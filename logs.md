@@ -195,3 +195,12 @@ This log documents every architectural decision, bug fix, feature integration, d
   - **Prerender:** All 22 static pages generated successfully (including dynamic slug routes `/academy/[slug]` and `/media/[slug]`).
 - Committed all changes: `feat: add interactive diplomatic tools, dedicated slug routes, global search palette, and editorial features` (`commit 487eb21`).
 - Pushed clean repository state to `https://github.com/Delegates-MUN/delegates-website` (`origin/main`).
+
+---
+
+## 9. Next.js Security Advisory Upgrade (16.4.4 → 16.4.6)
+- **Trigger:** Next.js build-time security advisory detected vulnerability in `16.4.4`.
+- **Workflow:** Created an isolated Git worktree (`.worktree-upgrade`) on branch `security/nextjs-16.4.6`.
+- **Configuration:** Updated `package.json` (`next` & `eslint-config-next` to `16.4.6`), set `experimental.agentUpgrade: "security"` in `next.config.ts`.
+- **Verification:** Ran `next --version` (`Next.js v16.4.6`) and completed a full production build (`npm run build`) with zero errors across all 22 static pages.
+- **Delivery:** Committed `chore(security): upgrade Next.js from 16.4.4 to 16.4.6 to resolve security advisory` and pushed branch `security/nextjs-16.4.6` to GitHub remote `origin`. Reported success via telemetry.
