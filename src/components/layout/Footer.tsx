@@ -13,6 +13,12 @@ export default function Footer() {
     }
   };
 
+  const handleOpenSubmitModal = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-submit-opportunity-modal"));
+    }
+  };
+
   return (
     <>
       <footer className="bg-[#171717] text-[#F4F0E8] border-t border-[#2D2B28] pt-16 pb-12">
@@ -85,6 +91,15 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/academy?tab=tools"
+                    className="hover:text-[#B89358] transition-colors flex items-center justify-between group pl-3 text-[11px] text-[#A69E93]"
+                  >
+                    <span>↳ Diplomatic Drafting Lab</span>
+                    <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/media"
                     className="hover:text-white transition-colors flex items-center justify-between group"
                   >
@@ -137,6 +152,14 @@ export default function Footer() {
                   >
                     MUN Opportunities
                   </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={handleOpenSubmitModal}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Submit an Opportunity
+                  </button>
                 </li>
                 <li>
                   <Link

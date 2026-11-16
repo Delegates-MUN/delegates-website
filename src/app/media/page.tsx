@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { MEDIA_ARTICLES } from "@/data/media";
 import { MediaArticle } from "@/types";
 import {
@@ -10,6 +11,7 @@ import {
   Calendar,
   Clock,
   ArrowRight,
+  ArrowUpRight,
   X,
   Quote,
   Share2,
@@ -145,17 +147,25 @@ export default function MediaPage() {
                   {featuredStory.summary}
                 </p>
 
-                <div className="pt-4 flex items-center justify-between border-t border-[#D8D0C4]">
+                <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#D8D0C4]">
                   <span className="text-xs font-interface text-[#8E877C]">
                     By {featuredStory.author} · {featuredStory.authorRole}
                   </span>
-                  <button
-                    onClick={() => setReadingArticle(featuredStory)}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-widest font-interface font-semibold hover:bg-black transition-colors"
-                  >
-                    <span>Read Lead Story</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => setReadingArticle(featuredStory)}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 border border-[#171717] text-[#171717] text-xs uppercase tracking-wider font-interface font-medium hover:bg-[#EAE4D9] transition-colors"
+                    >
+                      <span>Quick View</span>
+                    </button>
+                    <Link
+                      href={`/media/${featuredStory.slug}`}
+                      className="inline-flex items-center gap-2 px-5 py-2 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-widest font-interface font-semibold hover:bg-black transition-colors"
+                    >
+                      <span>Read Full Story</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -218,9 +228,11 @@ export default function MediaPage() {
                     </div>
 
                     <div className="min-h-[3.5rem] flex items-start">
-                      <h3 className="font-editorial text-xl text-[#171717] font-medium leading-snug group-hover:text-[#68645D] transition-colors">
-                        {article.title}
-                      </h3>
+                      <Link href={`/media/${article.slug}`}>
+                        <h3 className="font-editorial text-xl text-[#171717] font-medium leading-snug hover:text-[#68645D] transition-colors">
+                          {article.title}
+                        </h3>
+                      </Link>
                     </div>
 
                     <p className="text-xs text-[#68645D] line-clamp-3 leading-relaxed min-h-[3.25rem]">
@@ -229,17 +241,25 @@ export default function MediaPage() {
                   </div>
 
                   <div className="pt-5 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
-                    <span className="text-[11px] font-interface text-[#8E877C] truncate max-w-[150px]">
+                    <span className="text-[11px] font-interface text-[#8E877C] truncate max-w-[120px]">
                       {article.author}
                     </span>
 
-                    <button
-                      onClick={() => setReadingArticle(article)}
-                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-interface font-semibold text-[#171717] hover:underline"
-                    >
-                      <span>Read Article</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => setReadingArticle(article)}
+                        className="text-xs uppercase tracking-wider font-interface text-[#68645D] hover:text-[#171717]"
+                      >
+                        Preview
+                      </button>
+                      <Link
+                        href={`/media/${article.slug}`}
+                        className="inline-flex items-center gap-1 text-xs uppercase tracking-wider font-interface font-semibold text-[#171717] hover:underline"
+                      >
+                        <span>Read</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -333,16 +353,25 @@ export default function MediaPage() {
               </div>
 
               {/* Footer */}
-              <div className="pt-6 border-t border-[#D8D0C4] flex items-center justify-between">
+              <div className="pt-6 border-t border-[#D8D0C4] flex flex-wrap items-center justify-between gap-4">
                 <span className="text-xs text-[#68645D]">
                   Published by DELEGATES Media Directorate
                 </span>
-                <button
-                  onClick={() => setReadingArticle(null)}
-                  className="px-5 py-2 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-wider font-interface font-medium"
-                >
-                  Close Article
-                </button>
+                <div className="flex items-center gap-3">
+                  <Link
+                    href={`/media/${readingArticle.slug}`}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border border-[#171717] text-[#171717] text-xs uppercase tracking-wider font-interface font-medium hover:bg-[#171717] hover:text-[#F4F0E8] transition-colors"
+                  >
+                    <span>Dedicated Reader View</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <button
+                    onClick={() => setReadingArticle(null)}
+                    className="px-5 py-2 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-wider font-interface font-medium"
+                  >
+                    Close Preview
+                  </button>
+                </div>
               </div>
             </article>
           </div>

@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   Filter,
   CheckCircle,
+  PlusCircle,
 } from "lucide-react";
 
 export default function FeaturedOpportunities() {
@@ -27,6 +28,12 @@ export default function FeaturedOpportunities() {
       ? OPPORTUNITIES_DATA
       : OPPORTUNITIES_DATA.filter((opp) => opp.category === selectedCategory);
 
+  const handleOpenSubmitModal = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-submit-opportunity-modal"));
+    }
+  };
+
   return (
     <section id="opportunities" className="py-20 md:py-28 bg-[#F4F0E8] border-b border-[#D8D0C4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -41,31 +48,49 @@ export default function FeaturedOpportunities() {
             </h2>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
-            <Filter className="w-4 h-4 text-[#68645D] mr-1 hidden sm:block" />
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 font-interface text-xs uppercase tracking-wider transition-all border ${
-                  selectedCategory === cat
-                    ? "bg-[#171717] text-[#F4F0E8] border-[#171717]"
-                    : "bg-white text-[#68645D] border-[#D8D0C4] hover:border-[#171717] hover:text-[#171717]"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+          {/* Category Filter Pills & Submit Button */}
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <Filter className="w-4 h-4 text-[#68645D] mr-1 hidden sm:block" />
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-3 py-1.5 font-interface text-xs uppercase tracking-wider transition-all border ${
+                    selectedCategory === cat
+                      ? "bg-[#171717] text-[#F4F0E8] border-[#171717]"
+                      : "bg-white text-[#68645D] border-[#D8D0C4] hover:border-[#171717] hover:text-[#171717]"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={handleOpenSubmitModal}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#171717] bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
+            >
+              <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
+              <span>Submit Opportunity</span>
+            </button>
           </div>
         </div>
 
         {/* Note on data integrity */}
-        <div className="flex items-center gap-2 text-xs text-[#68645D] bg-[#EAE4D9]/60 px-4 py-2 border border-[#D8D0C4]">
-          <CheckCircle className="w-3.5 h-3.5 text-[#171717]" />
-          <span>
-            Curated conference directories and institutional application calls verified for youth delegates.
-          </span>
+        <div className="flex items-center justify-between flex-wrap gap-4 text-xs text-[#68645D] bg-[#EAE4D9]/60 px-4 py-2.5 border border-[#D8D0C4]">
+          <div className="flex items-center gap-2">
+            <CheckCircle className="w-3.5 h-3.5 text-[#171717]" />
+            <span>
+              Curated conference directories and institutional application calls verified for youth delegates.
+            </span>
+          </div>
+          <button
+            onClick={handleOpenSubmitModal}
+            className="text-[#171717] underline hover:text-[#68645D] font-medium"
+          >
+            Hosting an MUN or Call for Papers? Submit here →
+          </button>
         </div>
 
         {/* Opportunities Grid */}
@@ -80,20 +105,16 @@ export default function FeaturedOpportunities() {
                   <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
                     {opp.category}
                   </span>
-                  {opp.isOnline && (
-                    <span className="font-interface text-[10px] uppercase tracking-wider text-[#68645D] border-b border-[#68645D]/40">
-                      Virtual / Hybrid
-                    </span>
-                  )}
+                  <span className="font-interface text-[11px] text-[#8E877C]">
+                    {opp.location.includes("Virtual") ? "Online" : "In-Person"}
+                  </span>
                 </div>
 
-                <div className="min-h-[3.75rem] flex items-start">
-                  <h3 className="font-editorial text-lg sm:text-xl text-[#171717] font-medium leading-snug group-hover:text-[#68645D] transition-colors">
-                    {opp.title}
-                  </h3>
-                </div>
+                <h3 className="font-editorial text-xl text-[#171717] group-hover:underline">
+                  {opp.title}
+                </h3>
 
-                <p className="text-xs text-[#68645D] line-clamp-3 leading-relaxed min-h-[3.25rem]">
+                <p className="font-interface text-xs text-[#68645D] leading-relaxed line-clamp-2">
                   {opp.description}
                 </p>
 

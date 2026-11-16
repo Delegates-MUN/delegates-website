@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Play, Pause, Compass, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Pause, Compass, Sparkles, Volume2, Maximize2 } from "lucide-react";
 import Image from "next/image";
 
 export default function EditorialHero() {
@@ -27,16 +27,25 @@ export default function EditorialHero() {
     }
   };
 
+  const handleOpenCinemaModal = () => {
+    if (videoRef.current && isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-cinematic-film"));
+    }
+  };
+
   return (
     <section className="relative w-full border-b border-[#D8D0C4] bg-[#F4F0E8] overflow-hidden pt-12 pb-16 md:pt-16 md:pb-24">
-      {/* Top subtle decorative grid pattern */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Editorial Headline & Narrative */}
           <div className="lg:col-span-7 space-y-8">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717]">
-              <Sparkles className="w-3.5 h-3.5 text-[#68645D]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#B89358]" />
               <span className="font-interface text-[11px] uppercase tracking-[0.22em] font-medium">
                 An MUN & Diplomacy Community
               </span>
@@ -134,26 +143,40 @@ export default function EditorialHero() {
                   </div>
                 </div>
 
-                <div className="flex items-end justify-between">
-                  <div>
-                    <span className="font-interface text-[10px] tracking-widest uppercase text-white/70 block">
-                      DELEGATES Cinematography
-                    </span>
-                    <span className="font-editorial text-white text-base">
-                      Rooted in Principles.
-                    </span>
+                <div className="space-y-3">
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <span className="font-interface text-[10px] tracking-widest uppercase text-white/70 block">
+                        DELEGATES Cinematography
+                      </span>
+                      <span className="font-editorial text-white text-base">
+                        Rooted in Principles.
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={toggleVideo}
+                        className="p-3 bg-white text-[#171717] rounded-full hover:scale-105 active:scale-95 transition-transform shadow-lg"
+                        aria-label={isPlaying ? "Pause brand video" : "Play brand video"}
+                      >
+                        {isPlaying ? (
+                          <Pause className="w-4 h-4 fill-current" />
+                        ) : (
+                          <Play className="w-4 h-4 fill-current translate-x-0.5" />
+                        )}
+                      </button>
+                    </div>
                   </div>
 
+                  {/* Cinema Mode Button with Sound */}
                   <button
-                    onClick={toggleVideo}
-                    className="p-3 bg-white text-[#171717] rounded-full hover:scale-105 active:scale-95 transition-transform shadow-lg"
-                    aria-label={isPlaying ? "Pause brand video" : "Play brand video"}
+                    onClick={handleOpenCinemaModal}
+                    className="w-full py-2 px-3 bg-black/70 hover:bg-black/90 backdrop-blur-xs border border-white/25 text-white flex items-center justify-center gap-2 text-xs font-interface uppercase tracking-widest transition-colors"
                   >
-                    {isPlaying ? (
-                      <Pause className="w-4 h-4 fill-current" />
-                    ) : (
-                      <Play className="w-4 h-4 fill-current translate-x-0.5" />
-                    )}
+                    <Volume2 className="w-3.5 h-3.5 text-[#B89358]" />
+                    <span>Watch with Sound (Cinema Mode)</span>
+                    <Maximize2 className="w-3 h-3 text-white/70" />
                   </button>
                 </div>
               </div>

@@ -18,6 +18,7 @@ import {
   Sparkles,
   CheckCircle2,
   Check,
+  PlusCircle,
 } from "lucide-react";
 
 export default function CommunityPage() {
@@ -45,6 +46,12 @@ export default function CommunityPage() {
   const handleOpenJoinModal = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("open-join-community-modal"));
+    }
+  };
+
+  const handleOpenSubmitModal = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-submit-opportunity-modal"));
     }
   };
 
@@ -225,16 +232,25 @@ export default function CommunityPage() {
       {/* 4. MUN Opportunities & Event Listings */}
       <section id="opportunities" className="py-16 md:py-24 border-b border-[#D8D0C4] bg-[#EAE4D9]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="space-y-3">
-            <span className="font-interface text-xs uppercase tracking-[0.2em] text-[#68645D]">
-              Verified Circuit Directory
-            </span>
-            <h2 className="font-editorial text-3xl sm:text-4xl text-[#171717]">
-              MUN Conferences & Opportunities
-            </h2>
-            <p className="text-xs text-[#68645D] max-w-xl">
-              Curated opportunities for youth delegates. Links connect directly to official institutional organizers.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#D8D0C4] pb-6">
+            <div className="space-y-2">
+              <span className="font-interface text-xs uppercase tracking-[0.2em] text-[#68645D]">
+                Verified Circuit Directory
+              </span>
+              <h2 className="font-editorial text-3xl sm:text-4xl text-[#171717]">
+                MUN Conferences & Opportunities
+              </h2>
+              <p className="text-xs text-[#68645D] max-w-xl">
+                Curated opportunities for youth delegates. Links connect directly to official institutional organizers.
+              </p>
+            </div>
+            <button
+              onClick={handleOpenSubmitModal}
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors self-start md:self-auto"
+            >
+              <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
+              <span>Submit Opportunity</span>
+            </button>
           </div>
 
           {/* Search & Filter Controls */}

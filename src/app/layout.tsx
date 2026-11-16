@@ -4,6 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JoinCommunityModal from "@/components/ui/JoinCommunityModal";
+import EditorialMastheadBar from "@/components/ui/EditorialMastheadBar";
+import GlobalSearchModal from "@/components/ui/GlobalSearchModal";
+import SubmitOpportunityModal from "@/components/ui/SubmitOpportunityModal";
+import VideoCinematicModal from "@/components/ui/VideoCinematicModal";
+import NewsletterBar from "@/components/ui/NewsletterBar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -81,10 +86,15 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-screen flex flex-col bg-[#F4F0E8] text-[#202020] antialiased selection:bg-[#171717] selection:text-[#F4F0E8]">
+        <EditorialMastheadBar />
         <Navbar />
         <main className="flex-grow">{children}</main>
+        <NewsletterBar />
         <Footer />
         <JoinCommunityModal />
+        <GlobalSearchModal />
+        <SubmitOpportunityModal />
+        <VideoCinematicModal />
       </body>
     </html>
   );

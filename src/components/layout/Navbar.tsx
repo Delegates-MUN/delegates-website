@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Search, PlusCircle } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 
 const NAV_LINKS = [
@@ -39,6 +39,18 @@ export default function Navbar() {
     }
   };
 
+  const handleOpenSearch = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-global-search"));
+    }
+  };
+
+  const handleOpenSubmitModal = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-submit-opportunity-modal"));
+    }
+  };
+
   return (
     <>
       <header
@@ -57,7 +69,7 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <nav
-              className="hidden md:flex items-center space-x-8"
+              className="hidden lg:flex items-center space-x-7"
               aria-label="Main Navigation"
             >
               {NAV_LINKS.map((link) => {
@@ -81,8 +93,32 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center space-x-4">
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center space-x-3">
+              {/* Search Trigger */}
+              <button
+                onClick={handleOpenSearch}
+                className="flex items-center gap-2 px-3 py-1.5 border border-[#D8D0C4] bg-white/70 hover:bg-white hover:border-[#171717] text-[#68645D] hover:text-[#171717] transition-all text-xs font-interface"
+                title="Search the site (Ctrl+K)"
+              >
+                <Search className="w-3.5 h-3.5" />
+                <span className="text-[11px] uppercase tracking-wider">Search</span>
+                <kbd className="text-[9px] bg-[#EAE4D9] px-1 py-0.5 border border-[#D8D0C4] font-mono text-[#68645D]">
+                  ⌘K
+                </kbd>
+              </button>
+
+              {/* Submit Opportunity Trigger */}
+              <button
+                onClick={handleOpenSubmitModal}
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-[#8E877C] hover:border-[#171717] text-[#68645D] hover:text-[#171717] text-xs font-interface uppercase tracking-wider transition-colors"
+                title="Submit an MUN Conference or Research Call"
+              >
+                <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
+                <span className="text-[11px]">Submit Call</span>
+              </button>
+
+              {/* Join Community CTA */}
               <button
                 onClick={handleOpenJoinModal}
                 className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-[0.15em] font-interface font-medium hover:bg-black transition-colors"
@@ -92,8 +128,15 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Mobile Hamburger Button */}
-            <div className="flex md:hidden items-center space-x-3">
+            {/* Mobile Hamburger & Fast Search Button */}
+            <div className="flex md:hidden items-center space-x-2">
+              <button
+                onClick={handleOpenSearch}
+                className="p-2 text-[#68645D] hover:text-[#171717]"
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </button>
               <button
                 onClick={handleOpenJoinModal}
                 className="px-3 py-1.5 bg-[#171717] text-[#F4F0E8] text-[11px] uppercase tracking-wider font-interface font-medium"
@@ -119,7 +162,7 @@ export default function Navbar() {
         {/* Mobile Slide-down Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-[#D8D0C4] bg-[#F4F0E8] px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
-            <nav className="flex flex-col space-y-2">
+            <nav className="flex flex-col space-y-1">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -137,7 +180,19 @@ export default function Navbar() {
                 );
               })}
             </nav>
-            <div className="pt-3 border-t border-[#D8D0C4]">
+
+            <div className="pt-3 border-t border-[#D8D0C4] space-y-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleOpenSubmitModal();
+                }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 border border-[#171717] text-[#171717] text-xs uppercase tracking-widest font-interface font-medium"
+              >
+                <PlusCircle className="w-4 h-4 text-[#B89358]" />
+                <span>Submit Opportunity / Call</span>
+              </button>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
