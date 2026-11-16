@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #F4F0E8;
+  --color-ivory-soft: #EAE4D9;
+  --color-near-black: #171717;
+  --color-dark-surface: #1E1D1B;
+  --color-text-main: #202020;
+  --color-text-muted: #68645D;
+  --color-border-subtle: #D8D0C4;
+  --color-border-dark: #2D2B28;
+  --color-dark-muted: #C9C2B7;
+
+  --font-serif: var(--font-lora), Georgia, Cambria, serif;
+  --font-sans: var(--font-montserrat), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --bg-primary: #F4F0E8;
+  --bg-secondary: #EAE4D9;
+  --text-primary: #202020;
+  --text-secondary: #68645D;
+  --border-color: #D8D0C4;
+  --dark-primary: #171717;
+  --dark-text-secondary: #C9C2B7;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-montserrat), sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: #171717;
+  color: #F4F0E8;
+}
+
+/* Editorial typography utilities */
+.font-editorial {
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+.font-interface {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Thin editorial borders */
+.border-editorial {
+  border-color: #D8D0C4;
+}
+
+.border-editorial-dark {
+  border-color: #2D2B28;
+}
+
+/* Editorial subtle focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 3px;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
