@@ -9,6 +9,7 @@ import GlobalSearchModal from "@/components/ui/GlobalSearchModal";
 import SubmitOpportunityModal from "@/components/ui/SubmitOpportunityModal";
 import VideoCinematicModal from "@/components/ui/VideoCinematicModal";
 import NewsletterBar from "@/components/ui/NewsletterBar";
+import ReadingProgress from "@/components/ui/ReadingProgress";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -86,6 +87,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-screen flex flex-col bg-[#F4F0E8] text-[#202020] antialiased selection:bg-[#171717] selection:text-[#F4F0E8]">
+        <ReadingProgress />
         <EditorialMastheadBar />
         <Navbar />
         <main className="flex-grow">{children}</main>

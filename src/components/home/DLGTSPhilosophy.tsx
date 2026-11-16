@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Shield, Scale, Globe2, CheckCircle, Award } from "lucide-react";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface Principle {
   letter: "D" | "L" | "G" | "T" | "S";
@@ -122,45 +123,47 @@ export default function DLGTSPhilosophy() {
         </div>
 
         {/* Active Principle Detailed Showcase */}
-        <div className="bg-[#201F1D] border border-[#33312D] p-8 sm:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-            {/* Letter Callout */}
-            <div className="lg:col-span-3 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-[#33312D] pb-8 lg:pb-0 lg:pr-8 flex flex-col justify-between space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#171717] border border-[#33312D] text-white mx-auto lg:mx-0">
-                <IconComponent className="w-8 h-8" />
-              </div>
-              <div className="space-y-1">
-                <span className="font-editorial text-5xl sm:text-6xl text-white block">
-                  {activePrinciple.letter}
-                </span>
-                <span className="font-interface text-xs uppercase tracking-[0.2em] text-[#C9C2B7] font-semibold block">
-                  {activePrinciple.title}
-                </span>
-              </div>
-            </div>
-
-            {/* Content & Application */}
-            <div className="lg:col-span-9 space-y-6">
-              <div className="space-y-2">
-                <span className="font-interface text-[11px] uppercase tracking-widest text-[#8E877C]">
-                  {activePrinciple.subtitle}
-                </span>
-                <p className="font-editorial text-xl sm:text-2xl text-white leading-relaxed">
-                  “{activePrinciple.description}”
-                </p>
+        <ScrollReveal delay={100}>
+          <div key={activeLetter} className="bg-[#201F1D] border border-[#33312D] p-8 sm:p-12 animate-fadeIn card-hover-lift">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+              {/* Letter Callout */}
+              <div className="lg:col-span-3 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-[#33312D] pb-8 lg:pb-0 lg:pr-8 flex flex-col justify-between space-y-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#171717] border border-[#33312D] text-white mx-auto lg:mx-0 transition-transform duration-300 hover:scale-105">
+                  <IconComponent className="w-8 h-8" />
+                </div>
+                <div className="space-y-1">
+                  <span className="font-editorial text-5xl sm:text-6xl text-white block">
+                    {activePrinciple.letter}
+                  </span>
+                  <span className="font-interface text-xs uppercase tracking-[0.2em] text-[#C9C2B7] font-semibold block">
+                    {activePrinciple.title}
+                  </span>
+                </div>
               </div>
 
-              <div className="p-4 bg-[#171717] border border-[#2D2B28] text-xs text-[#C9C2B7] space-y-1">
-                <span className="font-interface font-semibold uppercase tracking-wider text-[10px] text-white block">
-                  Practical Application in Diplomacy & MUN:
-                </span>
-                <p className="leading-relaxed">
-                  {activePrinciple.application}
-                </p>
+              {/* Content & Application */}
+              <div className="lg:col-span-9 space-y-6">
+                <div className="space-y-2">
+                  <span className="font-interface text-[11px] uppercase tracking-widest text-[#8E877C]">
+                    {activePrinciple.subtitle}
+                  </span>
+                  <p className="font-editorial text-xl sm:text-2xl text-white leading-relaxed">
+                    “{activePrinciple.description}”
+                  </p>
+                </div>
+
+                <div className="p-4 bg-[#171717] border border-[#2D2B28] text-xs text-[#C9C2B7] space-y-1">
+                  <span className="font-interface font-semibold uppercase tracking-wider text-[10px] text-white block">
+                    Practical Application in Diplomacy & MUN:
+                  </span>
+                  <p className="leading-relaxed">
+                    {activePrinciple.application}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ACADEMY_RESOURCES } from "@/data/academy";
 import { AcademyResource } from "@/types";
 import ClauseBuilder from "@/components/academy/ClauseBuilder";
 import RoPMatrix from "@/components/academy/RoPMatrix";
 import DossierWorksheet from "@/components/academy/DossierWorksheet";
+import { SwissCornerMarks, CartographicStamp, ArchivalBadge } from "@/components/ui/SwissAccents";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import {
   BookOpen,
   Search,
@@ -90,29 +93,70 @@ export default function AcademyPage() {
     <div className="w-full bg-[#F4F0E8] text-[#202020]">
       {/* 1. Editorial Hero */}
       <section className="border-b border-[#D8D0C4] pt-14 pb-16 md:pt-20 md:pb-24 bg-[#F4F0E8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717]">
-            <BookOpen className="w-3.5 h-3.5 text-[#68645D]" />
-            <span className="font-interface text-[11px] uppercase tracking-[0.2em] font-medium">
-              Pillar 02 — Academy
-            </span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fadeIn">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717]">
+              <BookOpen className="w-3.5 h-3.5 text-[#68645D]" />
+              <span className="font-interface text-[11px] uppercase tracking-[0.2em] font-medium">
+                Pillar 02 — Academy
+              </span>
+            </div>
+            <CartographicStamp
+              location="ACADEMY DIRECTORATE // AMPHITHEATER"
+              coordinates="46°13′36″N 6°08′26″E"
+            />
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl text-[#171717] font-normal max-w-4xl leading-tight">
-            Learn the art of diplomacy.
-            <br />
-            <span className="italic">Grounded in law, procedure, and rigor.</span>
-          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Col: Narrative & Features */}
+            <div className="lg:col-span-6 space-y-6">
+              <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl text-[#171717] font-normal leading-tight animate-fadeInUp delay-100">
+                Learn the art of diplomacy.
+                <br />
+                <span className="italic font-serif font-light text-[#3A3835]">
+                  Grounded in law, procedure, and rigor.
+                </span>
+              </h1>
 
-          <p className="font-interface text-base sm:text-lg text-[#68645D] max-w-2xl leading-relaxed">
-            An open-access pedagogical library and interactive workbench for Model UN delegates, researchers, and aspiring chairs. We demystify parliamentary procedure, legal resolution drafting, and geopolitical dossier methodology.
-          </p>
+              <p className="font-interface text-base sm:text-lg text-[#68645D] leading-relaxed animate-fadeInUp delay-150">
+                An open-access pedagogical library and interactive workbench for Model UN delegates, researchers, and aspiring chairs. We demystify parliamentary procedure, legal resolution drafting, and geopolitical dossier methodology.
+              </p>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs font-interface text-[#68645D] pt-2">
-            <span>• Completely Free & Open Access</span>
-            <span>• No Course Gating</span>
-            <span>• Interactive Drafting Tools</span>
-            <span>• Written by Chairs & Jurists</span>
+              <div className="pt-2 flex flex-wrap gap-4 text-xs font-interface text-[#171717] font-medium animate-fadeInUp delay-200">
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Open Access</span>
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Zero Paywalls</span>
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">3 Interactive Tools</span>
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Peer-Reviewed</span>
+              </div>
+            </div>
+
+            {/* Right Col: Grand Amphitheater Visual */}
+            <div className="lg:col-span-6 animate-fadeIn delay-150">
+              <div className="relative aspect-[16/10] w-full border border-[#D8D0C4] overflow-hidden bg-[#171717] group">
+                <SwissCornerMarks />
+                <Image
+                  src="/assets/editorial/academy-amphitheater.jpg"
+                  alt="Neoclassical diplomatic lecture amphitheater"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover grayscale contrast-125 opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent p-5 sm:p-6 flex flex-col justify-between">
+                  <div className="flex justify-end">
+                    <ArchivalBadge label="DIPLOMATIC AMPHITHEATER" classification="ACCREDITED" variant="dark" />
+                  </div>
+                  <div className="text-white text-xs font-interface space-y-1">
+                    <span className="text-[10px] uppercase tracking-widest text-[#B89358] block">
+                      The Hall of Deliberation
+                    </span>
+                    <p className="font-editorial italic text-xs sm:text-sm text-white/90">
+                      “Where theoretical foreign policy is transformed into operational debate statesmanship.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -213,12 +257,14 @@ export default function AcademyPage() {
           {/* Resources Grid */}
           <section className="py-16 md:py-24 bg-[#F4F0E8]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-              <div className="flex items-center justify-between text-xs font-interface text-[#68645D]">
-                <span>
-                  Showing {filteredResources.length} educational modules
-                </span>
-                <span>Public Learning Repository</span>
-              </div>
+              <ScrollReveal>
+                <div className="flex items-center justify-between text-xs font-interface text-[#68645D]">
+                  <span>
+                    Showing {filteredResources.length} educational modules
+                  </span>
+                  <span>Public Learning Repository</span>
+                </div>
+              </ScrollReveal>
 
               {filteredResources.length === 0 ? (
                 <div className="p-12 text-center bg-white border border-[#D8D0C4] space-y-3">
@@ -238,88 +284,90 @@ export default function AcademyPage() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredResources.map((item) => {
+                  {filteredResources.map((item, idx) => {
                     const isSaved = bookmarked.includes(item.slug);
                     return (
-                      <div
-                        key={item.id}
-                        id={item.slug}
-                        className="border border-[#D8D0C4] bg-white p-7 flex flex-col justify-between hover:border-[#171717] transition-all group relative"
-                      >
-                        {/* Bookmark Button */}
-                        <button
-                          onClick={() => toggleBookmark(item.slug)}
-                          className={`absolute top-6 right-6 p-1.5 rounded-full border transition-colors ${
-                            isSaved
-                              ? "bg-[#171717] text-white border-[#171717]"
-                              : "bg-white text-[#68645D] border-[#D8D0C4] hover:text-[#171717]"
-                          }`}
-                          title={isSaved ? "Remove Bookmark" : "Bookmark Guide"}
+                      <ScrollReveal key={item.id} delay={(idx % 3) * 60}>
+                        <div
+                          id={item.slug}
+                          className="relative border border-[#D8D0C4] bg-white p-7 sm:p-8 flex flex-col justify-between hover:border-[#171717] transition-all group card-hover-lift h-full"
                         >
-                          <Bookmark className="w-3.5 h-3.5 fill-current" />
-                        </button>
+                          <SwissCornerMarks size="w-2 h-2" />
+                          {/* Bookmark Button */}
+                          <button
+                            onClick={() => toggleBookmark(item.slug)}
+                            className={`absolute top-6 right-6 p-1.5 rounded-full border transition-colors ${
+                              isSaved
+                                ? "bg-[#171717] text-white border-[#171717]"
+                                : "bg-white text-[#68645D] border-[#D8D0C4] hover:text-[#171717]"
+                            }`}
+                            title={isSaved ? "Remove Bookmark" : "Bookmark Guide"}
+                          >
+                            <Bookmark className="w-3.5 h-3.5 fill-current" />
+                          </button>
 
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-2">
-                            <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
-                              {item.category}
-                            </span>
-                            <span className="font-interface text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#D8D0C4] text-[#68645D]">
-                              {item.difficulty}
-                            </span>
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-2">
+                              <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
+                                {item.category}
+                              </span>
+                              <span className="font-interface text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#D8D0C4] text-[#68645D]">
+                                {item.difficulty}
+                              </span>
+                            </div>
+
+                            <div className="min-h-[3.75rem] flex items-start">
+                              <h3 className="font-editorial text-xl text-[#171717] font-medium leading-snug group-hover:text-[#68645D] transition-colors pr-6">
+                                <Link href={`/academy/${item.slug}`}>
+                                  {item.title}
+                                </Link>
+                              </h3>
+                            </div>
+
+                            <p className="text-xs text-[#68645D] leading-relaxed line-clamp-3 min-h-[3.25rem]">
+                              {item.summary}
+                            </p>
+
+                            <div className="space-y-1.5 pt-3 border-t border-[#D8D0C4]/70 min-h-[3.75rem]">
+                              <span className="text-[10px] font-interface uppercase tracking-widest text-[#8E877C] block font-semibold">
+                                Core Takeaways:
+                              </span>
+                              {item.keyTakeaways.slice(0, 2).map((takeaway, i) => (
+                                <div
+                                  key={i}
+                                  className="flex items-start gap-2 text-[11px] text-[#202020]"
+                                >
+                                  <CheckCircle className="w-3 h-3 text-[#171717] flex-shrink-0 mt-0.5" />
+                                  <span className="line-clamp-1">{takeaway}</span>
+                                </div>
+                              ))}
+                            </div>
                           </div>
 
-                          <div className="min-h-[3.75rem] flex items-start">
-                            <h3 className="font-editorial text-xl text-[#171717] font-medium leading-snug group-hover:text-[#68645D] transition-colors pr-6">
-                              <Link href={`/academy/${item.slug}`}>
-                                {item.title}
-                              </Link>
-                            </h3>
-                          </div>
+                          <div className="pt-6 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
+                            <div className="flex items-center gap-1.5 text-xs text-[#68645D]">
+                              <Clock className="w-3.5 h-3.5" />
+                              <span>{item.readingTime}</span>
+                            </div>
 
-                          <p className="text-xs text-[#68645D] leading-relaxed line-clamp-3 min-h-[3.25rem]">
-                            {item.summary}
-                          </p>
-
-                          <div className="space-y-1.5 pt-3 border-t border-[#D8D0C4]/70 min-h-[3.75rem]">
-                            <span className="text-[10px] font-interface uppercase tracking-widest text-[#8E877C] block font-semibold">
-                              Core Takeaways:
-                            </span>
-                            {item.keyTakeaways.slice(0, 2).map((takeaway, i) => (
-                              <div
-                                key={i}
-                                className="flex items-start gap-2 text-[11px] text-[#202020]"
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => setReadingResource(item)}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-wider font-interface font-medium hover:bg-black transition-colors active:scale-[0.98]"
                               >
-                                <CheckCircle className="w-3 h-3 text-[#171717] flex-shrink-0 mt-0.5" />
-                                <span className="line-clamp-1">{takeaway}</span>
-                              </div>
-                            ))}
+                                <span>Quick Read</span>
+                              </button>
+                              <Link
+                                href={`/academy/${item.slug}`}
+                                className="p-1.5 text-[#171717] hover:bg-[#EAE4D9] border border-[#D8D0C4] transition-colors"
+                                title="Open dedicated shareable page"
+                              >
+                                <ArrowRight className="w-3.5 h-3.5" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
-
-                        <div className="pt-6 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
-                          <div className="flex items-center gap-1.5 text-xs text-[#68645D]">
-                            <Clock className="w-3.5 h-3.5" />
-                            <span>{item.readingTime}</span>
-                          </div>
-
-                          <div className="flex items-center gap-2">
-                            <button
-                              onClick={() => setReadingResource(item)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-wider font-interface font-medium hover:bg-black transition-colors"
-                            >
-                              <span>Quick Read</span>
-                            </button>
-                            <Link
-                              href={`/academy/${item.slug}`}
-                              className="p-1.5 text-[#171717] hover:bg-[#EAE4D9] border border-[#D8D0C4] transition-colors"
-                              title="Open dedicated shareable page"
-                            >
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
+                      </ScrollReveal>
                     );
                   })}
                 </div>
@@ -332,7 +380,7 @@ export default function AcademyPage() {
       {/* VIEW 2: Interactive Diplomatic Lab */}
       {activeMainTab === "lab" && (
         <section className="py-12 md:py-20 bg-[#F4F0E8]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 animate-fadeIn">
             {/* Tool Switcher */}
             <div className="flex flex-wrap items-center gap-2 p-1.5 bg-[#EAE4D9] border border-[#D8D0C4] max-w-fit">
               <button
@@ -368,9 +416,11 @@ export default function AcademyPage() {
             </div>
 
             {/* Active Tool Render */}
-            {activeLabTool === "clause" && <ClauseBuilder />}
-            {activeLabTool === "rop" && <RoPMatrix />}
-            {activeLabTool === "dossier" && <DossierWorksheet />}
+            <div className="animate-fadeIn">
+              {activeLabTool === "clause" && <ClauseBuilder />}
+              {activeLabTool === "rop" && <RoPMatrix />}
+              {activeLabTool === "dossier" && <DossierWorksheet />}
+            </div>
           </div>
         </section>
       )}
@@ -490,3 +540,5 @@ export default function AcademyPage() {
     </div>
   );
 }
+
+

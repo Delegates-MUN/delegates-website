@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MEDIA_ARTICLES } from "@/data/media";
 import { Metadata } from "next";
 import { ArrowLeft, Clock, Calendar, ArrowRight } from "lucide-react";
+import { SwissCornerMarks, CartographicStamp } from "@/components/ui/SwissAccents";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -110,13 +111,14 @@ export default async function MediaArticleDetailPage({ params }: PageProps) {
         {/* Featured Cover Image if available */}
         {article.coverImage && (
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#171717] border border-[#D8D0C4]">
+            <SwissCornerMarks />
             <Image
               src={article.coverImage}
               alt={article.title}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 896px"
-              className="object-cover"
+              className="object-cover grayscale contrast-110 opacity-95"
             />
           </div>
         )}

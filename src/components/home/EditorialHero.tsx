@@ -44,7 +44,7 @@ export default function EditorialHero() {
           {/* Left Column: Editorial Headline & Narrative */}
           <div className="lg:col-span-7 space-y-8">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717]">
+            <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717] animate-fadeInUp delay-50">
               <Sparkles className="w-3.5 h-3.5 text-[#B89358]" />
               <span className="font-interface text-[11px] uppercase tracking-[0.22em] font-medium">
                 An MUN & Diplomacy Community
@@ -53,39 +53,39 @@ export default function EditorialHero() {
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-normal leading-[1.08] tracking-tight text-[#171717]">
+              <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-normal leading-[1.08] tracking-tight text-[#171717] animate-fadeInUp delay-100">
                 Rooted in Principles.
                 <br />
                 <span className="italic font-serif font-light text-[#3A3835]">
                   United by Dialogue.
                 </span>
               </h1>
-              <p className="font-interface text-base sm:text-lg text-[#68645D] max-w-xl leading-relaxed pt-2">
+              <p className="font-interface text-base sm:text-lg text-[#68645D] max-w-xl leading-relaxed pt-2 animate-fadeInUp delay-150">
                 A space for Model UN enthusiasts, aspiring diplomats, and youth leaders to connect, learn without barriers, and engage with the world through critical thinking and informed dialogue.
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 animate-fadeInUp delay-200">
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-[#171717] text-[#F4F0E8] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-black hover:shadow-md transition-all group"
+                className="inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-[#171717] text-[#F4F0E8] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-black hover:shadow-md active:scale-[0.99] transition-all group"
               >
                 <span>Explore DELEGATES</span>
-                <Compass className="w-4 h-4 transition-transform group-hover:rotate-45" />
+                <Compass className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
               </Link>
 
               <button
                 onClick={handleOpenJoinModal}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-[#171717] text-[#171717] bg-transparent font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#171717] hover:text-[#F4F0E8] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-[#171717] text-[#171717] bg-transparent font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#171717] hover:text-[#F4F0E8] active:scale-[0.99] transition-all group"
               >
                 <span>Join the Community</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
               </button>
             </div>
 
             {/* Editorial Institutional Markers */}
-            <div className="pt-8 border-t border-[#D8D0C4] flex flex-wrap items-center justify-between gap-6">
+            <div className="pt-8 border-t border-[#D8D0C4] flex flex-wrap items-center justify-between gap-6 animate-fadeIn delay-300">
               <div className="space-y-1">
                 <span className="block font-interface text-[10px] uppercase tracking-[0.2em] text-[#68645D]">
                   Three Pillars
@@ -114,8 +114,8 @@ export default function EditorialHero() {
           </div>
 
           {/* Right Column: Visual Art Direction / Film Reel */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="relative border border-[#D8D0C4] bg-[#171717] overflow-hidden shadow-lg aspect-[4/3] group">
+          <div className="lg:col-span-5 space-y-4 animate-fadeIn delay-150">
+            <div className="relative border border-[#D8D0C4] bg-[#171717] overflow-hidden shadow-lg aspect-[4/3] group card-hover-lift">
               {/* Video Element */}
               <video
                 ref={videoRef}

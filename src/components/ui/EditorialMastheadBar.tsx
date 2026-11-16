@@ -37,7 +37,7 @@ export default function EditorialMastheadBar() {
           >
             <Search className="w-3 h-3 text-[#C9C2B7]" />
             <span className="text-[9px] uppercase tracking-wider hidden sm:inline">Search</span>
-            <kbd className="text-[9px] bg-[#171717] px-1 py-0.2 border border-[#444] text-[#C9C2B7] font-mono">
+            <kbd className="text-[9px] bg-[#171717] px-1 py-px border border-[#444] text-[#C9C2B7] font-mono">
               Ctrl K
             </kbd>
           </button>

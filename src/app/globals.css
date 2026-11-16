@@ -78,3 +78,134 @@ select:focus-visible {
 a, button {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ============================================================
+   EDITORIAL ANIMATIONS & MICRO-INTERACTIONS
+   Calibrated for quiet, architectural elegance ("do not over-do it")
+   ============================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered entrance delay utilities */
+.delay-50  { animation-delay: 50ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* Subtle card lift on hover — 2px tactile elevation with soft atmospheric shadow */
+.card-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(23, 23, 23, 0.06), 0 4px 8px -4px rgba(23, 23, 23, 0.03);
+}
+
+/* Image zoom in container */
+.img-zoom-hover {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  will-change: transform;
+}
+
+.group:hover .img-zoom-hover {
+  transform: scale(1.025);
+  opacity: 1;
+}
+
+/* Swiss Corner Marks subtle hover response */
+.swiss-corner-tick {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.group:hover .swiss-corner-tick {
+  transform: scale(1.08);
+}
+
+/* Accessible reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   SWISS CORNER MARKS — custom border thickness 1.5px
+   (Tailwind does not have border-t-1.5; we define it here)
+   ============================================================ */
+
+.swiss-border-tl {
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.swiss-border-tr {
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.swiss-border-bl {
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.swiss-border-br {
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+/* ============================================================
+   SCALE UTILITIES (used in image hover effects)
+   ============================================================ */
+
+.group:hover .group-hover\:scale-101 {
+  transform: scale(1.01);
+}
+
+.group:hover .group-hover\:scale-102 {
+  transform: scale(1.02);
+}
+
+.group-hover\:scale-101 {
+  --tw-scale-x: 1.01;
+  --tw-scale-y: 1.01;
+}
+
+.group-hover\:scale-102 {
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+}

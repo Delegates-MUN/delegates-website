@@ -57,14 +57,17 @@ This document provides a comprehensive, structured summary of all textual conten
 ### D. The Three Pillars
 1. **01 — COMMUNITY:**
    - *Theme:* “Find your people. Exchange perspectives. Grow together.”
+   - *Visual Window:* Monochrome photograph of delegates traversing a sunlit institutional colonnade (`pillar-community.jpg`) with archival badge `PALAIS DES NATIONS // GENEVA`.
    - *Content:* Youth networking circles, crisis rooms, collaborative draft paper exchanges, and non-exploitative conference circuit directories.
    - *Action:* Discover the Community (`/community`).
 2. **02 — ACADEMY:**
    - *Theme:* “Learn the art of diplomacy.”
+   - *Visual Window:* Monochrome photograph of a classical diplomatic law library with floor-to-ceiling treaty codices (`pillar-academy.jpg`) with archival badge `JURISPRUDENCE ARCHIVE // OPEN VAULT`.
    - *Content:* Comprehensive rules of procedure, authoritative position paper structures, public speaking drills, and the interactive diplomatic lab.
    - *Action:* Explore the Academy (`/academy`).
 3. **03 — MEDIA:**
    - *Theme:* “Understand the world beyond the headlines.”
+   - *Visual Window:* Monochrome photograph of an international affairs press desk with broadsheet proofs and typographic plates (`pillar-media.jpg`) with archival badge `DISPATCH DESK // VOL. I · Nº 01`.
    - *Content:* Geopolitical explainers, treaty breakdowns, ICJ jurisprudence analyses, and independent diplomatic journalism.
    - *Action:* Read Our Stories (`/media`).
 
@@ -83,8 +86,9 @@ This document provides a comprehensive, structured summary of all textual conten
 
 ## 3. Page Content: Community Hub (`/community`)
 
-### A. Community Mission
-- “Find your people. Exchange perspectives. Grow together.” Building a barrier-free international relations community.
+### A. Community Mission & Visual Hero
+- **Visual Presentation:** Two-column split hero featuring a high-impact monochrome photograph of an active plenary session with raised delegate placards (`community-assembly.jpg`), Cartographic Stamp (`GENEVA // YOUTH PLENARY ASSEMBLY · 46°13′36″N 6°08′26″E`), and Archival Badge (`COMMITTEE FLOOR // IN SESSION`).
+- **Core Manifesto:** “Find your people. Exchange perspectives. Grow together.” Building a barrier-free international relations community.
 
 ### B. Inclusivity Standard (Who the Community is For)
 1. **First-Time MUN Participants (Foundation):** Step-by-step procedural guides, jargon decoders, and low-stakes simulation rooms.
@@ -113,8 +117,9 @@ This document provides a comprehensive, structured summary of all textual conten
 
 ## 4. Page Content: Academy & Diplomatic Lab (`/academy`)
 
-### A. Academic Mission
-- “Learn the art of diplomacy.” Open educational curriculum and interactive lab tools for delegates and student leaders.
+### A. Academic Mission & Visual Hero
+- **Visual Presentation:** Two-column split hero featuring a monochrome architectural photograph of a classical tiered diplomatic lecture amphitheater (`academy-amphitheater.jpg`), Cartographic Stamp (`GENEVA // DIPLOMATIC AMPHITHEATER · 46°13′36″N 6°08′26″E`), and Archival Badge (`DIPLOMATIC AMPHITHEATER // ACCREDITED`).
+- **Pedagogical Goal:** “Learn the art of diplomacy.” Open educational curriculum and interactive lab tools for delegates and student leaders.
 
 ### B. Curriculum Categories & Modules
 1. **Rules of Procedure (RoP):**
@@ -149,23 +154,25 @@ Each dedicated guide route features:
 
 ## 6. Page Content: Media & Publications (`/media`)
 
-### A. Editorial Mission
-- “Understand the world beyond the headlines.” Independent geopolitical and diplomatic commentary grounded in international law and history.
+### A. Editorial Mission & Visual Hero
+- **Visual Presentation:** Two-column split hero with a monochrome still life of the diplomatic reading room with open geopolitical atlas and legal folios (`media-reading-room.jpg`), Cartographic Stamp (`GENEVA // PRESS BUREAU & ARCHIVES · 46°13′36″N 6°08′26″E`), and Archival Badge (`DISPATCH BUREAU // VOL. I // ISSUE 01`).
+- **Core Manifesto:** “Understand the world beyond the headlines.” Independent geopolitical and diplomatic commentary grounded in international law and history.
 
 ### B. Flagship Story Spotlight
 - **Title:** *The Future of Multilateralism in a Fragmented Order*
+- **Visual Cover:** Monochrome assembly hall photograph (`multilateralism-hall.jpg`).
 - **Author:** Editorial Board · Strategic Studies Desk
 - **Summary:** As unilateral sanctions and regional pacts surge, the post-1945 multilateral architecture faces unprecedented institutional stress. This dispatch examines whether the United Nations system can evolve to accommodate a multipolar century.
 
 ### C. Thematic Desks & Dispatches
 1. **Geopolitics:**
-   - *Sovereignty and Sanctions: The Limits of Extraterritoriality in International Law* (By Elena Rostova, Senior Research Fellow).
+   - *Sovereignty and Sanctions: The Limits of Extraterritoriality in International Law* (By Elena Rostova, Senior Research Fellow). Cover: Archival treaty still life (`sovereignty-treaties.jpg`).
 2. **Diplomacy & International Relations:**
    - *The Evolution of Bilateral Backchannels: How Historic Accords Were Born* (By Marcus Sterling, Diplomatic Historian).
 3. **MUN Insights:**
-   - *Why Modern Model UN Needs More Law and Less Rhetoric* (By Kabir Mehta, Chair of Academic Council).
+   - *Why Modern Model UN Needs More Law and Less Rhetoric* (By Kabir Mehta, Chair of Academic Council). Cover: Dais and microphones (`dais-moderation.jpg`).
 4. **Interviews & Perspectives:**
-   - *Dispatches from the Permanent Missions: A Conversation on Youth in Multilateralism* (By DELEGATES Special Correspondent).
+   - *Voices at the High Table: Youth Leadership in International Deliberation* (By DELEGATES Special Correspondent). Cover: Caucus consultation (`youth-diplomacy.jpg`).
 
 ### D. Legal Citations & Sources Archive
 - Detailed references to ICJ rulings, the Vienna Convention on the Law of Treaties (1969), UN Charter Chapter VII, and General Assembly declarations.
@@ -185,7 +192,8 @@ Each dedicated dispatch route features:
 ## 8. Page Content: About Directorate (`/about`)
 
 ### A. Foundational Narrative
-- Traces the founding of DELEGATES as a response to superficial MUN coaching institutes. DELEGATES re-establishes the discipline of serious international affairs research, ethical dialogue, and accessible learning.
+- **Monumental Architectural Visual:** Full-width 21:9 monochrome exterior of the Palais des Nations (`about-architecture.jpg`) with geographic coordinate stamp `GENEVA // PALAIS DES NATIONS · 46°13′36″N 6°08′26″E` and archival badge `PALAIS DES NATIONS // SEAT OF MULTILATERALISM · EST. 1936`.
+- **Manifesto:** Traces the founding of DELEGATES as a response to superficial MUN coaching institutes. DELEGATES re-establishes the discipline of serious international affairs research, ethical dialogue, and accessible learning.
 
 ### B. The Three Core Pillars
 - Deep examination of how Community, Academy, and Media intersect to support a delegate from beginner to diplomat.
@@ -206,10 +214,12 @@ Each dedicated dispatch route features:
 
 ## 9. Page Content: Official Desk & Contact (`/contact`)
 
-### A. Direct Communication Desks
-- **Academic Directorate:** `academy@delegates.org` (Curriculum contributions, guide inquiries, workshop requests).
-- **Media Editorial Desk:** `media@delegates.org` (Article pitches, research submissions, press inquiries).
-- **Secretariat Relations:** `secretariat@delegates.org` (Conference listings, institutional partnerships, verification).
+### A. Communication Desk & Visual Hero
+- **Visual Presentation:** Two-column split hero with a monochrome photograph of the official diplomatic secretariat desk with leather portfolio, fountain pen, and embossed seal (`secretariat-desk.jpg`), Cartographic Stamp (`GENEVA // DIPLOMATIC LIAISON DESK · 46°13′36″N 6°08′26″E`), and Archival Badge (`SECRETARIAT LIAISON // OFFICIAL DESK`).
+- **Direct Desks Directory:**
+  - **Academic Directorate:** `academy@delegates.org` (Curriculum contributions, guide inquiries, workshop requests).
+  - **Media Editorial Desk:** `media@delegates.org` (Article pitches, research submissions, press inquiries).
+  - **Secretariat Relations:** `secretariat@delegates.org` (Conference listings, institutional partnerships, verification).
 
 ### B. Structured Inquiry Intake
 - Fields: Full Name, Email, Subject, Department Route, Message.
@@ -239,3 +249,20 @@ Each dedicated dispatch route features:
 
 ### D. Global Footer
 - Full brand tagline, DLGTS matrix summary tags, pillar navigation links, channels (Instagram, LinkedIn, Official Desk), and legal links (Principles & Ethics, Privacy & Data, Terms of Use).
+
+---
+
+## 11. Reading Experience & Motion Semantics
+
+### A. Reading Progress Bar
+- **Visual Cue:** 2px hairline in antique gold (`#B89358`) pinned to the viewport header.
+- **Narrative Purpose:** Provides quiet, continuous orientation for long-form curriculum modules, treaty analyses, and editorial articles without intrusive numeric indicators.
+
+### B. Spatial Stagger & Typography Hierarchy
+- **Visual Hierarchy:** Headline, narrative, and callout components appear in a calm, 50ms–250ms sequential drift.
+- **Content Focus:** Draws reader attention first to institutional classification badges, followed by primary headlines, and finally interactive actions.
+
+### C. Tactile Elevation & Corner Mark Semantics
+- **Interactive Feedback:** Cards and modules respond to cursor hover with a 2px lift and corner bracket expansion, affirming interactive state without flashiness or distraction.
+- **Accessibility:** Full compatibility with system reduced-motion preferences, ensuring content is immediately accessible to all users.
+

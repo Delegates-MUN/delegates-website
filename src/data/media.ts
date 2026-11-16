@@ -11,7 +11,7 @@ export const MEDIA_ARTICLES: MediaArticle[] = [
     authorRole: "DELEGATES Global Affairs Desk",
     publishedDate: "November 2026",
     readingTime: "6 min read",
-    coverImage: "/assets/editorial/editorial-template.png",
+    coverImage: "/assets/editorial/multilateralism-hall.jpg",
     summary: "An examination of institutional inertia, regional mini-lateralism, and the enduring imperative for sovereign states to maintain open diplomatic channels amid systemic volatility.",
     content: [
       {
@@ -51,7 +51,7 @@ export const MEDIA_ARTICLES: MediaArticle[] = [
     authorRole: "DELEGATES Academic Directorate",
     publishedDate: "October 2026",
     readingTime: "8 min read",
-    coverImage: "/assets/editorial/social-toolkit.png",
+    coverImage: "/assets/editorial/sovereignty-treaties.jpg",
     summary: "Examining how economic coercion tests the boundaries of non-intervention, humanitarian exemptions, and customary international jurisprudence.",
     content: [
       {
@@ -85,7 +85,7 @@ export const MEDIA_ARTICLES: MediaArticle[] = [
     authorRole: "Conference Observation Initiative",
     publishedDate: "October 2026",
     readingTime: "5 min read",
-    coverImage: "/assets/editorial/new-chapter.png",
+    coverImage: "/assets/editorial/dais-moderation.jpg",
     summary: "Perspectives on balancing parliamentary rigor with collaborative engagement, and why committee atmosphere is determined by how the dais listens.",
     content: [
       {
@@ -114,7 +114,7 @@ export const MEDIA_ARTICLES: MediaArticle[] = [
     authorRole: "DELEGATES Youth Outreach",
     publishedDate: "September 2026",
     readingTime: "7 min read",
-    coverImage: "/assets/editorial/typography-guidelines.png",
+    coverImage: "/assets/editorial/youth-diplomacy.jpg",
     summary: "How student delegations and youth civil society groups are moving from symbolic representation to genuine policy influence on climate, digital sovereignty, and disarmament.",
     content: [
       {

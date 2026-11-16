@@ -12,6 +12,8 @@ import {
   CheckCircle,
   PlusCircle,
 } from "lucide-react";
+import { SwissCornerMarks } from "@/components/ui/SwissAccents";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function FeaturedOpportunities() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -95,68 +97,70 @@ export default function FeaturedOpportunities() {
 
         {/* Opportunities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredOpportunities.map((opp) => (
-            <div
-              key={opp.id}
-              className="border border-[#D8D0C4] bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-[#171717] transition-all group"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
-                    {opp.category}
-                  </span>
-                  <span className="font-interface text-[11px] text-[#8E877C]">
-                    {opp.location.includes("Virtual") ? "Online" : "In-Person"}
-                  </span>
-                </div>
-
-                <h3 className="font-editorial text-xl text-[#171717] group-hover:underline">
-                  {opp.title}
-                </h3>
-
-                <p className="font-interface text-xs text-[#68645D] leading-relaxed line-clamp-2">
-                  {opp.description}
-                </p>
-
-                <div className="space-y-2 pt-3 border-t border-[#D8D0C4] text-xs text-[#68645D]">
-                  <div className="flex items-center gap-2">
-                    <Building className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
-                    <span className="truncate">{opp.organizer}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
-                    <span>{opp.dateOrDeadline}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
-                    <span className="truncate">{opp.location}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-5 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
-                <div className="flex flex-wrap gap-1">
-                  {opp.tags.slice(0, 2).map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] font-interface text-[#8E877C] bg-[#F4F0E8] px-2 py-0.5"
-                    >
-                      {t}
+          {filteredOpportunities.map((opp, idx) => (
+            <ScrollReveal key={opp.id} delay={(idx % 3) * 75} className="h-full">
+              <div
+                className="relative border border-[#D8D0C4] bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-[#171717] transition-all group card-hover-lift h-full"
+              >
+                <SwissCornerMarks size="w-2 h-2" />
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
+                      {opp.category}
                     </span>
-                  ))}
+                    <span className="font-interface text-[11px] text-[#8E877C]">
+                      {opp.location.includes("Virtual") ? "Online" : "In-Person"}
+                    </span>
+                  </div>
+
+                  <h3 className="font-editorial text-xl text-[#171717] group-hover:underline">
+                    {opp.title}
+                  </h3>
+
+                  <p className="font-interface text-xs text-[#68645D] leading-relaxed line-clamp-2">
+                    {opp.description}
+                  </p>
+
+                  <div className="space-y-2 pt-3 border-t border-[#D8D0C4] text-xs text-[#68645D]">
+                    <div className="flex items-center gap-2">
+                      <Building className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
+                      <span className="truncate">{opp.organizer}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
+                      <span>{opp.dateOrDeadline}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
+                      <span className="truncate">{opp.location}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <a
-                  href={opp.sourceUrl}
-                  target={opp.sourceUrl.startsWith("http") ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs uppercase tracking-wider font-interface font-semibold text-[#171717] group-hover:underline"
-                >
-                  <span>Apply / Info</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
+                <div className="pt-5 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
+                  <div className="flex flex-wrap gap-1">
+                    {opp.tags.slice(0, 2).map((t) => (
+                      <span
+                        key={t}
+                        className="text-[10px] font-interface text-[#8E877C] bg-[#F4F0E8] px-2 py-0.5"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={opp.sourceUrl}
+                    target={opp.sourceUrl.startsWith("http") ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs uppercase tracking-wider font-interface font-semibold text-[#171717] group-hover:underline"
+                  >
+                    <span>Apply / Info</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 

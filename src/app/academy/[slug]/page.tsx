@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Bookmark,
 } from "lucide-react";
+import { SwissCornerMarks } from "@/components/ui/SwissAccents";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -101,7 +102,8 @@ export default async function AcademyDetailPage({ params }: PageProps) {
         </header>
 
         {/* Takeaways Box */}
-        <div className="p-6 sm:p-8 bg-[#EAE4D9] border border-[#D8D0C4] space-y-4">
+        <div className="relative p-6 sm:p-8 bg-[#EAE4D9] border border-[#D8D0C4] space-y-4">
+          <SwissCornerMarks />
           <span className="font-interface text-xs font-semibold uppercase tracking-widest text-[#171717] block">
             Core Takeaways for Delegates & Chairs:
           </span>

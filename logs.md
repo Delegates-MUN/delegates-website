@@ -204,3 +204,175 @@ This log documents every architectural decision, bug fix, feature integration, d
 - **Configuration:** Updated `package.json` (`next` & `eslint-config-next` to `16.4.6`), set `experimental.agentUpgrade: "security"` in `next.config.ts`.
 - **Verification:** Ran `next --version` (`Next.js v16.4.6`) and completed a full production build (`npm run build`) with zero errors across all 22 static pages.
 - **Delivery:** Committed `chore(security): upgrade Next.js from 16.4.4 to 16.4.6 to resolve security advisory` and pushed branch `security/nextjs-16.4.6` to GitHub remote `origin`. Reported success via telemetry.
+
+---
+
+## 10. Visual Art Direction & Monochrome Photography Overhaul (Option A)
+- **Asset Generation:** Created a bespoke suite of 8 high-resolution, monochrome (black-and-white) editorial photographs through the visual designer subagent, saved to `public/assets/editorial/`:
+  - `multilateralism-hall.jpg` (Multilateral council chamber / assembly hall with directional architectural lighting)
+  - `sovereignty-treaties.jpg` (Archival still life of treaty folios, legal codices, and embossed wax seals)
+  - `dais-moderation.jpg` (Authoritative close-up of a diplomatic committee dais table and microphones)
+  - `youth-diplomacy.jpg` (Candid photojournalism of young delegates conferring intently in an institutional hall)
+  - `pillar-community.jpg` (Architectural shot of delegates walking through a sunlit grand diplomatic colonnade)
+  - `pillar-academy.jpg` (International law library with floor-to-ceiling treaty book stacks and reading desk)
+  - `pillar-media.jpg` (International affairs press desk with broadsheet proofs, fountain pen, and typographic plates)
+  - `about-architecture.jpg` (Neoclassical exterior of the Palais des Nations in Geneva under overcast sky)
+- **Swiss Accents Component (`src/components/ui/SwissAccents.tsx`):**
+  - Created reusable UI primitives: `SwissCornerMarks` (subtle L-shaped corner hairline registration ticks), `CartographicStamp` (typographic coordinates and location badges using typographic arcminute/arcsecond symbols `46°13′36″N 6°08′26″E`), and `ArchivalBadge` (diplomatic volume classification tags).
+- **Media Dispatches Integration (`src/data/media.ts` & `src/app/media/page.tsx`):**
+  - Replaced all four internal template PNGs with the new bespoke photography.
+  - Added high-contrast monochrome image treatment (`grayscale contrast-110 opacity-90 group-hover:scale-105 group-hover:opacity-100 duration-700`).
+- **Three Pillars Visual Split Layout (`src/components/home/PillarsSection.tsx`):**
+  - Upgraded Pillar 01 (Community), Pillar 02 (Academy), and Pillar 03 (Media) with photographic split banners, archival badges, and Swiss corner marks.
+- **About Page Monumental Hero (`src/app/about/page.tsx`):**
+  - Added a wide 21:9 monumental architectural hero section with the Palais des Nations photograph, coordinate stamp, and institutional quote.
+  - Added Swiss corner marks to Vision, Mission, and Brand Promise cards.
+- **Dedicated Route Polish (`src/app/academy/[slug]/page.tsx` & `src/app/media/[slug]/page.tsx`):**
+  - Added Swiss corner marks to takeaway and cover image containers.
+- **Verification:** Completed `npm run build` with exit code 0; all 22 static routes prerendered cleanly.
+- **Git Policy Adherence:** Changes kept locally in workspace; remote push withheld per user request.
+
+---
+
+## 11. Inner Pages Visual Overhaul & Institutional Architecture Expansion
+- **Objective:** Address user feedback that inner pages (`/community`, `/academy`, `/media`, `/contact`, `/about`) felt dull and visually sparse compared to the homepage, elevating each into an editorial, magazine-grade layout without modifying the core brand monogram or warm ivory palette.
+- **Architectural Photography Suite Expansion (4 New Assets in `public/assets/editorial/`):**
+  - `community-assembly.jpg`: Plenary hall during vote with delegates holding country placards under directional architectural lighting.
+  - `academy-amphitheater.jpg`: Symmetrical tiered classical lecture amphitheater with mahogany desks and lecture podium.
+  - `media-reading-room.jpg`: Open geopolitical atlas and legal folios under a green banker's lamp.
+  - `secretariat-desk.jpg`: Diplomatic desk with leather portfolio, fountain pen, and embossed wax seal.
+- **Inner Page Hero Overhauls:**
+  - **Community Page (`src/app/community/page.tsx`):**
+    - Two-column hero with split architectural window (`community-assembly.jpg`), gradient overlay, and `ArchivalBadge` (`COMMITTEE FLOOR // IN SESSION`).
+    - Added `CartographicStamp` (`GENEVA // YOUTH PLENARY ASSEMBLY · 46°13′36″N 6°08′26″E`).
+    - Added `SwissCornerMarks` and tier tags (`TIER 01 // Foundation`, etc.) across all Inclusivity Standard audience cards.
+    - Added `SwissCornerMarks` to active initiative cards and circuit opportunity listing cards.
+  - **Academy Page (`src/app/academy/page.tsx`):**
+    - Two-column hero with split amphitheater photograph (`academy-amphitheater.jpg`) and `ArchivalBadge` (`DIPLOMATIC AMPHITHEATER // ACCREDITED`).
+    - Added `CartographicStamp` (`GENEVA // DIPLOMATIC AMPHITHEATER · 46°13′36″N 6°08′26″E`).
+    - Added `SwissCornerMarks` to all curriculum cards across difficulty tiers and procedural lab tools.
+  - **Media Page (`src/app/media/page.tsx`):**
+    - Two-column hero with reading room photograph (`media-reading-room.jpg`) and `ArchivalBadge` (`DISPATCH BUREAU // VOL. I // ISSUE 01`).
+    - Added `CartographicStamp` (`GENEVA // PRESS BUREAU & ARCHIVES · 46°13′36″N 6°08′26″E`).
+    - Applied `SwissCornerMarks` to lead featured story and all dispatch cards in the articles grid.
+  - **Contact & Inquiries Page (`src/app/contact/page.tsx`):**
+    - Two-column hero with official desk photograph (`secretariat-desk.jpg`) and `ArchivalBadge` (`SECRETARIAT LIAISON // OFFICIAL DESK`).
+    - Added `CartographicStamp` (`GENEVA // DIPLOMATIC LIAISON DESK · 46°13′36″N 6°08′26″E`).
+    - Added `SwissCornerMarks` to the Official Desks directory card and the verified inquiry form card.
+  - **Homepage Consistency (`src/components/home/FeaturedOpportunities.tsx`):**
+    - Added `SwissCornerMarks` to opportunity cards to align with the community page directory.
+- **Git Policy Adherence:** All changes preserved locally; zero `git push` operations performed.
+
+---
+
+## 12. Visual Quality Assurance, CSS Modernization & Swiss Marks Fixes
+- **Trigger:** Systematic audit and debugging of inner pages visual elements, styling consistency, and runtime animations following the Option A overhaul.
+- **Identified Issues & Engineering Fixes:**
+  1. **Swiss Corner Marks Rendering Failure (`src/components/ui/SwissAccents.tsx`):**
+     - *Issue:* Tailwind v4 does not support fractional border width classes (`border-t-1.5`, `border-l-1.5`). Corner marks were not rendering or appeared invisible.
+     - *Fix:* Refactored `SwissCornerMarks` to apply exact `1.5px` border widths via explicit inline styles (`style={{ ...base, borderTopWidth: "1.5px", ... }}`), with automatic color mapping for light ivory and dark charcoal surfaces (`rgba(255,255,255,0.4)`, etc.).
+  2. **Missing Keyframe Animations (`src/app/globals.css`):**
+     - *Issue:* Modals, accordions, and mobile navigation relied on `.animate-fadeIn` without underlying `@keyframes` definitions.
+     - *Fix:* Added `@keyframes fadeIn`, `@keyframes fadeInUp`, and `@keyframes scaleIn` definitions with smooth cubic-bezier timing (`cubic-bezier(0.16, 1, 0.3, 1)`) along with helper utilities in `globals.css`.
+  3. **Non-Standard Utility Class Cleanup:**
+     - *Issue:* `EditorialMastheadBar.tsx` used `py-0.2`, and multiple pages used `contrast-115` and `group-hover:scale-101/102` which are outside Tailwind's standard scales.
+     - *Fix:* Standardized `py-0.2` to `py-px`, `contrast-115` to `contrast-125`, and image hover transforms to `group-hover:scale-105` with accompanying CSS scale utilities.
+  4. **Production Build & Font Cache Refresh:**
+     - Cleared stale lock states and rebuilt Google Fonts cache (`Lora` & `Montserrat`) for prerendering.
+     - Verified `npm run build` exits with code 0 and all 22 static pages prerendered in 2.8s.
+- **Git Policy Adherence:** All updates remain strictly local; no remote push executed.
+
+---
+
+## 13. Critical Defect Remediation: Full-Screen Image Overflow & PostCSS Pipeline Restoration
+- **Defect Reported:** Images were expanding uncontrollably and covering the entire screen on page load, completely obscuring headers, navigation, typography, and card content.
+- **Root Cause Analysis via Headless Chrome Visual Inspection:**
+  1. Next.js `<Image fill />` components output inline styles: `position: absolute; height: 100%; width: 100%; inset: 0`.
+  2. For `fill` images to stay contained, their parent element requires CSS `position: relative`.
+  3. `postcss.config.mjs` was absent from the project root. Without this configuration file, Next.js bypassed `@tailwindcss/postcss` during asset compilation.
+  4. As a direct consequence, the compiled stylesheet lacked all core Tailwind utilities (`.relative`, `.flex`, `.grid`, `.w-full`, `.max-w-7xl`, `.aspect-*`).
+  5. With `.relative` completely undefined in the browser, the images calculated their absolute boundaries against the root `<html>`/`<body>` viewport, blowing up to 100vw × 100vh and blanketing all text and layout elements.
+- **Engineering Fix:**
+  - Created `postcss.config.mjs` with `@tailwindcss/postcss` plugin registration.
+  - Recompiled production bundle via `npm run build` (clean exit code 0, 22/22 static routes prerendered).
+  - Restarted production server and verified layout across all routes (`/`, `/about`, `/community`, `/academy`, `/media`, `/contact`) via headless Chrome screenshots. All images now stay strictly within their intended aspect ratios (`16:10`, `21:9`, `4:3`).
+- **Git Policy Adherence:** All changes preserved locally; zero `git push` executed until explicit user authorization.
+
+---
+
+## 14. Restrained Editorial Motion System & Micro-Interactions Integration
+- **Objective:** Introduce subtle, non-intrusive editorial animations and tactile micro-interactions across all pages (`/`, `/about`, `/community`, `/academy`, `/media`, `/contact`) adhering strictly to the user boundary: *"do not over-do it"*.
+- **Design Philosophy:**
+  - Swiss architectural minimalism and calm editorial print aesthetic.
+  - Quiet, dignified vertical drift (max 10–14px).
+  - Micro-tactile elevation (-2px hover lift with soft atmospheric shadow `0 10px 24px -6px rgba(23, 23, 23, 0.06)`).
+  - Controlled image scaling (1.025×–1.05× over 500–700ms cubic-bezier).
+  - Strict accessibility guarantee: Full bypass of all motion for users with `@media (prefers-reduced-motion: reduce)`.
+- **Core Primitives & Global Architecture:**
+  1. **Global CSS Animations (`src/app/globals.css`):**
+     - `@keyframes fadeIn`: 0.4s opacity fade with `cubic-bezier(0.16, 1, 0.3, 1)`.
+     - `@keyframes fadeInUp`: 0.5s vertical reveal drifting 12px upwards to rest.
+     - `@keyframes scaleIn`: 0.3s gentle scale from 0.98 to 1.
+     - Timing utilities: `.delay-50` through `.delay-400` for sequential cascade entrances.
+     - Micro-interaction utilities: `.card-hover-lift`, `.img-zoom-hover`, `.swiss-corner-tick`, and active tap micro-interactions (`active:scale-[0.98]`).
+     - Accessibility guard: `@media (prefers-reduced-motion: reduce)` resets duration to `0.01ms`.
+  2. **Scroll-Triggered Reveal Component (`src/components/ui/ScrollReveal.tsx`):**
+     - Lightweight `IntersectionObserver` component (threshold 0.08, rootMargin `-40px`).
+     - Automatic unobserving upon entry to avoid CPU overhead during long reading sessions.
+     - Full support for configurable `delay`, `duration`, `yOffset`, and dual named/default exports.
+  3. **Hairline Reading Progress Bar (`src/components/ui/ReadingProgress.tsx`):**
+     - 2px gold-bronze hairline (`#B89358`) pinned to the top of the viewport (`z-50`).
+     - Calculates precise window scroll percentage dynamically without layout shift.
+     - Integrated globally into `src/app/layout.tsx`.
+  4. **Corner Mark Micro-Reaction (`src/components/ui/SwissAccents.tsx`):**
+     - Integrated `.swiss-corner-tick` to subtle corner bracket hover reactions.
+- **Page-by-Page Integration:**
+  - **Homepage (`src/app/page.tsx` & subcomponents):**
+    - `EditorialHero.tsx`: Staggered entrance cascade on eyebrow, headline, narrative, and CTA button group.
+    - `PillarsSection.tsx`: Wrapped section header and all three pillar containers in `<ScrollReveal delay={...}>` with `.card-hover-lift`.
+    - `DLGTSPhilosophy.tsx`: Interactive tab switcher with animated transition on principle change.
+    - `FeaturedOpportunities.tsx` & `FeaturedEditorial.tsx`: Wrapped cards in staggered reveals with hover elevation.
+  - **About Page (`src/app/about/page.tsx`):**
+    - Staggered hero entrance and monumental archival photo fade-in.
+    - Vision, Mission, and Promise cards wrapped in staggered reveals with `.card-hover-lift`.
+    - 6 DLGTS Principle cards and 3 Pillar deep-dive cards wrapped in staggered reveals.
+  - **Community Page (`src/app/community/page.tsx`):**
+    - Hero staggered entrance cascade and assembly photograph fade-in.
+    - "Who the Community is For" 5-tier audience cards in staggered reveals with `.card-hover-lift`.
+    - "Active Community Initiatives" cards with `.card-hover-lift`.
+    - Verified Circuit Opportunities grid items in staggered reveals with `.card-hover-lift`.
+    - Interactive FAQ accordion items with smooth expansion animations.
+  - **Academy Page (`src/app/academy/page.tsx`):**
+    - Hero staggered entrance and amphitheater photograph fade-in.
+    - Curriculum guides repository cards wrapped in staggered reveals with `.card-hover-lift`.
+    - Interactive Diplomatic Lab tool switcher tabs with active indicators and smooth fade transitions.
+  - **Media Page (`src/app/media/page.tsx`):**
+    - Hero staggered entrance and editorial reading room photograph fade-in.
+    - Lead Editorial Story showcase wrapped in `<ScrollReveal>` with `.card-hover-lift`.
+    - Dispatches & Analysis publication cards wrapped in staggered reveals with `.card-hover-lift`.
+  - **Contact Page (`src/app/contact/page.tsx`):**
+    - Hero staggered entrance and secretariat desk photograph fade-in.
+    - Official Desks directory card and Verified Correspondence Form wrapped in staggered reveals with `.card-hover-lift` and active tap micro-interactions.
+- **Verification & QA:**
+  - Cleaned `.next` build cache to eliminate Windows file-locking conflicts.
+  - Full production build (`npm run build`) exited with code 0; all 22 static routes prerendered in 1.47s.
+  - Captured full-resolution headless Chrome screenshots (`1440x1200`) across all routes to verify layout stability, crisp typography, and restrained animation execution.
+- **Git Policy Adherence:** All changes preserved locally; zero `git push` executed until explicit user authorization.
+
+---
+
+## 15. Production Deployment & Remote Git Synchronization
+- **Trigger:** User issued direct command: *"push to production"*.
+- **Pre-Push Validation:**
+  - Production build re-verified (`npm run build` exits 0 with 22/22 static pages prerendered).
+  - TypeScript types verified with zero errors.
+  - Tailwind v4 + PostCSS configuration (`postcss.config.mjs`) verified.
+  - Visual layout verified across desktop viewports via headless Chrome.
+- **Git Operations:**
+  - Staged all source files, newly created photography assets in `public/assets/editorial/`, components (`ReadingProgress.tsx`, `ScrollReveal.tsx`, `SwissAccents.tsx`), and comprehensive documentation (`logs.md`, `feature.md`, `content.md`).
+  - Committed with structured conventional commit message: `feat: visual redesign, archival photography, restrained editorial animations, and layout stabilization`.
+  - Executed `git push origin main` to synchronize local production branch with GitHub repository `https://github.com/Delegates-MUN/delegates-website.git`.
+
+
+
+

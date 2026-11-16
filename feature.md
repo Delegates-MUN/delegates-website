@@ -54,15 +54,40 @@ This document provides a comprehensive inventory of all features, interactive to
 - **Fullscreen Mode:** One-click native browser fullscreen toggle.
 - **Watermark & Caption:** Features official monogram branding and the tagline *“Rooted in Principles. United by Dialogue.”*
 
+### 2.3 Bespoke Monochrome Photography Suite
+- **Archival International Affairs Aesthetic:** 12 custom high-contrast, black-and-white editorial photographs supporting the content and institutional atmosphere:
+  - `multilateralism-hall.jpg`: Assembly chamber with directional lighting for flagship geopolitics analysis.
+  - `sovereignty-treaties.jpg`: Archival still life of treaties, legal codices, and wax seals for sovereignty dispatches.
+  - `dais-moderation.jpg`: Committee dais and microphones for MUN insights and Chair perspectives.
+  - `youth-diplomacy.jpg`: Candid photojournalism of young delegates in caucus deliberation.
+  - `pillar-community.jpg`: Delegates conversing in a neoclassical diplomatic colonnade (Homepage Pillar 01).
+  - `pillar-academy.jpg`: Diplomatic law library with floor-to-ceiling treaty book stacks (Homepage Pillar 02).
+  - `pillar-media.jpg`: Press desk with broadsheet proofs, typewriter, and typographic plates (Homepage Pillar 03).
+  - `about-architecture.jpg`: Grand monumental exterior of the Palais des Nations in Geneva (About Page Hero).
+  - `community-assembly.jpg`: Plenary hall during vote with delegates holding country placards (Community Page Hero).
+  - `academy-amphitheater.jpg`: Symmetrical tiered classical lecture amphitheater with mahogany desks (Academy Page Hero).
+  - `media-reading-room.jpg`: Open geopolitical atlas and legal folios under a green banker's lamp (Media Page Hero).
+  - `secretariat-desk.jpg`: Diplomatic desk with leather portfolio, fountain pen, and embossed wax seal (Contact Page Hero).
+- **Consistent Image Post-Processing:** Standardized with `grayscale contrast-110 opacity-90 group-hover:scale-102 group-hover:opacity-100` transitions across all article covers, hero windows, and pillar panels.
+
+### 2.4 Swiss Typographic & Cartographic Accents (`SwissAccents.tsx`)
+- **`SwissCornerMarks`:** Reusable corner hairline registration brackets (`+` and `L` ticks) evoking high-end Swiss print layout standards. Implemented using resilient 1.5px inline styling to guarantee pixel-perfect rendering across all browsers, regardless of CSS build pipeline changes. Automatically adapts to light ivory (`#171717`) and dark charcoal (`rgba(255,255,255,0.4)`) backgrounds.
+- **`CartographicStamp`:** Geographic coordinates and diplomatic location indicators (`GENEVA // PALAIS DES NATIONS · 46°13′36″N 6°08′26″E`) rendered with authentic typographic arcminutes and arcseconds.
+- **`ArchivalBadge`:** Volume and classification tags (`[ DLGTS · ARCHIVE · VOL. I // ISSUE 01 ]`) in monospace styling.
+- **Micro-Interaction Animation Suite (`globals.css`):** Hardware-accelerated keyframe animations (`fadeIn`, `fadeInUp`, `scaleIn`) with `cubic-bezier(0.16, 1, 0.3, 1)` easing powering modal overlays, accordion disclosures, and image zoom states.
+
 ---
 
 ## 3. Pillar 01 — Community & Opportunities Hub
 
-### 3.1 Inclusivity Standards & Audience Tracks (`/community`)
-- **Role-Segmented Content:** Clear guidelines and pathways for:
+### 3.1 Editorial Visual Architecture & Audience Tracks (`/community`)
+- **Split Photographic Hero Window:** Features `community-assembly.jpg` with a warm monochrome grade, dark vignette gradient, Swiss corner marks, and an archival status badge (`COMMITTEE FLOOR // IN SESSION`).
+- **Cartographic Registration:** Typographic location coordinate stamp (`GENEVA // YOUTH PLENARY ASSEMBLY · 46°13′36″N 6°08′26″E`).
+- **Role-Segmented Content Cards:** Elevated with `SwissCornerMarks` and tier tags (`TIER 01 // Foundation`, etc.) covering:
   - *Beginner Delegates:* Foundation guides, procedural basics, and low-stakes practice simulations.
   - *Experienced Delegates:* Advanced geopolitical debate, multilateral strategy, and resolution clinics.
   - *Executive Board Chairs:* Impartial committee moderation, study guide drafting, and delegate evaluation.
+- **Active Community Initiatives:** Modular grid with Swiss registration marks detailing Diplomatic Working Groups, Peer Position Paper Critiques, Chairs' Colloquium, and Open Geopolitical Debates.
 
 ### 3.2 Verified Opportunities Circuit Directory (`FeaturedOpportunities.tsx`)
 - **Real-Time Category Filtering:** Filter opportunities by:
@@ -103,9 +128,11 @@ This document provides a comprehensive inventory of all features, interactive to
 
 ## 4. Pillar 02 — Academy & Interactive Diplomatic Lab
 
-### 4.1 Tabbed Educational Architecture (`/academy`)
-- **Main View Switcher:**
-  - `Curriculum Guides`: The open-access library of pedagogical modules.
+### 4.1 Amphitheater Hero & Educational Architecture (`/academy`)
+- **Split Amphitheater Hero Window:** Displays `academy-amphitheater.jpg` with archival badge (`DIPLOMATIC AMPHITHEATER // ACCREDITED`) and Swiss corner tick registration marks.
+- **Cartographic Registration:** Location stamp (`GENEVA // DIPLOMATIC AMPHITHEATER · 46°13′36″N 6°08′26″E`).
+- **Tabbed Navigation:**
+  - `Curriculum Guides`: Open-access library of pedagogical modules across 6 domains with `SwissCornerMarks` on all cards.
   - `Interactive Diplomatic Lab`: Hands-on drafting and procedural tools.
 - **URL Parameter Support:** Direct deep linking via `?tab=tools` or `?tab=tools&tool=rop`.
 
@@ -170,8 +197,10 @@ This document provides a comprehensive inventory of all features, interactive to
 
 ## 5. Pillar 03 — Media & Publication Directorate
 
-### 5.1 Editorial Dispatches & Desks (`/media`)
-- **Lead Story Spotlight:** Full-width editorial card highlighting the current flagship analysis with cover photography, reading time, and author credentials.
+### 5.1 Editorial Reading Room & Dispatches (`/media`)
+- **Split Reading Room Hero Window:** Features `media-reading-room.jpg` with an archival badge (`DISPATCH BUREAU // VOL. I // ISSUE 01`) and cartographic stamp (`GENEVA // PRESS BUREAU & ARCHIVES · 46°13′36″N 6°08′26″E`).
+- **Lead Story Spotlight:** Full-width editorial card with `multilateralism-hall.jpg` highlighting the flagship analysis with cover photography, reading time, and author credentials.
+- **Thematic Desks & Article Cards:** All cards enhanced with `SwissCornerMarks` and monochrome photography (`sovereignty-treaties.jpg`, `dais-moderation.jpg`, `youth-diplomacy.jpg`).
 - **Thematic Desks:**
   - *Geopolitics*
   - *Diplomacy & International Relations*
@@ -207,7 +236,9 @@ This document provides a comprehensive inventory of all features, interactive to
   - Detailed subsections explaining *Diplomacy & Democracy*, *Law & Order*, *Geopolitics*, *Truth & Trust*, and *Sovereignty*.
 - **Institutional Governance Principles:** Guarantees of pedagogical independence, transparency, and non-monetization of youth education.
 
-### 6.2 Official Desk & Inquiries (`/contact`)
+### 6.2 Official Secretariat Desk & Inquiries (`/contact`)
+- **Split Secretariat Hero Window:** Features `secretariat-desk.jpg` with archival badge (`SECRETARIAT LIAISON // OFFICIAL DESK`) and cartographic stamp (`GENEVA // DIPLOMATIC LIAISON DESK · 46°13′36″N 6°08′26″E`).
+- **Official Desks & Form Cards:** Framed with `SwissCornerMarks` for editorial structure.
 - **Multi-Department Contact Intake:**
   - Full Name, Email, Inquiry Subject, Department Route, and Detailed Message.
   - Client-side error validation.
@@ -241,3 +272,34 @@ This document provides a comprehensive inventory of all features, interactive to
 | **Images** | Next.js `Image` with explicit `sizes` | Optimized responsive delivery, lazy loading, and prevention of layout shifts. |
 | **Local Storage** | Client-side persistence queues | Bookmarks, community applications, and opportunity submissions persist across reloads. |
 | **Accessibility** | Focus-visible, ARIA roles, ESC keys | Keyboard-friendly navigation for all modals and interactive worksheets. |
+
+---
+
+## 8. Editorial Motion & Micro-Interactions System
+
+### 8.1 Scroll-Triggered Reveal Component (`ScrollReveal.tsx`)
+- **IntersectionObserver Driven:** Lightweight viewport detection with a relaxed threshold (`0.08`) and `-40px` root margin to ensure elements reveal gracefully as they enter the screen.
+- **Staggered Delays:** Configurable per-element millisecond delay (`delay={...}`) creating natural cascading entrances across multi-column card grids.
+- **Auto-Disconnect:** Unobserves elements once triggered to conserve device memory and CPU during long reading sessions.
+- **Reduced Motion Support:** Checks `prefers-reduced-motion: reduce` at runtime and automatically defaults to fully visible state with zero transform.
+
+### 8.2 Viewport Reading Progress Bar (`ReadingProgress.tsx`)
+- **Continuous Reading Feedback:** 2px subtle hairline indicator in muted gold-bronze (`#B89358`) pinned to the top of the viewport.
+- **Throttled Calculation:** Calculates scroll depth dynamically using standard `requestAnimationFrame` timing for 60fps performance without layout shifts.
+- **Zero Distraction:** Blends seamlessly beneath the editorial masthead bar without obscuring typography or navigation controls.
+
+### 8.3 Card Elevation & Hover Physics (`.card-hover-lift`)
+- **Subtle Elevation:** Tactile `-2px` vertical drift on hover paired with a soft atmospheric drop shadow (`0 10px 24px -6px rgba(23, 23, 23, 0.06)`).
+- **Smooth Easing:** 250ms duration with custom cubic-bezier (`0.16, 1, 0.3, 1`) creating a responsive, high-end print tactile feel.
+- **Hardware Acceleration:** Uses `will-change: transform` to ensure jitter-free rendering on high-DPI displays.
+
+### 8.4 Archival Image Scale Transitions (`.img-zoom-hover`)
+- **Editorial Zoom:** Smooth 1.025×–1.05× scale transition over 700ms on container hover.
+- **Monochrome Contrast Enhancement:** Subtle increase from 90% to 100% opacity on hover, drawing attention to historical archival details.
+
+### 8.5 Swiss Corner Mark Reactive Hover (`.swiss-corner-tick`)
+- **Architectural Accent:** Corner brackets expand subtly (`scale(1.08)`) on card focus/hover, providing immediate spatial visual confirmation.
+
+### 8.6 Tactile Button Tap Micro-Interactions
+- **Haptic-Inspired Feedback:** Primary and secondary CTA buttons depress subtly (`active:scale-[0.98]`) when tapped or clicked, communicating intent.
+
