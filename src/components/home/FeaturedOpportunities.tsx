@@ -8,9 +8,8 @@ import {
   MapPin,
   Building,
   ArrowUpRight,
-  Filter,
-  CheckCircle,
   PlusCircle,
+  Clock,
 } from "lucide-react";
 import { SwissCornerMarks } from "@/components/ui/SwissAccents";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -50,28 +49,10 @@ export default function FeaturedOpportunities() {
             </h2>
           </div>
 
-          {/* Category Filter Pills & Submit Button */}
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <Filter className="w-4 h-4 text-[#68645D] mr-1 hidden sm:block" />
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 font-interface text-xs uppercase tracking-wider transition-all border ${
-                    selectedCategory === cat
-                      ? "bg-[#171717] text-[#F4F0E8] border-[#171717]"
-                      : "bg-white text-[#68645D] border-[#D8D0C4] hover:border-[#171717] hover:text-[#171717]"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
+          <div className="flex items-center gap-3">
             <button
               onClick={handleOpenSubmitModal}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#171717] bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 border border-[#171717] bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
             >
               <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
               <span>Submit Opportunity</span>
@@ -79,101 +60,99 @@ export default function FeaturedOpportunities() {
           </div>
         </div>
 
-        {/* Note on data integrity */}
-        <div className="flex items-center justify-between flex-wrap gap-4 text-xs text-[#68645D] bg-[#EAE4D9]/60 px-4 py-2.5 border border-[#D8D0C4]">
-          <div className="flex items-center gap-2">
-            <CheckCircle className="w-3.5 h-3.5 text-[#171717]" />
-            <span>
-              Curated conference directories and institutional application calls verified for youth delegates.
-            </span>
-          </div>
-          <button
-            onClick={handleOpenSubmitModal}
-            className="text-[#171717] underline hover:text-[#68645D] font-medium"
-          >
-            Hosting an MUN or Call for Papers? Submit here →
-          </button>
-        </div>
-
-        {/* Opportunities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredOpportunities.map((opp, idx) => (
-            <ScrollReveal key={opp.id} delay={(idx % 3) * 75} className="h-full">
-              <div
-                className="relative border border-[#D8D0C4] bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-[#171717] transition-all group card-hover-lift h-full"
-              >
-                <SwissCornerMarks size="w-2 h-2" />
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
-                      {opp.category}
-                    </span>
-                    <span className="font-interface text-[11px] text-[#8E877C]">
-                      {opp.location.includes("Virtual") ? "Online" : "In-Person"}
-                    </span>
-                  </div>
-
-                  <h3 className="font-editorial text-xl text-[#171717] group-hover:underline">
-                    {opp.title}
-                  </h3>
-
-                  <p className="font-interface text-xs text-[#68645D] leading-relaxed line-clamp-2">
-                    {opp.description}
-                  </p>
-
-                  <div className="space-y-2 pt-3 border-t border-[#D8D0C4] text-xs text-[#68645D]">
-                    <div className="flex items-center gap-2">
-                      <Building className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
-                      <span className="truncate">{opp.organizer}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
-                      <span>{opp.dateOrDeadline}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
-                      <span className="truncate">{opp.location}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-5 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
-                  <div className="flex flex-wrap gap-1">
-                    {opp.tags.slice(0, 2).map((t) => (
-                      <span
-                        key={t}
-                        className="text-[10px] font-interface text-[#8E877C] bg-[#F4F0E8] px-2 py-0.5"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href={opp.sourceUrl}
-                    target={opp.sourceUrl.startsWith("http") ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs uppercase tracking-wider font-interface font-semibold text-[#171717] group-hover:underline"
-                  >
-                    <span>Apply / Info</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                </div>
+        {/* Opportunities Content or Empty State */}
+        {filteredOpportunities.length === 0 ? (
+          <ScrollReveal>
+            <div className="relative border border-[#D8D0C4] bg-white p-10 sm:p-16 text-center max-w-3xl mx-auto space-y-5 card-hover-lift">
+              <SwissCornerMarks size="w-3 h-3" />
+              <div className="w-14 h-14 mx-auto rounded-full bg-[#F4F0E8] border border-[#D8D0C4] flex items-center justify-center text-[#171717]">
+                <Clock className="w-6 h-6 text-[#68645D]" />
               </div>
-            </ScrollReveal>
-          ))}
-        </div>
+              <div className="space-y-2">
+                <span className="font-interface text-[10px] uppercase tracking-[0.22em] text-[#8E877C] font-semibold block">
+                  Circuit Listings
+                </span>
+                <h3 className="font-editorial text-2xl sm:text-3xl text-[#171717] font-normal">
+                  No Opportunities Listed Yet
+                </h3>
+              </div>
+              <p className="font-interface text-sm text-[#68645D] max-w-lg mx-auto leading-relaxed">
+                We&apos;re working on bringing relevant MUN conferences, initiatives, and opportunities to the DELEGATES community. Check back soon for updates.
+              </p>
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button
+                  onClick={handleOpenSubmitModal}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
+                >
+                  <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
+                  <span>Submit an Opportunity</span>
+                </button>
+                <Link
+                  href="/community"
+                  className="inline-flex items-center gap-1 px-5 py-2.5 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider hover:border-[#171717] transition-colors"
+                >
+                  <span>Explore Community</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredOpportunities.map((opp, idx) => (
+              <ScrollReveal key={opp.id} delay={(idx % 3) * 75} className="h-full">
+                <div className="relative border border-[#D8D0C4] bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-[#171717] transition-all group card-hover-lift h-full">
+                  <SwissCornerMarks size="w-2 h-2" />
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-interface text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-[#EAE4D9] text-[#171717] border border-[#D8D0C4]">
+                        {opp.category}
+                      </span>
+                      <span className="font-interface text-[11px] text-[#8E877C]">
+                        {opp.location.includes("Virtual") ? "Online" : "In-Person"}
+                      </span>
+                    </div>
 
-        {/* View all opportunities link */}
-        <div className="pt-4 text-center">
-          <Link
-            href="/community#opportunities"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-interface font-semibold text-[#171717] hover:text-[#68645D] transition-colors border-b border-[#171717] pb-1"
-          >
-            <span>View Full Opportunities Directory in Community Hub</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
+                    <h3 className="font-editorial text-xl text-[#171717] group-hover:underline">
+                      {opp.title}
+                    </h3>
+
+                    <p className="font-interface text-xs text-[#68645D] leading-relaxed line-clamp-2">
+                      {opp.description}
+                    </p>
+
+                    <div className="space-y-2 pt-3 border-t border-[#D8D0C4] text-xs text-[#68645D]">
+                      <div className="flex items-center gap-2">
+                        <Building className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
+                        <span className="truncate">{opp.organizer}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
+                        <span>{opp.dateOrDeadline}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-[#171717]" />
+                        <span className="truncate">{opp.location}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-5 mt-auto border-t border-[#D8D0C4] flex items-center justify-between">
+                    <a
+                      href={opp.sourceUrl}
+                      target={opp.sourceUrl.startsWith("http") ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs uppercase tracking-wider font-interface font-semibold text-[#171717] group-hover:underline"
+                    >
+                      <span>Apply / Info</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -91,15 +91,6 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/academy?tab=tools"
-                    className="hover:text-[#B89358] transition-colors flex items-center justify-between group pl-3 text-[11px] text-[#A69E93]"
-                  >
-                    <span>↳ Diplomatic Drafting Lab</span>
-                    <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/media"
                     className="hover:text-white transition-colors flex items-center justify-between group"
                   >
@@ -108,12 +99,14 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className="pt-2">
-                  <button
-                    onClick={handleOpenJoinModal}
+                  <a
+                    href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white hover:text-[#F4F0E8] underline underline-offset-4 decoration-[#68645D]"
                   >
-                    Join the Community →
-                  </button>
+                    Join WhatsApp Community →
+                  </a>
                 </li>
               </ul>
             </div>

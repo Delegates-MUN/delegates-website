@@ -409,3 +409,60 @@ This log documents every architectural decision, bug fix, feature integration, d
 
 
 
+
+
+---
+
+## 17. Comprehensive Website Cleanup, Content Audit & QA Sprint
+- **Objective:** Complete audit and cleanup of the entire platform to remove all dummy information, fabricated claims, placeholder entries, and non-functional tools while preserving the approved DELEGATES brand identity (Warm Ivory `#F4F0E8`, Near Black `#171717`, Lora/Montserrat typography, Swiss aesthetic, DLGTS philosophy).
+- **Audit & Removal Actions Executed:**
+  1. **Opportunities & Events (`src/data/opportunities.ts`, `src/components/home/FeaturedOpportunities.tsx`, `src/app/community/page.tsx`):**
+     - Removed all fabricated opportunities (e.g. Young Diplomat Policy Essay Contest, DELEGATES EB Mentorship Initiative, dummy HNMUN/THIMUN listings).
+     - Set `OPPORTUNITIES_DATA = []` without inventing substitute opportunities.
+     - Implemented the approved polished empty state across both Home and Community hubs:
+       - Heading: *"No Opportunities Listed Yet"*
+       - Description: *"We're working on bringing relevant MUN conferences, initiatives, and opportunities to the DELEGATES community. Check back soon for updates."*
+     - Removed all fake application buttons, deadlines, organizer names, and mock links.
+  2. **Community Activities & Initiatives (`src/app/community/page.tsx`, `src/components/home/PillarsSection.tsx`):**
+     - Removed fabricated operational claims: bi-weekly working groups, peer position-paper review cohorts, monthly Chairs' Colloquium, and moderated geopolitical debates.
+     - Replaced with the truthful, approved community introduction:
+       - Heading: *"A Community Built Around Dialogue"*
+       - Description: *"DELEGATES brings together MUN enthusiasts, aspiring diplomats, and individuals interested in international affairs. We aim to create opportunities for learning, meaningful conversations, and connections grounded in shared principles."*
+     - Centered around direct entry to the verified WhatsApp community forum (`https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`).
+  3. **Academy Tools & Pedagogical Architecture (`src/app/academy/page.tsx`, `src/components/academy/`):**
+     - Permanently removed non-functional dummy client tools: `ClauseBuilder.tsx`, `RoPMatrix.tsx`, `DossierWorksheet.tsx`.
+     - Removed the "Interactive Diplomatic Lab" tab switcher and unsupported claims of interactive drafting tools.
+     - Replaced Academy introduction with the approved statement:
+       - Heading: *"Learn. Understand. Engage."*
+       - Description: *"The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs."*
+     - Retained and featured the 6 authentic, published foundational guides in `src/data/academy.ts` (Rules of Procedure, Position Papers, Research Methodology, Unmoderated Caucus Negotiation, Executive Board Scoring, Resolution Drafting).
+     - Added the required empty state for unpopulated categories: *"New learning resources are in the works. Stay connected for upcoming guides and educational content."*
+  4. **Media, Articles & Editorial Content (`src/data/media.ts`, `src/app/media/page.tsx`, `src/components/home/FeaturedEditorial.tsx`):**
+     - Removed all placeholder articles, fabricated author personas, invented dates, and reading metrics.
+     - Set `MEDIA_ARTICLES = []`.
+     - Removed dead dynamic route `src/app/media/[slug]/page.tsx`.
+     - Implemented the approved editorial empty state:
+       - Heading: *"Perspectives Worth Exploring"*
+       - Description: *"DELEGATES is building an editorial space for thoughtful perspectives on diplomacy, geopolitics, international relations, and Model United Nations."*
+       - Empty state notice: *"Our editorial desk is preparing its first collection of stories. Stay connected for updates."*
+     - Reconfigured `FeaturedEditorial.tsx` on the homepage to highlight authentic Academy guides alongside the editorial desk announcement.
+  5. **Newsletter & Subscription Bar (`src/components/ui/NewsletterBar.tsx`):**
+     - Removed unsupported promises (fortnightly briefings, every-second-Sunday delivery, peer-reviewed digests, simulated localStorage submissions).
+     - Replaced with the approved simple CTA:
+       - Heading: *"Stay Connected with DELEGATES"*
+       - Supporting text: *"Follow our platforms for updates, learning resources, and community announcements."*
+       - Integrated verified links to WhatsApp, LinkedIn, Instagram, and direct Secretariat email.
+  6. **Account & Authentication Removal (`src/components/home/CommunityCTA.tsx`, `src/app/community/page.tsx`, `src/components/ui/JoinCommunityModal.tsx`):**
+     - Removed all "Register Member Profile" buttons and account implications.
+     - Redesigned `JoinCommunityModal.tsx` into a clean, welcoming Community Portal providing direct WhatsApp group access and contact routing with zero simulated user registries.
+  7. **Contact & Opportunity Submissions Verification (`src/app/api/submit-opportunity/route.ts`, `src/components/ui/SubmitOpportunityModal.tsx`):**
+     - Created real server-side route `/api/submit-opportunity` with strict input validation, anti-spam checks, and real reference ID generation (`DLGTS-OPP-XXXXXX`).
+     - Updated `SubmitOpportunityModal.tsx` to handle real network states, display errors, and provide direct mail fallback to `delegates@zohomail.in`.
+  8. **Language Simplification & Tone Grounding:**
+     - Simplified baroque terminology ("Jurisprudential Rigor" -> "Principled Commentary", "Institutional Manifesto" -> "Our Purpose & Principles", "Diplomatic Dispatch Registry" -> "Secretariat Communications").
+     - Grounded all Geneva cartographic references to aesthetic/heritage markers without claiming physical presence or official UN affiliation.
+  9. **Search Modal Realignment (`src/components/ui/GlobalSearchModal.tsx`):**
+     - Removed indices of deleted dummy tools.
+     - Realized direct search over verified platform navigation pages and authentic Academy guides.
+- **Verification & Deployment:**
+  - Full production build (`npm run build`) succeeded with exit code 0 across 18 static/dynamic routes.

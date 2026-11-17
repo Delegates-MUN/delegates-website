@@ -67,8 +67,8 @@ export function SwissCornerMarks({
 }
 
 export function CartographicStamp({
-  location = "GENEVA // PALAIS DES NATIONS",
-  coordinates = "46°13′36″N 6°08′26″E",
+  location = "EDITORIAL ARCHIVE // SWISS GRID",
+  coordinates = "46°12′N 6°09′E",
   className = "",
 }: {
   location?: string;

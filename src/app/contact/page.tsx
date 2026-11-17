@@ -127,7 +127,7 @@ export default function ContactPage() {
               </span>
             </div>
             <CartographicStamp
-              location="GENEVA // DIPLOMATIC LIAISON DESK"
+              location="OFFICIAL COMMUNICATIONS // SECRETARIAT DESK"
               coordinates="46°13′36″N 6°08′26″E"
             />
           </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   </div>
                   <div className="text-white text-xs font-interface space-y-1">
                     <span className="text-[10px] uppercase tracking-widest text-[#B89358] block">
-                      Diplomatic Dispatch Registry
+                      Secretariat Communications
                     </span>
                     <p className="font-editorial italic text-xs sm:text-sm text-white/90">
                       “All formal inquiries, conference partnerships, and submissions receive prompt archival review.”

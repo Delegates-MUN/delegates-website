@@ -16,7 +16,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: "faq-3",
     question: "How do I participate in community discussions and initiatives?",
-    answer: "You can submit an expression of interest through our 'Join the Community' interest form. Verified community members receive invitations to our working groups, delegate mentorship circles, moderated discussion forums, and collaborative research initiatives.",
+    answer: "You can join our verified WhatsApp community directly through the link on the website or reach out via our contact page. Anyone interested in diplomacy and Model UN is welcome in our open forum, and active members are invited to collaborate on specialized initiatives.",
     category: "Community",
   },
   {
@@ -34,7 +34,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: "faq-6",
     question: "Does DELEGATES organize its own Model UN conferences?",
-    answer: "DELEGATES functions as a community ecosystem, academy, and media publication supporting the entire MUN circuit. While we facilitate workshops, mentorship labs, and delegate preparation, we collaborate with and amplify institutional conferences globally rather than acting solely as a single conference.",
+    answer: "DELEGATES functions as a community ecosystem, academy, and media publication supporting the Model UN community. While we share learning resources, guidance, and delegate preparation materials, we collaborate with and amplify institutional conferences globally rather than acting solely as a single conference.",
     category: "Participation",
   },
 ];

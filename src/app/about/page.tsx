@@ -56,11 +56,11 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717] animate-fadeInUp delay-50">
               <Compass className="w-3.5 h-3.5 text-[#68645D]" />
               <span className="font-interface text-[11px] uppercase tracking-[0.2em] font-medium">
-                Institutional Manifesto
+                Our Purpose & Principles
               </span>
             </div>
             <CartographicStamp
-              location="GENEVA // PALAIS DES NATIONS"
+              location="ARCHITECTURAL INSPIRATION // MULTILATERALISM"
               coordinates="46°13′36″N 6°08′26″E"
               className="animate-fadeIn delay-100"
             />
@@ -255,7 +255,7 @@ export default function AboutPage() {
                     The Human Network
                   </h3>
                   <p className="text-xs text-[#68645D] leading-relaxed">
-                    A non-hierarchical space connecting first-time delegates, university competitors, and Executive Board members through working groups and conference collaboration.
+                    A non-hierarchical space connecting first-time delegates, university competitors, and Executive Board members through open dialogue and conference collaboration.
                   </p>
                 </div>
                 <Link

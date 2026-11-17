@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, CheckCircle2, ArrowRight, Loader2, Sparkles, Building, Calendar, Globe, Mail, FileText } from "lucide-react";
+import { X, CheckCircle2, ArrowRight, Loader2, Sparkles, Building, Calendar, Globe, Mail, FileText, AlertCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function SubmitOpportunityModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [referenceId, setReferenceId] = useState("");
+  const [serverError, setServerError] = useState("");
 
   const [formData, setFormData] = useState({
     title: "",
@@ -28,6 +30,7 @@ export default function SubmitOpportunityModal() {
     const handleOpen = () => {
       setIsOpen(true);
       setIsSuccess(false);
+      setServerError("");
     };
     window.addEventListener("open-submit-opportunity-modal", handleOpen);
 
@@ -72,26 +75,27 @@ export default function SubmitOpportunityModal() {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    setServerError("");
 
     try {
-      const existing = JSON.parse(
-        localStorage.getItem("delegates_submitted_opportunities") || "[]"
-      );
-      existing.push({
-        ...formData,
-        submittedAt: new Date().toISOString(),
+      const res = await fetch("/api/submit-opportunity", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      localStorage.setItem(
-        "delegates_submitted_opportunities",
-        JSON.stringify(existing)
-      );
-    } catch {
-      // LocalStorage fallback
-    }
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setReferenceId(data.referenceId || "DLGTS-OPP");
+        setIsSuccess(true);
+      } else {
+        setServerError(data.error || "Unable to submit opportunity. Please try again or email delegates@zohomail.in.");
+      }
+    } catch {
+      setServerError("Network error. Please check your connection or contact delegates@zohomail.in directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
@@ -143,288 +147,252 @@ export default function SubmitOpportunityModal() {
               />
             </div>
             <div>
-              <span className="font-interface text-[10px] uppercase tracking-[0.2em] text-[#C9C2B7] block">
-                DELEGATES Circuit Desk
+              <span className="text-[10px] uppercase tracking-widest text-[#B89358] font-mono block">
+                Circuit Submissions
               </span>
-              <h2
-                id="submit-opp-title"
-                className="font-editorial text-lg sm:text-xl font-normal text-white"
-              >
-                Submit an Opportunity or Call for Papers
+              <h2 id="submit-opp-title" className="font-editorial text-lg text-white">
+                Submit an MUN Conference or Opportunity
               </h2>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-1.5 text-[#C9C2B7] hover:text-white hover:bg-[#252422] transition-colors"
+            className="text-[#C9C2B7] hover:text-white transition-colors p-1"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Content Body */}
-        <div className="p-6 sm:p-8">
-          {isSuccess ? (
-            <div className="py-8 text-center space-y-6 animate-fadeIn">
-              <div className="w-14 h-14 mx-auto rounded-full bg-[#EAE4D9] border border-[#D8D0C4] flex items-center justify-center text-[#171717]">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <div className="space-y-3 max-w-lg mx-auto">
-                <h3 className="font-editorial text-2xl sm:text-3xl text-[#171717]">
-                  Submission Received for Editorial Review
-                </h3>
-                <p className="font-interface text-sm text-[#68645D] leading-relaxed">
-                  Thank you for contributing to the DELEGATES Circuit. Our editorial secretariat verifies all conference calls, writing competitions, and fellowship postings within 24 to 48 hours to ensure zero-predatory practices before indexation on our public directory.
-                </p>
-                <div className="p-4 bg-[#EAE4D9]/80 border border-[#D8D0C4] text-xs font-interface text-left text-[#202020] space-y-1">
-                  <span className="font-semibold block uppercase tracking-wider text-[10px] text-[#68645D]">
-                    Submission Summary
-                  </span>
-                  <p><strong>Title:</strong> {formData.title}</p>
-                  <p><strong>Organizing Body:</strong> {formData.organizer}</p>
-                  <p><strong>Verification Contact:</strong> {formData.contactEmail}</p>
-                </div>
-              </div>
-
-              <div className="pt-4 flex justify-center">
-                <button
-                  onClick={resetForm}
-                  className="px-6 py-3 bg-[#171717] text-[#F4F0E8] font-interface text-xs uppercase tracking-[0.16em] font-semibold hover:bg-black transition-colors"
-                >
-                  Close & Return
-                </button>
-              </div>
+        {isSuccess ? (
+          <div className="p-8 sm:p-12 text-center space-y-6">
+            <div className="w-16 h-16 rounded-full bg-[#171717] text-[#F4F0E8] mx-auto flex items-center justify-center">
+              <CheckCircle2 className="w-8 h-8 text-[#B89358]" />
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="bg-[#EAE4D9]/70 border border-[#D8D0C4] p-4 text-xs text-[#68645D] font-interface space-y-1">
-                <p className="font-semibold text-[#171717]">
-                  Editorial Standards Notice:
-                </p>
-                <p>
-                  DELEGATES indexes verified opportunities without pay-to-list fees. All submissions must carry an official host domain or transparent secretariat contact.
-                </p>
+            <div className="space-y-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#68645D]">
+                Reference ID: {referenceId}
+              </span>
+              <h3 className="font-editorial text-2xl sm:text-3xl text-[#171717]">
+                Submission Received
+              </h3>
+            </div>
+            <p className="font-interface text-sm text-[#68645D] max-w-md mx-auto leading-relaxed">
+              Thank you for submitting <strong className="text-[#171717]">{formData.title}</strong>. Our editorial desk reviews all submissions for authenticity and delegate safety prior to inclusion in the public directory.
+            </p>
+            <div className="p-4 bg-white border border-[#D8D0C4] text-xs text-left text-[#68645D] space-y-1">
+              <p className="font-semibold text-[#171717] uppercase tracking-wider text-[11px]">
+                Submission Inquiries:
+              </p>
+              <p>
+                For expedited verification or updates, reach out to <a href="mailto:delegates@zohomail.in" className="text-[#171717] underline font-medium">delegates@zohomail.in</a> referencing your submission ID.
+              </p>
+            </div>
+            <button
+              onClick={resetForm}
+              className="px-6 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-widest font-interface font-medium hover:bg-black transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
+            <p className="text-xs text-[#68645D] leading-relaxed">
+              DELEGATES lists genuine collegiate and youth MUN conferences, writing opportunities, and academic calls. All listings are reviewed before publication.
+            </p>
+
+            {serverError && (
+              <div className="p-3.5 bg-red-50 border border-red-200 text-red-800 text-xs flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                <span>{serverError}</span>
+              </div>
+            )}
+
+            <div className="space-y-4">
+              {/* Title */}
+              <div>
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                  Title of Opportunity / Conference *
+                </label>
+                <input
+                  type="text"
+                  value={formData.title}
+                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                  placeholder="e.g. World Affairs MUN 2027"
+                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                />
+                {errors.title && <p className="text-[11px] text-red-600 mt-1">{errors.title}</p>}
               </div>
 
-              {/* Grid 1: Title and Category */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Opportunity / Conference Title *
+              {/* Organizer & Category */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                    Organizing Institution *
                   </label>
                   <input
                     type="text"
-                    value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    placeholder="e.g. Geneva Model UN 2026"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
+                    value={formData.organizer}
+                    onChange={(e) => setFormData({ ...formData, organizer: e.target.value })}
+                    placeholder="e.g. University MUN Society"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   />
-                  {errors.title && (
-                    <p className="text-xs text-red-600 font-interface">{errors.title}</p>
-                  )}
+                  {errors.organizer && <p className="text-[11px] text-red-600 mt-1">{errors.organizer}</p>}
                 </div>
-
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
+                <div>
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
                     Category *
                   </label>
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] focus:outline-none focus:border-[#171717] transition-colors"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   >
                     <option value="MUN Conference">MUN Conference</option>
-                    <option value="Writing Competition">Writing Competition / Essay</option>
-                    <option value="EB Application">Executive Board (EB) Application</option>
-                    <option value="Youth Fellowship">Youth Diplomatic Fellowship</option>
-                    <option value="Call for Papers">Call for Papers / Research Journal</option>
+                    <option value="Writing Competition">Writing Competition</option>
+                    <option value="EB Application">EB Application</option>
+                    <option value="Youth Fellowship">Youth Fellowship</option>
                   </select>
                 </div>
               </div>
 
-              {/* Grid 2: Host & Format */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Organizing Body / Institution *
-                  </label>
-                  <div className="relative">
-                    <Building className="w-4 h-4 absolute left-3 top-3 text-[#8E877C]" />
-                    <input
-                      type="text"
-                      value={formData.organizer}
-                      onChange={(e) => setFormData({ ...formData, organizer: e.target.value })}
-                      placeholder="e.g. Harvard International Relations Council"
-                      className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
-                    />
-                  </div>
-                  {errors.organizer && (
-                    <p className="text-xs text-red-600 font-interface">{errors.organizer}</p>
-                  )}
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Format & Mode
-                  </label>
-                  <select
-                    value={formData.format}
-                    onChange={(e) => setFormData({ ...formData, format: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] focus:outline-none focus:border-[#171717] transition-colors"
-                  >
-                    <option value="In-Person">In-Person</option>
-                    <option value="Online / Virtual">Online / Virtual</option>
-                    <option value="Hybrid">Hybrid</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Grid 3: Location and Deadline */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Location / Platform *
+              {/* Location & Format */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                    Location / Venue *
                   </label>
                   <input
                     type="text"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    placeholder="e.g. Geneva, Switzerland / Online"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
+                    placeholder="e.g. New Delhi, India or Virtual"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   />
-                  {errors.location && (
-                    <p className="text-xs text-red-600 font-interface">{errors.location}</p>
-                  )}
+                  {errors.location && <p className="text-[11px] text-red-600 mt-1">{errors.location}</p>}
                 </div>
-
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Deadline or Conference Date *
+                <div>
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                    Format *
                   </label>
-                  <div className="relative">
-                    <Calendar className="w-4 h-4 absolute left-3 top-3 text-[#8E877C]" />
-                    <input
-                      type="text"
-                      value={formData.deadline}
-                      onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
-                      placeholder="e.g. Registration closes May 15, 2026"
-                      className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
-                    />
-                  </div>
-                  {errors.deadline && (
-                    <p className="text-xs text-red-600 font-interface">{errors.deadline}</p>
-                  )}
+                  <select
+                    value={formData.format}
+                    onChange={(e) => setFormData({ ...formData, format: e.target.value })}
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  >
+                    <option value="In-Person">In-Person</option>
+                    <option value="Virtual">Virtual / Online</option>
+                    <option value="Hybrid">Hybrid</option>
+                  </select>
                 </div>
               </div>
 
-              {/* Grid 4: Official URL & Contact Email */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Official Application Portal / Link *
+              {/* Deadline & Official URL */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                    Date / Registration Deadline *
                   </label>
-                  <div className="relative">
-                    <Globe className="w-4 h-4 absolute left-3 top-3 text-[#8E877C]" />
-                    <input
-                      type="url"
-                      value={formData.url}
-                      onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-                      placeholder="https://..."
-                      className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
-                    />
-                  </div>
-                  {errors.url && (
-                    <p className="text-xs text-red-600 font-interface">{errors.url}</p>
-                  )}
+                  <input
+                    type="text"
+                    value={formData.deadline}
+                    onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
+                    placeholder="e.g. December 15, 2026"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  />
+                  {errors.deadline && <p className="text-[11px] text-red-600 mt-1">{errors.deadline}</p>}
                 </div>
+                <div>
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                    Official Portal / Information URL *
+                  </label>
+                  <input
+                    type="url"
+                    value={formData.url}
+                    onChange={(e) => setFormData({ ...formData, url: e.target.value })}
+                    placeholder="https://example.org/register"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  />
+                  {errors.url && <p className="text-[11px] text-red-600 mt-1">{errors.url}</p>}
+                </div>
+              </div>
 
-                <div className="space-y-1.5">
-                  <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                    Organizer Verification Email *
-                  </label>
-                  <div className="relative">
-                    <Mail className="w-4 h-4 absolute left-3 top-3 text-[#8E877C]" />
-                    <input
-                      type="email"
-                      value={formData.contactEmail}
-                      onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
-                      placeholder="secretariat@domain.org"
-                      className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
-                    />
-                  </div>
-                  {errors.contactEmail && (
-                    <p className="text-xs text-red-600 font-interface">{errors.contactEmail}</p>
-                  )}
-                </div>
+              {/* Verification Contact Email */}
+              <div>
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                  Organizer Contact Email (for verification) *
+                </label>
+                <input
+                  type="email"
+                  value={formData.contactEmail}
+                  onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
+                  placeholder="secretariat@example.org"
+                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                />
+                {errors.contactEmail && <p className="text-[11px] text-red-600 mt-1">{errors.contactEmail}</p>}
               </div>
 
               {/* Description */}
-              <div className="space-y-1.5">
-                <label className="block font-interface text-xs uppercase tracking-wider font-semibold text-[#171717]">
-                  Short Description & Committee Focus (Optional)
+              <div>
+                <label className="block text-xs uppercase tracking-wider font-semibold text-[#171717] mb-1">
+                  Brief Overview
                 </label>
                 <textarea
                   rows={3}
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="Outline committee agendas, delegate eligibility, awards, or registration tiers..."
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-sm text-[#202020] placeholder-[#8E877C] focus:outline-none focus:border-[#171717] transition-colors"
+                  placeholder="Summary of committees, agendas, eligibility..."
+                  className="w-full px-3.5 py-2 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717] resize-none"
                 />
               </div>
 
-              {/* Authenticity Checkbox */}
-              <div className="space-y-1.5 pt-2">
-                <label className="flex items-start gap-3 cursor-pointer">
+              {/* Integrity Confirmation */}
+              <div className="pt-2">
+                <label className="flex items-start gap-2.5 cursor-pointer text-xs text-[#68645D]">
                   <input
                     type="checkbox"
                     checked={formData.confirmedAuthentic}
-                    onChange={(e) =>
-                      setFormData({ ...formData, confirmedAuthentic: e.target.checked })
-                    }
-                    className="mt-1 h-4 w-4 border-[#D8D0C4] text-[#171717] rounded-none focus:ring-0"
+                    onChange={(e) => setFormData({ ...formData, confirmedAuthentic: e.target.checked })}
+                    className="mt-0.5 accent-[#171717]"
                   />
-                  <span className="font-interface text-xs text-[#68645D] leading-snug">
-                    I confirm this is an authentic, reputable opportunity aligned with youth leadership and non-exploitative MUN practices.
+                  <span>
+                    I confirm that this opportunity is genuine, active, and adheres to ethical youth event standards.
                   </span>
                 </label>
                 {errors.confirmedAuthentic && (
-                  <p className="text-xs text-red-600 font-interface">
-                    {errors.confirmedAuthentic}
-                  </p>
+                  <p className="text-[11px] text-red-600 mt-1">{errors.confirmedAuthentic}</p>
                 )}
               </div>
+            </div>
 
-              {/* Action Buttons */}
-              <div className="pt-4 border-t border-[#D8D0C4] flex items-center justify-end gap-4">
-                <button
-                  type="button"
-                  onClick={() => setIsOpen(false)}
-                  className="px-5 py-2.5 border border-[#D8D0C4] text-xs uppercase tracking-wider font-interface text-[#68645D] hover:text-[#171717] hover:border-[#171717] transition-colors"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] text-[#F4F0E8] font-interface text-xs uppercase tracking-[0.16em] font-semibold hover:bg-black transition-colors disabled:opacity-60"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Verifying...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Submit for Verification</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-          )}
-        </div>
+            <div className="pt-4 border-t border-[#D8D0C4] flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-2 text-xs font-interface text-[#68645D] hover:text-[#171717]"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider font-semibold hover:bg-black transition-colors disabled:opacity-60"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    <span>Submitting...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Submit for Review</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );

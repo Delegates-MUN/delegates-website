@@ -1,15 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, MessageSquare, ArrowRight } from "lucide-react";
 
 export default function CommunityCTA() {
-  const handleOpenJoinModal = () => {
-    if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-join-community-modal"));
-    }
-  };
-
   return (
     <section className="py-24 md:py-32 bg-[#171717] text-[#F4F0E8] relative overflow-hidden border-b border-[#2D2B28]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
@@ -33,7 +28,7 @@ export default function CommunityCTA() {
         </h2>
 
         <p className="font-interface text-sm sm:text-base text-[#C9C2B7] max-w-xl mx-auto leading-relaxed">
-          Anyone interested is welcomed into our open community forum. Selected active members are invited into specialized working groups and committee cohorts subsequently.
+          Anyone interested is welcomed into our open community forum. Selected active members are invited into specialized cohorts and working groups subsequently.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -47,12 +42,13 @@ export default function CommunityCTA() {
             <span>Join WhatsApp Community</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
-          <button
-            onClick={handleOpenJoinModal}
+          <Link
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 border border-white/40 text-white font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white hover:text-[#171717] transition-all active:scale-[0.98]"
           >
-            <span>Register Member Profile</span>
-          </button>
+            <span>Contact Secretariat</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         <p className="text-[11px] font-interface text-[#8E877C] tracking-wide pt-2">

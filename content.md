@@ -24,7 +24,7 @@ This document provides a comprehensive, structured summary of all textual conten
 
 ### The DLGTS Philosophy
 - **D — Diplomacy / Democracy:** Prioritizing peaceful multilateral dispute resolution, reasoned negotiation, and democratic dialogue over coercion.
-- **L — Law & Order:** Upholding public international law, the UN Charter, treaty obligations, and consistent parliamentary jurisprudence.
+- **L — Law & Order:** Upholding public international law, the UN Charter, treaty obligations, and consistent parliamentary decorum.
 - **G — Geopolitics:** Rigorous analysis of power dynamics, regional alliances, sovereign interests, and systemic international constraints.
 - **T — Truth / Trust:** Rejection of disinformation; insistence on verifiable evidence, primary source citations, and intellectual integrity.
 - **S — Sovereignty:** Respecting the legal equality of sovereign states while fostering collective accountability for global security.
@@ -46,8 +46,8 @@ This document provides a comprehensive, structured summary of all textual conten
 - **Supporting Narrative:** A space for Model UN enthusiasts, aspiring diplomats, and youth leaders to connect, learn without barriers, and engage with the world through critical thinking and informed dialogue.
 - **CTAs:**
   - Primary: *Explore DELEGATES* (links to `/about`)
-  - Secondary: *Join the Community* (launches intake modal)
-- **Multimedia:** Embedded official 30-second brand film with option to launch *Cinema Mode with Sound*.
+  - Secondary: *Join the Community* (opens community modal)
+- **Multimedia:** Embedded official 30-second brand film with cinema mode option.
 - **Institutional Badges:** Three Pillars, DLGTS Framework, Open Public Library.
 
 ### C. Introduction Section
@@ -56,216 +56,101 @@ This document provides a comprehensive, structured summary of all textual conten
 
 ### D. The Three Pillars
 1. **01 — COMMUNITY:**
-   - *Theme:* “Find your people. Exchange perspectives. Grow together.”
-   - *Visual Window:* Monochrome photograph of delegates traversing a sunlit institutional colonnade (`pillar-community.jpg`) with archival badge `PALAIS DES NATIONS // GENEVA`.
-   - *Content:* Youth networking circles, crisis rooms, collaborative draft paper exchanges, and non-exploitative conference circuit directories.
+   - *Theme:* “A Community Built Around Dialogue”
+   - *Visual Window:* Monochrome photograph of delegates traversing a colonnade (`pillar-community.jpg`).
+   - *Content:* Meaningful conversations, learning opportunities, and connections grounded in shared principles.
    - *Action:* Discover the Community (`/community`).
 2. **02 — ACADEMY:**
-   - *Theme:* “Learn the art of diplomacy.”
-   - *Visual Window:* Monochrome photograph of a classical diplomatic law library with floor-to-ceiling treaty codices (`pillar-academy.jpg`) with archival badge `JURISPRUDENCE ARCHIVE // OPEN VAULT`.
-   - *Content:* Comprehensive rules of procedure, authoritative position paper structures, public speaking drills, and the interactive diplomatic lab.
-   - *Action:* Explore the Academy (`/academy`).
+   - *Theme:* “Learn. Understand. Engage.”
+   - *Visual Window:* Monochrome photograph of a classical diplomatic law library (`pillar-academy.jpg`).
+   - *Content:* Practical guidance, rules of procedure, and insights into diplomacy and international affairs.
+   - *Action:* Explore the Academy Library (`/academy`).
 3. **03 — MEDIA:**
-   - *Theme:* “Understand the world beyond the headlines.”
-   - *Visual Window:* Monochrome photograph of an international affairs press desk with broadsheet proofs and typographic plates (`pillar-media.jpg`) with archival badge `DISPATCH DESK // VOL. I · Nº 01`.
-   - *Content:* Geopolitical explainers, treaty breakdowns, ICJ jurisprudence analyses, and independent diplomatic journalism.
-   - *Action:* Read Our Stories (`/media`).
+   - *Theme:* “Perspectives Worth Exploring”
+   - *Visual Window:* Monochrome photograph of an international affairs press desk (`pillar-media.jpg`).
+   - *Content:* Thoughtful perspectives on diplomacy, geopolitics, international relations, and Model United Nations.
+   - *Action:* Explore Media Desk (`/media`).
 
 ### E. DLGTS Philosophy Matrix
 - In-depth interactive cards exploring each of the 5 pillars (Diplomacy, Law, Geopolitics, Truth, Sovereignty) with diplomatic definitions and institutional values.
 
 ### F. Featured Opportunities Hub
-- Dynamic directory of upcoming conferences, youth essay competitions, and Executive Board applications.
-- Anti-predatory verification guarantee: Only legitimate conferences with verifiable secretariats are indexed.
-- Direct outbound links to official organizers.
+- Clean empty state:
+  - Heading: *“No Opportunities Listed Yet”*
+  - Description: *“We're working on bringing relevant MUN conferences, initiatives, and opportunities to the DELEGATES community. Check back soon for updates.”*
+  - CTA: *Submit an Opportunity* (verified organizer intake).
 
-### G. Closing Manifesto
-- *“Dialogue grounded in principles.”* Open invitation for students, delegates, and young diplomats to join the platform without financial barriers.
+### G. Featured Learning & Media Section
+- Highlights top foundational Academy guides alongside the editorial desk announcement.
+
+### H. Closing Movement CTA
+- *“The world is shaped by those willing to understand it.”* Direct WhatsApp community entry for all delegates.
 
 ---
 
 ## 3. Page Content: Community Hub (`/community`)
 
 ### A. Community Mission & Visual Hero
-- **Visual Presentation:** Two-column split hero featuring a high-impact monochrome photograph of an active plenary session with raised delegate placards (`community-assembly.jpg`), Cartographic Stamp (`GENEVA // YOUTH PLENARY ASSEMBLY · 46°13′36″N 6°08′26″E`), and Archival Badge (`COMMITTEE FLOOR // IN SESSION`).
-- **Core Manifesto:** “Find your people. Exchange perspectives. Grow together.” Building a barrier-free international relations community.
+- **Visual Presentation:** Two-column split hero featuring `community-assembly.jpg` with archival badge `COMMITTEE FLOOR // IN SESSION`.
+- **Core Narrative:** “Find your people. Exchange perspectives. Grow together.”
 
-### B. Inclusivity Standard (Who the Community is For)
-1. **First-Time MUN Participants (Foundation):** Step-by-step procedural guides, jargon decoders, and low-stakes simulation rooms.
-2. **Regular & Experienced Delegates (Strategy):** Advanced geopolitical debate, multilateral coalition building, and crisis management.
-3. **Executive Board Members & Chairs (Leadership):** Unbiased committee management, study guide drafting, and constructive delegate feedback methods.
+### B. A Community Built Around Dialogue
+- **Truthful Introduction:** DELEGATES brings together MUN enthusiasts, aspiring diplomats, and individuals interested in international affairs. We aim to create opportunities for learning, meaningful conversations, and connections grounded in shared principles.
+- **Engagement Mechanism:** Direct WhatsApp community access open to all; active members selected for specialized cohorts subsequently.
 
-### C. Discussion & Collaboration Tracks
-- **Geopolitical Debate Circles:** Fortnightly moderated discussions dissecting active UN Security Council agenda items.
-- **Resolution Drafting Clinics:** Peer-reviewed collaborative workshops transforming raw ideas into structured UN draft resolutions.
-- **Crisis & Historical Simulation Rooms:** Rapid-fire crisis simulations testing impromptu negotiation and diplomatic crisis communication.
+### C. Inclusivity Standard (Who the Community is For)
+1. **First-Time MUN Participants (Foundation):** Step-by-step procedural guides, jargon decoders, and accessible foundational resources.
+2. **Regular & Experienced Delegates (Strategy):** Deeper geopolitical context, collaborative drafting discussions, and foreign policy insights.
+3. **Executive Board Members & Chairs (Leadership):** Presiding officers exchanging study guide approaches and mentoring upcoming delegates.
+4. **MUN Organizers & Secretariats (Institutional):** Connecting with passionate delegates and upholding ethical standards.
+5. **Students of International Affairs (Academic):** Exploring diplomacy, global governance, and multilateral policy.
 
-### D. Verified Circuit Directory
-- **Catalog of verified listings:**
-  - *Harvard National Model United Nations (HNMUN) 2026* — Boston, USA
-  - *Geneva International Model United Nations (GIMUN)* — Geneva, Switzerland
-  - *Hague International Model UN (THIMUN)* — The Hague, Netherlands
-  - *International Diplomatic Essay Competition* — Virtual / Global
-  - *Oxford Climate & Sovereignty Forum* — Oxford, United Kingdom
-  - *Asia-Pacific Youth Assembly EB Applications* — Singapore
-- **Search & Filtering:** Real-time search across organizers, cities, and categories.
-
-### E. Community FAQ
-- Clear answers confirming that DELEGATES is completely free to join, detailing the opportunity submission workflow, and upholding editorial neutrality.
+### D. Opportunities Circuit Directory
+- Curated directory displaying the approved empty state when no verified listings are active.
+- Verified organizer intake form with server-side validation.
 
 ---
 
-## 4. Page Content: Academy & Diplomatic Lab (`/academy`)
+## 4. Page Content: Academy Library (`/academy`)
 
-### A. Academic Mission & Visual Hero
-- **Visual Presentation:** Two-column split hero featuring a monochrome architectural photograph of a classical tiered diplomatic lecture amphitheater (`academy-amphitheater.jpg`), Cartographic Stamp (`GENEVA // DIPLOMATIC AMPHITHEATER · 46°13′36″N 6°08′26″E`), and Archival Badge (`DIPLOMATIC AMPHITHEATER // ACCREDITED`).
-- **Pedagogical Goal:** “Learn the art of diplomacy.” Open educational curriculum and interactive lab tools for delegates and student leaders.
+### A. Core Educational Mission
+- **Headline:** *“Learn. Understand. Engage.”*
+- **Description:** The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs.
 
-### B. Curriculum Categories & Modules
-1. **Rules of Procedure (RoP):**
-   - *Demystifying Rules of Procedure: From Points to Motions* (Beginner, 12 min read). Full breakdown of Points of Order, Inquiry, Personal Privilege, and unmoderated vs moderated caucuses.
-2. **Position Papers:**
-   - *Crafting Authoritative Position Papers: Structure & Citation* (Intermediate, 15 min read). The three-part architecture: National Context, Past International Action, and Actionable Proposals.
-3. **Research & Country Preparation:**
-   - *Country Policy Dossiers: Navigating Sovereign Interests* (Beginner, 18 min read). Research methodology for isolating non-negotiable redlines and voting records.
-4. **Negotiation & Diplomacy:**
-   - *The Architecture of Consensus: Multilateral Negotiation Strategies* (Intermediate, 14 min read). Coalition forming, caucusing diplomacy, and bloc leadership.
-5. **Executive Board Preparation:**
-   - *The Art of the Gavel: Impartiality, RoP Mastery, and EB Conduct* (Advanced, 20 min read). Comprehensive guide for Committee Chairs, Directors, and Rapporteurs.
-6. **Resolution Drafting:**
-   - *Drafting UN Resolutions: Operative Precision & Jurisprudence* (Advanced, 16 min read). Drafting clauses that withstand legal scrutiny and international law standards.
-
-### C. Interactive Diplomatic Lab
-- **UN Resolution Clause Builder:** Select from UN General Assembly, Security Council, ECOSOC, or ICJ. Choose Preambulatory vs Operative. Access official legal verbs with UN Charter jurisprudence.
-- **RoP Decision Matrix:** Scenario navigator mapping real committee deadlocks to specific points, motions, interruption allowances, and voting thresholds.
-- **Country Dossier & Redline Worksheet:** Guided questionnaire producing a downloadable Markdown dossier (`.md`) covering stance, redlines, allies, and treaty citations.
+### B. Six Published Foundational Guides
+1. **Demystifying Rules of Procedure: From Roll Call to Voting Bloc:** Parliamentary rules, motions, points, and caucuses.
+2. **The Architecture of a Compelling Position Paper:** Tripartite structure, treaty alignment, and operative proposals.
+3. **Rigorous Country Dossier Research: Beyond the Surface:** Geopolitical alliances, trade dependencies, and national redlines.
+4. **Mastering the Unmoderated Caucus: Bloc Leadership Without Dominance:** Consensus building, synthesis, and clause delegation.
+5. **Behind the Dais: What Executive Boards Actually Look For:** Evaluation criteria, policy compliance, and chairing philosophy.
+6. **Resolution Drafting: Anatomy of Preambulatory & Operative Clauses:** Clause mechanics, operative verbs, and enforcement mechanisms.
 
 ---
 
-## 5. Page Content: Dedicated Dynamic Guides (`/academy/[slug]`)
+## 5. Page Content: Media Desk (`/media`)
 
-Each dedicated guide route features:
-- **Header:** Category, difficulty level, reading time, and publication metadata.
-- **Core Takeaways Box:** Distinct actionable items for delegates.
-- **Editorial Typography:** Classic drop-caps on opening paragraphs and high-contrast subheadings.
-- **Cross-Curriculum Navigation:** Links to related modules in the same pedagogical domain.
+### A. Editorial Purpose
+- **Headline:** *“Perspectives Worth Exploring”*
+- **Description:** DELEGATES is building an editorial space for thoughtful perspectives on diplomacy, geopolitics, international relations, and Model United Nations.
 
----
-
-## 6. Page Content: Media & Publications (`/media`)
-
-### A. Editorial Mission & Visual Hero
-- **Visual Presentation:** Two-column split hero with a monochrome still life of the diplomatic reading room with open geopolitical atlas and legal folios (`media-reading-room.jpg`), Cartographic Stamp (`GENEVA // PRESS BUREAU & ARCHIVES · 46°13′36″N 6°08′26″E`), and Archival Badge (`DISPATCH BUREAU // VOL. I // ISSUE 01`).
-- **Core Manifesto:** “Understand the world beyond the headlines.” Independent geopolitical and diplomatic commentary grounded in international law and history.
-
-### B. Flagship Story Spotlight
-- **Title:** *The Future of Multilateralism in a Fragmented Order*
-- **Visual Cover:** Monochrome assembly hall photograph (`multilateralism-hall.jpg`).
-- **Author:** Editorial Board · Strategic Studies Desk
-- **Summary:** As unilateral sanctions and regional pacts surge, the post-1945 multilateral architecture faces unprecedented institutional stress. This dispatch examines whether the United Nations system can evolve to accommodate a multipolar century.
-
-### C. Thematic Desks & Dispatches
-1. **Geopolitics:**
-   - *Sovereignty and Sanctions: The Limits of Extraterritoriality in International Law* (By Elena Rostova, Senior Research Fellow). Cover: Archival treaty still life (`sovereignty-treaties.jpg`).
-2. **Diplomacy & International Relations:**
-   - *The Evolution of Bilateral Backchannels: How Historic Accords Were Born* (By Marcus Sterling, Diplomatic Historian).
-3. **MUN Insights:**
-   - *Why Modern Model UN Needs More Law and Less Rhetoric* (By Kabir Mehta, Chair of Academic Council). Cover: Dais and microphones (`dais-moderation.jpg`).
-4. **Interviews & Perspectives:**
-   - *Voices at the High Table: Youth Leadership in International Deliberation* (By DELEGATES Special Correspondent). Cover: Caucus consultation (`youth-diplomacy.jpg`).
-
-### D. Legal Citations & Sources Archive
-- Detailed references to ICJ rulings, the Vienna Convention on the Law of Treaties (1969), UN Charter Chapter VII, and General Assembly declarations.
+### B. Editorial Desk Announcement
+- **Empty State Notice:** *“Our editorial desk is preparing its first collection of stories. Stay connected for updates.”*
+- **Zero Placeholder Articles:** Only authentic, approved content will be published upon completion by the editorial desk.
 
 ---
 
-## 7. Page Content: Dedicated Dynamic Articles (`/media/[slug]`)
-
-Each dedicated dispatch route features:
-- **Executive Summary Box:** High-level policy abstract.
-- **Drop-Cap Introduction:** Literary first-letter formatting.
-- **Pull Quotes:** Serif quotes emphasizing strategic insights.
-- **Formal Sources & Citations Index:** Primary source documentation for readers and debaters.
+## 6. Page Content: About DELEGATES (`/about`)
+- Vision, mission, and brand promise.
+- The 5 DLGTS pillars detailed in full.
+- The Three Pillars architecture.
+- Commitment to authentic transparency, open knowledge, and intellectual integrity.
 
 ---
 
-## 8. Page Content: About Directorate (`/about`)
-
-### A. Foundational Narrative
-- **Monumental Architectural Visual:** Full-width 21:9 monochrome exterior of the Palais des Nations (`about-architecture.jpg`) with geographic coordinate stamp `GENEVA // PALAIS DES NATIONS · 46°13′36″N 6°08′26″E` and archival badge `PALAIS DES NATIONS // SEAT OF MULTILATERALISM · EST. 1936`.
-- **Manifesto:** Traces the founding of DELEGATES as a response to superficial MUN coaching institutes. DELEGATES re-establishes the discipline of serious international affairs research, ethical dialogue, and accessible learning.
-
-### B. The Three Core Pillars
-- Deep examination of how Community, Academy, and Media intersect to support a delegate from beginner to diplomat.
-
-### C. The Five Principles (Comprehensive In-Depth Treatment)
-1. **Diplomacy / Democracy:** Dialogue as the fundamental instrument of civilization; mutual respect over intimidation.
-2. **Law & Order:** The imperative of international legal frameworks, codified treaties, and consistent procedural norms.
-3. **Geopolitics:** Unflinching analysis of geographical realities, national security interests, and structural balance of power.
-4. **Truth / Trust:** Truth as the bedrock of diplomacy; adherence to verifiable fact, institutional memory, and transparent rhetoric.
-5. **Sovereignty:** Respect for national self-determination combined with shared responsibility for human dignity and global peace.
-
-### D. Governance & Independence Charter
-- **Zero Commercial Paywalls:** Core curriculum remains permanently open-access.
-- **Editorial Neutrality:** No affiliation with political parties or partisan lobbies.
-- **Non-Predatory Circuit Standards:** Strict rejection of pay-to-win awards or unaccredited for-profit conferences.
-
----
-
-## 9. Page Content: Official Desk & Contact (`/contact`)
-
-### A. Communication Desk & Visual Hero
-- **Visual Presentation:** Two-column split hero with a monochrome photograph of the official diplomatic secretariat desk with leather portfolio, fountain pen, and embossed seal (`secretariat-desk.jpg`), Cartographic Stamp (`GENEVA // DIPLOMATIC LIAISON DESK · 46°13′36″N 6°08′26″E`), and Archival Badge (`SECRETARIAT LIAISON // OFFICIAL DESK`).
-- **Official Communication Channels:**
-  - **Official Secretariat Mail:** `delegates@zohomail.in` (Direct correspondence, article submissions, and partnerships).
-  - **WhatsApp Community:** `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv` (Open to all interested members; specialized cohorts added subsequently).
-  - **LinkedIn Channel:** `https://www.linkedin.com/company/delegates-mun/` (Institutional briefings and conference network updates).
-  - **Instagram Channel:** `https://www.instagram.com/delegates_mun/` (Visual dispatches, speaker highlights, and community updates).
-
-### B. Structured Inquiry Intake
-- Fields: Full Name, Email, Subject, Department Route, Message.
-- Confirmation: Local persistence queue with institutional acknowledgment.
-
-### C. Institutional Offices
-- **Geneva Desk:** Rue de Varembé, 1202 Genève, Switzerland (Multilateral Liaison).
-- **New Delhi Desk:** Diplomatic Enclave, Chanakyapuri, New Delhi, India (Youth Secretariat).
-- **Virtual Secretariat:** Global Open Desk (24/7 Digital Operations).
-
----
-
-## 10. Global UI Content: Modals & The Diplomatic Dispatch
-
-### A. The Diplomatic Dispatch (`NewsletterBar.tsx`)
-- **Eyebrow:** *Fortnightly Intelligence Briefing*
-- **Headline:** *The Diplomatic Dispatch*
-- **Copy:** Curated analyses of global shifts, procedural masterclasses, and verified circuit opportunities delivered directly to your inbox every second Sunday.
-- **Assurance:** Zero Spam · Unsubscribe Anytime · Peer-Reviewed.
-
-### B. "Join the Community" & WhatsApp Onboarding Intake (`JoinCommunityModal.tsx`)
-- **Direct Fast-Track:** One-click instant invite into the open WhatsApp Community group (`https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`).
-- **Community Policy:** All interested members are welcomed into the central community group; specialized working groups and committee cohorts are formed from selected active members later.
-- **Profile Registration:** Full Name, Email, Experience Level, Primary Interest, Delegate Statement.
-- Code of Conduct agreement acknowledging principled discourse.
-
-### C. "Submit Opportunity" Intake (`SubmitOpportunityModal.tsx`)
-- Questions: Title, Organizer, Category, Format, Location, Application Link, Verification Email, and Authenticity Attestation.
-
-### D. Global Footer
-- Full brand tagline, DLGTS matrix summary tags, pillar navigation links, channels (WhatsApp Community, LinkedIn `delegates-mun`, Instagram `delegates_mun`, Official Desk `delegates@zohomail.in`), and legal links (Principles & Ethics, Privacy & Data, Terms of Use).
-
----
-
-## 11. Reading Experience & Motion Semantics
-
-### A. Reading Progress Bar
-- **Visual Cue:** 2px hairline in antique gold (`#B89358`) pinned to the viewport header.
-- **Narrative Purpose:** Provides quiet, continuous orientation for long-form curriculum modules, treaty analyses, and editorial articles without intrusive numeric indicators.
-
-### B. Spatial Stagger & Typography Hierarchy
-- **Visual Hierarchy:** Headline, narrative, and callout components appear in a calm, 50ms–250ms sequential drift.
-- **Content Focus:** Draws reader attention first to institutional classification badges, followed by primary headlines, and finally interactive actions.
-
-### C. Tactile Elevation & Corner Mark Semantics
-- **Interactive Feedback:** Cards and modules respond to cursor hover with a 2px lift and corner bracket expansion, affirming interactive state without flashiness or distraction.
-- **Accessibility:** Full compatibility with system reduced-motion preferences, ensuring content is immediately accessible to all users.
-
+## 7. Page Content: Contact & Correspondence (`/contact`)
+- **Official Desks:**
+  - Official Secretariat Email: `delegates@zohomail.in`
+  - WhatsApp Community: `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`
+  - LinkedIn: `https://www.linkedin.com/company/delegates-mun/`
+  - Instagram: `https://www.instagram.com/delegates_mun/`
+- **Correspondence Form:** Real server-side validated contact form generating tracking reference ID `DLGTS-XXXXXX`.

@@ -3,9 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ACADEMY_RESOURCES } from "@/data/academy";
-import { MEDIA_ARTICLES } from "@/data/media";
-import { OPPORTUNITIES_DATA } from "@/data/opportunities";
-import { Search, X, BookOpen, Newspaper, Compass, Wrench, ArrowRight } from "lucide-react";
+import { Search, X, BookOpen, Compass, ArrowRight } from "lucide-react";
 
 export default function GlobalSearchModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,58 +41,27 @@ export default function GlobalSearchModal() {
           g.title.toLowerCase().includes(cleanQuery) ||
           g.category.toLowerCase().includes(cleanQuery) ||
           g.summary.toLowerCase().includes(cleanQuery)
-      ).slice(0, 3)
+      ).slice(0, 4)
     : [];
 
-  const articleResults = cleanQuery
-    ? MEDIA_ARTICLES.filter(
-        (a) =>
-          a.title.toLowerCase().includes(cleanQuery) ||
-          a.category.toLowerCase().includes(cleanQuery) ||
-          a.summary.toLowerCase().includes(cleanQuery)
-      ).slice(0, 3)
-    : [];
-
-  const oppResults = cleanQuery
-    ? OPPORTUNITIES_DATA.filter(
-        (o) =>
-          o.title.toLowerCase().includes(cleanQuery) ||
-          o.organizer.toLowerCase().includes(cleanQuery) ||
-          o.category.toLowerCase().includes(cleanQuery)
-      ).slice(0, 2)
-    : [];
-
-  const tools = [
-    {
-      title: "UN Resolution Clause Builder",
-      desc: "Draft verified Preambulatory and Operative clauses with official verbs",
-      href: "/academy?tab=lab",
-    },
-    {
-      title: "Rules of Procedure (RoP) Decision Matrix",
-      desc: "Instant parliamentary remedies for committee dilemmas and points",
-      href: "/academy?tab=lab",
-    },
-    {
-      title: "Country Dossier & Redline Planner",
-      desc: "Structure national foreign policy redlines and alliances",
-      href: "/academy?tab=lab",
-    },
+  const pages = [
+    { name: "Home", href: "/", desc: "Rooted in Principles. United by Dialogue." },
+    { name: "Community Hub", href: "/community", desc: "A Community Built Around Dialogue & WhatsApp Forum" },
+    { name: "Academy Library", href: "/academy", desc: "Foundational Model UN Learning & Procedural Guides" },
+    { name: "Media Desk", href: "/media", desc: "Perspectives on Diplomacy, Geopolitics, and International Relations" },
+    { name: "About DELEGATES", href: "/about", desc: "Our Vision, Mission, and the DLGTS Philosophy" },
+    { name: "Contact & Correspondence", href: "/contact", desc: "Official Enquiries, Collaborations, and Submissions" },
   ];
 
-  const toolResults = cleanQuery
-    ? tools.filter(
-        (t) =>
-          t.title.toLowerCase().includes(cleanQuery) ||
-          t.desc.toLowerCase().includes(cleanQuery)
+  const pageResults = cleanQuery
+    ? pages.filter(
+        (p) =>
+          p.name.toLowerCase().includes(cleanQuery) ||
+          p.desc.toLowerCase().includes(cleanQuery)
       )
     : [];
 
-  const hasResults =
-    guideResults.length > 0 ||
-    articleResults.length > 0 ||
-    oppResults.length > 0 ||
-    toolResults.length > 0;
+  const hasResults = guideResults.length > 0 || pageResults.length > 0;
 
   const navigateTo = (href: string) => {
     setIsOpen(false);
@@ -119,7 +86,7 @@ export default function GlobalSearchModal() {
           <Search className="w-5 h-5 text-[#68645D]" />
           <input
             type="text"
-            placeholder="Search guides, articles, opportunities, or tools... (Esc to close)"
+            placeholder="Search learning guides, pillars, pages... (Esc to close)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
@@ -137,171 +104,95 @@ export default function GlobalSearchModal() {
         {!cleanQuery ? (
           <div className="py-6 space-y-4 text-xs text-[#68645D]">
             <span className="font-interface uppercase tracking-wider text-[10px] text-[#8E877C] block font-semibold">
-              Quick Suggestions
+              Explore DELEGATES
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <button
-                onClick={() => navigateTo("/academy")}
-                className="text-left p-3 border border-[#D8D0C4] bg-white hover:border-[#171717] transition-colors"
-              >
-                <span className="font-semibold text-[#171717] block">Rules of Procedure</span>
-                <span className="text-[11px] text-[#68645D]">Parliamentary motions & voting guides</span>
-              </button>
-              <button
-                onClick={() => navigateTo("/media")}
-                className="text-left p-3 border border-[#D8D0C4] bg-white hover:border-[#171717] transition-colors"
-              >
-                <span className="font-semibold text-[#171717] block">Geopolitics Desks</span>
-                <span className="text-[11px] text-[#68645D]">Multilateralism & sovereignty analysis</span>
-              </button>
-              <button
-                onClick={() => navigateTo("/community#opportunities")}
-                className="text-left p-3 border border-[#D8D0C4] bg-white hover:border-[#171717] transition-colors"
-              >
-                <span className="font-semibold text-[#171717] block">Upcoming MUNs</span>
-                <span className="text-[11px] text-[#68645D]">Verified collegiate conferences & EB calls</span>
-              </button>
-              <button
-                onClick={() => navigateTo("/academy")}
-                className="text-left p-3 border border-[#D8D0C4] bg-white hover:border-[#171717] transition-colors"
-              >
-                <span className="font-semibold text-[#171717] block">Diplomatic Lab Tools</span>
-                <span className="text-[11px] text-[#68645D]">Clause Builder & Dossier Worksheet</span>
-              </button>
+              {pages.slice(1, 5).map((page) => (
+                <button
+                  key={page.name}
+                  onClick={() => navigateTo(page.href)}
+                  className="p-3 bg-white border border-[#D8D0C4] text-left hover:border-[#171717] transition-colors group flex items-center justify-between"
+                >
+                  <div>
+                    <span className="font-editorial text-sm text-[#171717] block font-medium group-hover:underline">
+                      {page.name}
+                    </span>
+                    <span className="text-[11px] text-[#68645D] line-clamp-1">{page.desc}</span>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#8E877C] group-hover:text-[#171717] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                </button>
+              ))}
             </div>
           </div>
-        ) : !hasResults ? (
-          <div className="py-12 text-center text-xs text-[#68645D] space-y-1">
-            <p className="font-editorial text-base text-[#171717]">
-              No results found for “{query}”
-            </p>
-            <p>Try searching for “procedure”, “resolution”, “geopolitics”, or “opportunities”.</p>
-          </div>
-        ) : (
-          <div className="space-y-6 py-2">
-            {/* Tools */}
-            {toolResults.length > 0 && (
+        ) : hasResults ? (
+          <div className="space-y-6 pt-2">
+            {/* Pages Matches */}
+            {pageResults.length > 0 && (
               <div className="space-y-2">
                 <span className="text-[10px] font-interface uppercase tracking-widest text-[#8E877C] font-semibold flex items-center gap-1.5">
-                  <Wrench className="w-3.5 h-3.5" />
-                  <span>Diplomatic Tools</span>
+                  <Compass className="w-3 h-3" />
+                  Navigation Pages
                 </span>
                 <div className="space-y-1.5">
-                  {toolResults.map((t) => (
+                  {pageResults.map((p) => (
                     <button
-                      key={t.title}
-                      onClick={() => navigateTo(t.href)}
-                      className="w-full text-left p-3 bg-white border border-[#D8D0C4] hover:border-[#171717] transition-all flex items-center justify-between"
+                      key={p.name}
+                      onClick={() => navigateTo(p.href)}
+                      className="w-full p-3 bg-white border border-[#D8D0C4] text-left hover:border-[#171717] transition-colors flex items-center justify-between group"
                     >
-                      <div className="space-y-0.5">
-                        <span className="font-editorial text-sm text-[#171717] font-medium block">
-                          {t.title}
+                      <div>
+                        <span className="font-editorial text-sm text-[#171717] group-hover:underline">
+                          {p.name}
                         </span>
-                        <span className="text-xs text-[#68645D] line-clamp-1">
-                          {t.desc}
-                        </span>
+                        <p className="text-[11px] text-[#68645D]">{p.desc}</p>
                       </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#171717] flex-shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#8E877C] group-hover:text-[#171717] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Academy Guides */}
+            {/* Guide Matches */}
             {guideResults.length > 0 && (
               <div className="space-y-2">
                 <span className="text-[10px] font-interface uppercase tracking-widest text-[#8E877C] font-semibold flex items-center gap-1.5">
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>Academy Curriculum</span>
+                  <BookOpen className="w-3 h-3" />
+                  Academy Learning Guides
                 </span>
                 <div className="space-y-1.5">
                   {guideResults.map((g) => (
                     <button
                       key={g.id}
-                      onClick={() => navigateTo(`/academy/${g.slug}`)}
-                      className="w-full text-left p-3 bg-white border border-[#D8D0C4] hover:border-[#171717] transition-all flex items-center justify-between"
+                      onClick={() => navigateTo(`/academy#${g.slug}`)}
+                      className="w-full p-3 bg-white border border-[#D8D0C4] text-left hover:border-[#171717] transition-colors flex items-center justify-between group"
                     >
-                      <div className="space-y-0.5">
-                        <span className="text-[10px] font-interface uppercase tracking-wider text-[#68645D]">
-                          {g.category} · {g.readingTime}
-                        </span>
-                        <span className="font-editorial text-sm text-[#171717] font-medium block">
+                      <div>
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="text-[9px] font-interface uppercase tracking-wider bg-[#EAE4D9] px-1.5 py-0.5 text-[#171717]">
+                            {g.category}
+                          </span>
+                          <span className="text-[10px] text-[#8E877C]">{g.readingTime}</span>
+                        </div>
+                        <span className="font-editorial text-sm text-[#171717] group-hover:underline">
                           {g.title}
                         </span>
                       </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#171717] flex-shrink-0" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Media Articles */}
-            {articleResults.length > 0 && (
-              <div className="space-y-2">
-                <span className="text-[10px] font-interface uppercase tracking-widest text-[#8E877C] font-semibold flex items-center gap-1.5">
-                  <Newspaper className="w-3.5 h-3.5" />
-                  <span>Media Publications</span>
-                </span>
-                <div className="space-y-1.5">
-                  {articleResults.map((a) => (
-                    <button
-                      key={a.id}
-                      onClick={() => navigateTo(`/media/${a.slug}`)}
-                      className="w-full text-left p-3 bg-white border border-[#D8D0C4] hover:border-[#171717] transition-all flex items-center justify-between"
-                    >
-                      <div className="space-y-0.5">
-                        <span className="text-[10px] font-interface uppercase tracking-wider text-[#68645D]">
-                          {a.category} · {a.readingTime}
-                        </span>
-                        <span className="font-editorial text-sm text-[#171717] font-medium block">
-                          {a.title}
-                        </span>
-                      </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#171717] flex-shrink-0" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Opportunities */}
-            {oppResults.length > 0 && (
-              <div className="space-y-2">
-                <span className="text-[10px] font-interface uppercase tracking-widest text-[#8E877C] font-semibold flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5" />
-                  <span>Opportunities Hub</span>
-                </span>
-                <div className="space-y-1.5">
-                  {oppResults.map((o) => (
-                    <button
-                      key={o.id}
-                      onClick={() => navigateTo("/community#opportunities")}
-                      className="w-full text-left p-3 bg-white border border-[#D8D0C4] hover:border-[#171717] transition-all flex items-center justify-between"
-                    >
-                      <div className="space-y-0.5">
-                        <span className="text-[10px] font-interface uppercase tracking-wider text-[#68645D]">
-                          {o.category} · {o.organizer}
-                        </span>
-                        <span className="font-editorial text-sm text-[#171717] font-medium block">
-                          {o.title}
-                        </span>
-                      </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#171717] flex-shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#8E877C] group-hover:text-[#171717] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                     </button>
                   ))}
                 </div>
               </div>
             )}
           </div>
+        ) : (
+          <div className="py-12 text-center text-xs text-[#68645D] space-y-1">
+            <p className="font-editorial text-base text-[#171717]">
+              No resources found matching &ldquo;{query}&rdquo;
+            </p>
+            <p>Try searching for general topics such as &ldquo;Rules of Procedure&rdquo;, &ldquo;Position Papers&rdquo;, or &ldquo;Community&rdquo;.</p>
+          </div>
         )}
-
-        {/* Footer tip */}
-        <div className="pt-2 border-t border-[#D8D0C4] flex items-center justify-between text-[10px] font-interface text-[#8E877C]">
-          <span>Tip: Press Ctrl+K (or Cmd+K) anywhere to search</span>
-          <span>Press Esc to close</span>
-        </div>
       </div>
     </div>
   );
