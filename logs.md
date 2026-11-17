@@ -466,3 +466,22 @@ This log documents every architectural decision, bug fix, feature integration, d
      - Realized direct search over verified platform navigation pages and authentic Academy guides.
 - **Verification & Deployment:**
   - Full production build (`npm run build`) succeeded with exit code 0 across 18 static/dynamic routes.
+
+
+---
+
+## 18. Live Email Forwarding Integration via Web3Forms (Zoho Mail Delivery)
+- **Objective:** Connect the Contact and Opportunity submission forms directly to `delegates@zohomail.in` without storing plain passwords or exposing credentials.
+- **Implementation:**
+  1. **Access Key Configuration:** Integrated verified Web3Forms API key routing to `delegates@zohomail.in`.
+  2. **API Route `/api/contact`:**
+     - Enforces server-side validation for all fields.
+     - Forwards payload directly to `https://api.web3forms.com/submit` with custom subject `[DELEGATES Contact] {enquiryType} — {fullName}`.
+     - Automatically passes sender name, email, topic, reference ID, and message text to your Zoho inbox.
+  3. **API Route `/api/submit-opportunity`:**
+     - Enforces strict validation on title, organizer, location, format, deadline, URL, and verification email.
+     - Forwards conference details directly to `delegates@zohomail.in`.
+  4. **Security & Reliability:**
+     - Zero account password requirements; runs purely via token authorization.
+     - Built-in spam filtering and fallback error states.
+- **Verification:** Live integration test succeeded with Web3Forms confirmation and production build passed with exit code 0.

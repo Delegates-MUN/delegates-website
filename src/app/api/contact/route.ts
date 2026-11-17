@@ -41,29 +41,56 @@ export async function POST(request: Request) {
       );
     }
 
-    // In production, forward to verified SMTP / Resend / Webhook
-    // process.env.CONTACT_EMAIL_WEBHOOK or similar
-    console.log("[DELEGATES Contact Submission Received]", {
-      fullName,
-      email,
-      enquiryType,
-      subject: subject || "None specified",
-      messageLength: message.length,
-      timestamp: new Date().toISOString(),
+    const referenceId = `DLGTS-${Date.now().toString().slice(-6)}`;
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || "fdce012a-4511-4e76-a4b5-7e7b72e8b183";
+
+    // Forward verified message to delegates@zohomail.in via Web3Forms
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "User-Agent": "DELEGATES-Official-Platform/1.0",
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: `[DELEGATES Contact] ${enquiryType} — ${fullName}`,
+        from_name: "DELEGATES Official Secretariat",
+        name: fullName,
+        email: email,
+        enquiry_type: enquiryType,
+        custom_subject: subject || "None specified",
+        message: message,
+        reference_id: referenceId,
+      }),
     });
+
+    const forwardResult = await response.json();
+
+    if (!response.ok || !forwardResult.success) {
+      console.error("[Web3Forms Forwarding Error]", forwardResult);
+      // Fallback: log to server logs even if forwarding service is unreachable
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Unable to dispatch message at this moment. Please email delegates@zohomail.in directly.",
+        },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
       message:
-        "Your enquiry has been securely logged with the DELEGATES Secretariat. We will respond via email shortly.",
-      referenceId: `DLGTS-${Date.now().toString().slice(-6)}`,
+        "Your enquiry has been delivered to the DELEGATES Secretariat. We will respond via email shortly.",
+      referenceId,
     });
   } catch (err) {
     console.error("Error processing contact request:", err);
     return NextResponse.json(
       {
         success: false,
-        error: "An unexpected server error occurred. Please try again.",
+        error: "An unexpected server error occurred. Please try again or email delegates@zohomail.in directly.",
       },
       { status: 500 }
     );

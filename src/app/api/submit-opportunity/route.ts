@@ -66,32 +66,60 @@ export async function POST(request: Request) {
       );
     }
 
-    // Log verified submission to secretariat audit trail
-    console.log("[DELEGATES Opportunity Submission Received]", {
-      title,
-      organizer,
-      category,
-      format,
-      location,
-      deadline,
-      url,
-      contactEmail,
-      descriptionLength: description ? description.length : 0,
-      timestamp: new Date().toISOString(),
+    const referenceId = `DLGTS-OPP-${Date.now().toString().slice(-6)}`;
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || "fdce012a-4511-4e76-a4b5-7e7b72e8b183";
+
+    // Forward opportunity details to delegates@zohomail.in
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "User-Agent": "DELEGATES-Official-Platform/1.0",
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: `[DELEGATES Opportunity Submission] ${category}: ${title}`,
+        from_name: "DELEGATES Circuit Desk",
+        opportunity_title: title,
+        organizer: organizer,
+        category: category,
+        format: format,
+        location: location,
+        deadline: deadline,
+        official_url: url,
+        organizer_email: contactEmail,
+        description: description || "No additional description provided",
+        reference_id: referenceId,
+      }),
     });
 
-    const referenceId = `DLGTS-OPP-${Date.now().toString().slice(-6)}`;
+    const forwardResult = await response.json();
+
+    if (!response.ok || !forwardResult.success) {
+      console.error("[Web3Forms Opportunity Error]", forwardResult);
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Unable to submit at this moment. Please email delegates@zohomail.in directly.",
+        },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
       message:
-        "Your opportunity submission has been submitted to the DELEGATES Secretariat. Our team will verify credentials before publishing to the circuit directory.",
+        "Your opportunity submission has been delivered to the DELEGATES Secretariat. Our team will verify credentials before publishing to the circuit directory.",
       referenceId,
     });
   } catch (err) {
     console.error("Error processing opportunity submission:", err);
     return NextResponse.json(
-      { success: false, error: "An unexpected server error occurred. Please try again or email delegates@zohomail.in directly." },
+      {
+        success: false,
+        error: "An unexpected server error occurred. Please try again or email delegates@zohomail.in directly.",
+      },
       { status: 500 }
     );
   }
