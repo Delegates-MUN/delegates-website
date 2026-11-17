@@ -207,31 +207,66 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4 pt-2 border-t border-[#D8D0C4] text-xs">
-                    <div className="p-3 bg-[#F4F0E8] border border-[#D8D0C4] space-y-1">
+                    <div className="p-3.5 bg-[#F4F0E8] border border-[#D8D0C4] space-y-1.5">
                       <span className="font-semibold text-[#171717] uppercase tracking-wider text-[11px] block">
-                        General & Secretariat Inquiries:
+                        Official Secretariat Desk:
                       </span>
-                      <p className="text-[#68645D]">
-                        contact@delegates.org (or submit form opposite)
+                      <a
+                        href="mailto:delegates@zohomail.in"
+                        className="text-[#171717] font-medium hover:underline flex items-center gap-1.5 text-xs"
+                      >
+                        <Mail className="w-3.5 h-3.5 text-[#B89358]" />
+                        <span>delegates@zohomail.in</span>
+                      </a>
+                      <p className="text-[11px] text-[#68645D]">
+                        All formal correspondence, partnerships, and editorial submissions.
                       </p>
                     </div>
 
-                    <div className="p-3 bg-[#F4F0E8] border border-[#D8D0C4] space-y-1">
+                    <div className="p-3.5 bg-[#F4F0E8] border border-[#D8D0C4] space-y-1.5">
                       <span className="font-semibold text-[#171717] uppercase tracking-wider text-[11px] block">
-                        Editorial & Media Submissions:
+                        WhatsApp Community Forum:
                       </span>
-                      <p className="text-[#68645D]">
-                        Accepting policy analyses, legal briefs, and interview pitches.
+                      <a
+                        href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#171717] font-medium hover:underline flex items-center gap-1.5 text-xs"
+                      >
+                        <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
+                        <span>Join Open Community Group</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                      <p className="text-[11px] text-[#68645D]">
+                        Open to all interested delegates; specialized working groups selected subsequently.
                       </p>
                     </div>
 
-                    <div className="p-3 bg-[#F4F0E8] border border-[#D8D0C4] space-y-1">
+                    <div className="p-3.5 bg-[#F4F0E8] border border-[#D8D0C4] space-y-1.5">
                       <span className="font-semibold text-[#171717] uppercase tracking-wider text-[11px] block">
-                        Academic & Mentorship Labs:
+                        Verified Network Channels:
                       </span>
-                      <p className="text-[#68645D]">
-                        Partnerships for collegiate and high-school MUN training.
-                      </p>
+                      <div className="flex items-center gap-4 pt-0.5 text-xs">
+                        <a
+                          href="https://www.linkedin.com/company/delegates-mun/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#171717] hover:underline flex items-center gap-1 font-medium"
+                        >
+                          <span>LinkedIn</span>
+                          <ArrowRight className="w-2.5 h-2.5 text-[#8E877C]" />
+                        </a>
+                        <span className="text-[#D8D0C4]">·</span>
+                        <a
+                          href="https://www.instagram.com/delegates_mun/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#171717] hover:underline flex items-center gap-1 font-medium"
+                        >
+                          <span>Instagram</span>
+                          <ArrowRight className="w-2.5 h-2.5 text-[#8E877C]" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

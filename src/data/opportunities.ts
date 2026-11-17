@@ -45,7 +45,7 @@ export const OPPORTUNITIES_DATA: Opportunity[] = [
     dateOrDeadline: "Submission Deadline: December 30, 2026",
     location: "Online / Global Submission",
     isOnline: true,
-    sourceUrl: "https://delegates.org/contact",
+    sourceUrl: "/contact",
     description: "An annual essay contest inviting high school and undergraduate writers to propose structural reforms for global governance bodies.",
     tags: ["Policy Writing", "Editorial", "Publication Prize"],
   },

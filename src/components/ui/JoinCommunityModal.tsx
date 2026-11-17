@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
+import { X, CheckCircle2, ArrowRight, ArrowUpRight, Loader2, MessageSquare } from "lucide-react";
 import Image from "next/image";
 
 export default function JoinCommunityModal() {
@@ -123,11 +123,11 @@ export default function JoinCommunityModal() {
         {isSuccess ? (
           <div className="py-8 text-center space-y-5 animate-fadeIn">
             <div className="w-16 h-16 mx-auto rounded-full bg-[#171717] text-[#F4F0E8] flex items-center justify-center">
-              <CheckCircle2 className="w-8 h-8" />
+              <CheckCircle2 className="w-8 h-8 text-[#B89358]" />
             </div>
             <div className="space-y-2">
               <span className="font-interface text-xs uppercase tracking-[0.2em] text-[#68645D]">
-                Application Received
+                Registration Received
               </span>
               <h3
                 id="join-modal-title"
@@ -137,8 +137,32 @@ export default function JoinCommunityModal() {
               </h3>
             </div>
             <p className="text-sm text-[#68645D] max-w-md mx-auto leading-relaxed">
-              Thank you, <strong className="text-[#171717]">{formData.fullName}</strong>. Your expression of interest has been recorded in our community registry. You will receive an onboarding briefing at <strong className="text-[#171717]">{formData.email}</strong> shortly.
+              Thank you, <strong className="text-[#171717]">{formData.fullName}</strong>. Your profile has been recorded in our community registry.
             </p>
+
+            {/* Direct WhatsApp Group Card on Success */}
+            <div className="p-5 bg-white border border-[#D8D0C4] text-left space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[#B89358] font-semibold">
+                  STEP 02 // JOIN THE COMMUNITY GROUP
+                </span>
+                <span className="text-[10px] font-interface text-[#68645D]">Instant Access</span>
+              </div>
+              <p className="text-xs text-[#202020] leading-relaxed">
+                We add all interested members to our main WhatsApp Community group right now. Our directors will review profiles and add selected delegates to specialized cohorts and working groups later.
+              </p>
+              <a
+                href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#171717] text-white text-xs uppercase tracking-widest font-interface font-semibold hover:bg-black transition-colors"
+              >
+                <MessageSquare className="w-4 h-4 text-[#25D366]" />
+                <span>Enter WhatsApp Community Group</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+
             <div className="p-4 bg-[#EAE4D9] border border-[#D8D0C4] text-xs text-[#202020] text-left space-y-1">
               <p className="font-semibold uppercase tracking-wider text-[11px]">
                 Brand Promise:
@@ -149,7 +173,7 @@ export default function JoinCommunityModal() {
             </div>
             <button
               onClick={handleClose}
-              className="mt-4 px-6 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-widest font-interface font-medium hover:bg-black transition-colors"
+              className="mt-4 px-6 py-2.5 border border-[#171717] text-[#171717] text-xs uppercase tracking-widest font-interface font-medium hover:bg-[#171717] hover:text-white transition-colors"
             >
               Return to Website
             </button>
@@ -181,6 +205,40 @@ export default function JoinCommunityModal() {
                   Rooted in Principles. United by Dialogue.
                 </p>
               </div>
+            </div>
+
+            {/* Direct Fast-Track Community Join */}
+            <div className="mb-6 p-4 bg-[#EAE4D9]/80 border border-[#D8D0C4] space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-[#171717] bg-white px-2 py-0.5 border border-[#D8D0C4]">
+                  DIRECT ACCESS // OPEN FORUM
+                </span>
+                <span className="text-[10px] font-interface text-[#68645D]">Instant WhatsApp Entry</span>
+              </div>
+              <p className="text-xs text-[#202020] leading-relaxed">
+                Anyone interested in diplomacy and Model UN is invited directly into our open community forum. Join now:
+              </p>
+              <a
+                href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-[0.16em] font-interface font-semibold hover:bg-black transition-colors"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
+                <span>Join WhatsApp Community Group</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+              <p className="text-[10px] text-[#68645D] italic">
+                *We add all interested members to this central community group; selected active members will be invited into specialized cohorts later.
+              </p>
+            </div>
+
+            <div className="relative flex py-1 items-center mb-5">
+              <div className="flex-grow border-t border-[#D8D0C4]"></div>
+              <span className="flex-shrink mx-3 text-[10px] font-interface uppercase tracking-widest text-[#8E877C]">
+                Or Register Profile for Specialized Selection
+              </span>
+              <div className="flex-grow border-t border-[#D8D0C4]"></div>
             </div>
 
             {/* Form */}

@@ -373,6 +373,39 @@ This log documents every architectural decision, bug fix, feature integration, d
   - Committed with structured conventional commit message: `feat: visual redesign, archival photography, restrained editorial animations, and layout stabilization`.
   - Executed `git push origin main` to synchronize local production branch with GitHub repository `https://github.com/Delegates-MUN/delegates-website.git`.
 
+---
+
+## 16. Official Communication Desks, Social Channels & WhatsApp Community Integration
+- **Objective:** Integrate verified institutional contact information and establish an open-access WhatsApp community onboarding model, where all interested individuals enter the primary community forum directly and active delegates are subsequently selected for specialized cohorts.
+- **Verified Official Channels:**
+  - **Official Secretariat Mail:** `delegates@zohomail.in`
+  - **Official LinkedIn Organization:** `https://www.linkedin.com/company/delegates-mun/`
+  - **Official Instagram Bureau:** `https://www.instagram.com/delegates_mun/`
+  - **Official WhatsApp Community Link:** `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`
+- **Architectural Enhancements:**
+  1. **Global Footer Channels (`src/components/layout/Footer.tsx`):**
+     - Updated LinkedIn link to `https://www.linkedin.com/company/delegates-mun/`.
+     - Updated Instagram link to `https://www.instagram.com/delegates_mun/`.
+     - Added direct WhatsApp Community invite (`https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`) with accent indicator.
+     - Added direct mail link to `delegates@zohomail.in` replacing placeholder domains.
+  2. **Community Membership Engine (`src/components/ui/JoinCommunityModal.tsx`):**
+     - **Direct Fast-Track Card:** Placed at top of modal offering instant one-click access to the open WhatsApp Community group.
+     - **Staged Cohort Intake:** Added clear explanatory policy: *"We add all interested members to this central community group; selected active members will be invited into specialized cohorts later."*
+     - **Post-Registration Next Step (`isSuccess`):** Upon optional profile registration, delegates receive instant access to enter the WhatsApp Community group via a high-visibility button.
+  3. **Official Contact Page (`src/app/contact/page.tsx`):**
+     - Updated Secretariat Desk directory with clickable `mailto:delegates@zohomail.in`.
+     - Integrated WhatsApp Community Forum card with direct link and clear cohort policy.
+     - Added direct links to verified LinkedIn and Instagram channels.
+  4. **Community Page Navigation & CTAs (`src/app/community/page.tsx`):**
+     - Added direct WhatsApp Community button in the hero action group.
+     - Upgraded bottom CTA section to feature both direct WhatsApp entry and member profile registration.
+  5. **Homepage Community Movement CTA (`src/components/home/CommunityCTA.tsx`):**
+     - Added direct WhatsApp Community button with accent icon alongside profile intake.
+- **Build & Quality Assurance:**
+  - Ran clean production build (`npm run build`) exiting code 0 with 22/22 static routes prerendered.
+  - Validated visual rendering on `/contact` and `/community` via headless Chrome screenshots.
+
+
 
 
 

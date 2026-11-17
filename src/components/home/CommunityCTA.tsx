@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageSquare } from "lucide-react";
 
 export default function CommunityCTA() {
   const handleOpenJoinModal = () => {
@@ -33,21 +33,30 @@ export default function CommunityCTA() {
         </h2>
 
         <p className="font-interface text-sm sm:text-base text-[#C9C2B7] max-w-xl mx-auto leading-relaxed">
-          Join a community that values informed perspectives, meaningful dialogue, and principled leadership. Open to delegates, organizers, and aspiring diplomats worldwide.
+          Anyone interested is welcomed into our open community forum. Selected active members are invited into specialized working groups and committee cohorts subsequently.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-[#171717] font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#F4F0E8] transition-all shadow-lg active:scale-[0.98]"
+          >
+            <MessageSquare className="w-4 h-4 text-[#25D366]" />
+            <span>Join WhatsApp Community</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
           <button
             onClick={handleOpenJoinModal}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-[#171717] font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#F4F0E8] transition-all shadow-lg"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 border border-white/40 text-white font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white hover:text-[#171717] transition-all active:scale-[0.98]"
           >
-            <span>Become Part of DELEGATES</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <span>Register Member Profile</span>
           </button>
         </div>
 
         <p className="text-[11px] font-interface text-[#8E877C] tracking-wide pt-2">
-          Rooted in Principles. United by Dialogue. · No membership fees or paywalled access.
+          Rooted in Principles. United by Dialogue. · Direct WhatsApp entry open to all delegates; specialized cohorts selected subsequently.
         </p>
       </div>
     </section>

@@ -180,18 +180,18 @@ export default function Footer() {
               <ul className="space-y-2.5 text-xs text-[#C9C2B7] font-interface">
                 <li>
                   <a
-                    href="https://www.instagram.com/delegatesofficial"
+                    href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
                   >
-                    <span>Instagram</span>
-                    <ArrowUpRight className="w-3 h-3" />
+                    <span>WhatsApp Community</span>
+                    <ArrowUpRight className="w-3 h-3 text-[#25D366]" />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/company/delegates"
+                    href="https://www.linkedin.com/company/delegates-mun/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -200,14 +200,25 @@ export default function Footer() {
                     <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </li>
-                <li className="pt-2">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1.5 text-xs text-white hover:text-[#C9C2B7]"
+                <li>
+                  <a
+                    href="https://www.instagram.com/delegates_mun/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors flex items-center gap-1.5"
                   >
-                    <Mail className="w-3.5 h-3.5" />
-                    <span>Official Desk</span>
-                  </Link>
+                    <span>Instagram</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </li>
+                <li className="pt-2 border-t border-[#2D2B28]">
+                  <a
+                    href="mailto:delegates@zohomail.in"
+                    className="inline-flex items-center gap-1.5 text-xs text-white hover:text-[#C9C2B7] transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-[#B89358]" />
+                    <span className="truncate">delegates@zohomail.in</span>
+                  </a>
                 </li>
               </ul>
             </div>

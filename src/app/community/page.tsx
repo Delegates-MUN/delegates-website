@@ -156,10 +156,14 @@ export default function CommunityPage() {
                   Join the Community
                 </button>
                 <a
-                  href="#opportunities"
-                  className="px-6 py-3 border border-[#171717] text-[#171717] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#171717] hover:text-[#F4F0E8] transition-colors active:scale-[0.98]"
+                  href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-[#171717] text-[#171717] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#171717] hover:text-[#F4F0E8] transition-colors active:scale-[0.98]"
                 >
-                  Explore Opportunities
+                  <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span>WhatsApp Community</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
 
@@ -518,16 +522,26 @@ export default function CommunityPage() {
               Ready to participate in principled dialogue?
             </h2>
 
-            <p className="font-interface text-sm text-[#C9C2B7] max-w-lg mx-auto leading-relaxed">
-              Express your interest to join community working groups, peer review circles, and event listings.
+            <p className="font-interface text-sm text-[#C9C2B7] max-w-xl mx-auto leading-relaxed">
+              Anyone interested in diplomacy and Model UN is welcomed into our open community forum. Selected active members are invited into specialized working groups and committee cohorts subsequently.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-[#171717] font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#F4F0E8] transition-colors active:scale-[0.98]"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
+                <span>Join WhatsApp Community</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
               <button
                 onClick={handleOpenJoinModal}
-                className="px-8 py-3.5 bg-white text-[#171717] font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#F4F0E8] transition-colors active:scale-[0.98]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/60 text-white font-interface text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white hover:text-[#171717] transition-colors active:scale-[0.98]"
               >
-                Join the Community Today
+                <span>Register Member Profile</span>
               </button>
             </div>
           </div>

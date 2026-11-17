@@ -243,20 +243,24 @@ This document provides a comprehensive inventory of all features, interactive to
   - Full Name, Email, Inquiry Subject, Department Route, and Detailed Message.
   - Client-side error validation.
   - Local queue storage for submitted inquiries (`delegates_contact_submissions`).
-- **Direct Desk Directory:**
-  - Academic Directorate: `academy@delegates.org`
-  - Media & Submissions: `media@delegates.org`
-  - Secretariat Relations: `secretariat@delegates.org`
+- **Official Communication Channels:**
+  - Secretariat General Desk: `delegates@zohomail.in`
+  - WhatsApp Community Group: `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`
+  - LinkedIn Official Page: `https://www.linkedin.com/company/delegates-mun/`
+  - Instagram Official Bureau: `https://www.instagram.com/delegates_mun/`
 - **Location & Office Markers:** Geneva, New Delhi, and Global Virtual Desk.
 
-### 6.3 "Join the Community" Engine (`JoinCommunityModal.tsx`)
-- **Platform Intake Modal:** Accessible from any page via global CustomEvent dispatch.
-- **Structured Questions:**
+### 6.3 "Join the Community" & WhatsApp Onboarding Engine (`JoinCommunityModal.tsx`)
+- **Open-Access WhatsApp Community Fast-Track:** Direct instant-entry link (`https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`) allowing anyone interested in diplomacy to enter the community group immediately.
+- **Two-Tier Membership Architecture:**
+  1. *Open Community Layer:* Open to all delegates, beginners, and students via WhatsApp Community group.
+  2. *Specialized Cohorts & EB Layer:* Profile registry where members submit their experience level and interests; leadership reviews profiles and invites selected members to working groups, simulation cohorts, and committee rosters subsequently.
+- **Structured Registry Intake:**
   - Experience Level (First-time delegate to EB Chair).
   - Primary Platform Interest.
   - Aspirations / Personal Statement.
   - Code of Conduct & Principles Consent Checkbox.
-- **Instant Feedback:** Animated processing indicator followed by an institutional welcome screen.
+- **Post-Submission Instant Onboarding:** Immediate confirmation displaying step 02 link to enter the WhatsApp Community group.
 
 ---
 

@@ -216,10 +216,11 @@ Each dedicated dispatch route features:
 
 ### A. Communication Desk & Visual Hero
 - **Visual Presentation:** Two-column split hero with a monochrome photograph of the official diplomatic secretariat desk with leather portfolio, fountain pen, and embossed seal (`secretariat-desk.jpg`), Cartographic Stamp (`GENEVA // DIPLOMATIC LIAISON DESK · 46°13′36″N 6°08′26″E`), and Archival Badge (`SECRETARIAT LIAISON // OFFICIAL DESK`).
-- **Direct Desks Directory:**
-  - **Academic Directorate:** `academy@delegates.org` (Curriculum contributions, guide inquiries, workshop requests).
-  - **Media Editorial Desk:** `media@delegates.org` (Article pitches, research submissions, press inquiries).
-  - **Secretariat Relations:** `secretariat@delegates.org` (Conference listings, institutional partnerships, verification).
+- **Official Communication Channels:**
+  - **Official Secretariat Mail:** `delegates@zohomail.in` (Direct correspondence, article submissions, and partnerships).
+  - **WhatsApp Community:** `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv` (Open to all interested members; specialized cohorts added subsequently).
+  - **LinkedIn Channel:** `https://www.linkedin.com/company/delegates-mun/` (Institutional briefings and conference network updates).
+  - **Instagram Channel:** `https://www.instagram.com/delegates_mun/` (Visual dispatches, speaker highlights, and community updates).
 
 ### B. Structured Inquiry Intake
 - Fields: Full Name, Email, Subject, Department Route, Message.
@@ -240,15 +241,17 @@ Each dedicated dispatch route features:
 - **Copy:** Curated analyses of global shifts, procedural masterclasses, and verified circuit opportunities delivered directly to your inbox every second Sunday.
 - **Assurance:** Zero Spam · Unsubscribe Anytime · Peer-Reviewed.
 
-### B. "Join the Community" Intake (`JoinCommunityModal.tsx`)
-- Questions: Full Name, Email, Experience Level, Primary Interest, Delegate Statement.
+### B. "Join the Community" & WhatsApp Onboarding Intake (`JoinCommunityModal.tsx`)
+- **Direct Fast-Track:** One-click instant invite into the open WhatsApp Community group (`https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`).
+- **Community Policy:** All interested members are welcomed into the central community group; specialized working groups and committee cohorts are formed from selected active members later.
+- **Profile Registration:** Full Name, Email, Experience Level, Primary Interest, Delegate Statement.
 - Code of Conduct agreement acknowledging principled discourse.
 
 ### C. "Submit Opportunity" Intake (`SubmitOpportunityModal.tsx`)
 - Questions: Title, Organizer, Category, Format, Location, Application Link, Verification Email, and Authenticity Attestation.
 
 ### D. Global Footer
-- Full brand tagline, DLGTS matrix summary tags, pillar navigation links, channels (Instagram, LinkedIn, Official Desk), and legal links (Principles & Ethics, Privacy & Data, Terms of Use).
+- Full brand tagline, DLGTS matrix summary tags, pillar navigation links, channels (WhatsApp Community, LinkedIn `delegates-mun`, Instagram `delegates_mun`, Official Desk `delegates@zohomail.in`), and legal links (Principles & Ethics, Privacy & Data, Terms of Use).
 
 ---
 
