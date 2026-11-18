@@ -605,3 +605,16 @@ This log documents every architectural decision, bug fix, feature integration, d
 ### 22.5 Submit Opportunity Pipeline & Google Sheets Sync (`submit-opportunity/route.ts`)
 - Verified that all "Submit Opportunity" CTAs correctly trigger the interactive modal `<SubmitOpportunityModal />`.
 - Connected `/api/submit-opportunity/route.ts` to the Google Sheets webhook so opportunity submissions are also logged to the spreadsheet in addition to forwarding to `delegates@zohomail.in`.
+
+
+---
+
+## 23. Google Search Console Verification
+
+### 23.1 Verification Artifacts Deployed
+- Placed static HTML verification file at `public/google9ead6cbf74096ef9.html`.
+  - Accessible directly at `https://delegates-website.vercel.app/google9ead6cbf74096ef9.html`.
+- Added Google verification metadata tag in `src/app/layout.tsx`:
+  - `verification: { google: "google9ead6cbf74096ef9" }`
+  - Ensures both the HTML file and the `<meta name="google-site-verification" ...>` methods are active simultaneously.
+- Verified production build (`npm run build`) succeeded with exit code 0.

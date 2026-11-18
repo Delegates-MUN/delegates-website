@@ -73,6 +73,9 @@ export const metadata: Metadata = {
     icon: "/assets/delegates-monogram-dark.png",
     apple: "/assets/delegates-monogram-dark.png",
   },
+  verification: {
+    google: "google9ead6cbf74096ef9",
+  },
 };
 
 export default function RootLayout({
