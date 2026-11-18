@@ -556,3 +556,26 @@ This log documents every architectural decision, bug fix, feature integration, d
 
 ### 20.4 Build & Verification
 - `npm run build` executed and passed cleanly (exit code 0, all 11 routes statically generated or dynamically enabled).
+
+
+---
+
+## 21. Real-Time Google Sheets Enquiry Logging Integration
+
+### 21.1 Overview
+- Integrated Google Apps Script Webhook (`https://script.google.com/macros/s/AKfycbzGDi6bHDlbSJPVoNp0Nbo3YrLbRwbKszgLZgfhBQak8p5V1_7lg6tJ0Q6mXNS7pHeH/exec`) into `/api/contact/route.ts`.
+- Restricting OAuth scopes via `@OnlyCurrentDoc` ensures Google permissions are strictly confined to the user's specific spreadsheet, preventing broad account-level Drive/Sheets access.
+
+### 21.2 Pipeline & Data Logged
+- When a user submits the Contact / Enquiry form:
+  1. **Google Sheets Real-Time Sync**: Automatically logs a new row with:
+     - Timestamp (Asia/Kolkata timezone)
+     - Full Name
+     - Email Address
+     - Enquiry Type
+     - Subject
+     - Message Body
+     - Tracking Reference ID (`DLGTS-XXXXXX`)
+  2. **Direct Secretariat Email Forwarding**: Dispatches verified transmission to `delegates@zohomail.in` via Web3Forms.
+- Connectivity test verified with live response `{ status: 'success' }`.
+- Verified production build (`npm run build`) succeeded with exit code 0.

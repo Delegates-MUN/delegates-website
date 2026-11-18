@@ -43,8 +43,33 @@ export async function POST(request: Request) {
 
     const referenceId = `DLGTS-${Date.now().toString().slice(-6)}`;
     const accessKey = process.env.WEB3FORMS_ACCESS_KEY || "fdce012a-4511-4e76-a4b5-7e7b72e8b183";
+    const googleSheetsUrl =
+      process.env.GOOGLE_SHEETS_WEBHOOK_URL ||
+      "https://script.google.com/macros/s/AKfycbzGDi6bHDlbSJPVoNp0Nbo3YrLbRwbKszgLZgfhBQak8p5V1_7lg6tJ0Q6mXNS7pHeH/exec";
 
-    // Forward verified message to delegates@zohomail.in via Web3Forms
+    // 1. Log submission to Google Sheet (non-blocking for resilience)
+    const logToSheetPromise = (async () => {
+      try {
+        if (googleSheetsUrl) {
+          await fetch(googleSheetsUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fullName,
+              email,
+              enquiryType,
+              subject: subject || "None specified",
+              message,
+              referenceId,
+            }),
+          });
+        }
+      } catch (sheetErr) {
+        console.error("[Google Sheets Logging Error]", sheetErr);
+      }
+    })();
+
+    // 2. Forward verified message to delegates@zohomail.in via Web3Forms
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -64,6 +89,9 @@ export async function POST(request: Request) {
         reference_id: referenceId,
       }),
     });
+
+    // Ensure sheet logging completes
+    await logToSheetPromise;
 
     const forwardResult = await response.json();
 
