@@ -63,7 +63,7 @@ export default function FeaturedOpportunities() {
         {/* Opportunities Content or Empty State */}
         {filteredOpportunities.length === 0 ? (
           <ScrollReveal>
-            <div className="relative border border-[#D8D0C4] bg-white p-10 sm:p-16 text-center max-w-3xl mx-auto space-y-5 card-hover-lift">
+            <div className="relative border border-[#D8D0C4] bg-white p-6 sm:p-10 md:p-16 text-center max-w-3xl mx-auto space-y-5 card-hover-lift">
               <SwissCornerMarks size="w-3 h-3" />
               <div className="w-14 h-14 mx-auto rounded-full bg-[#F4F0E8] border border-[#D8D0C4] flex items-center justify-center text-[#171717]">
                 <Clock className="w-6 h-6 text-[#68645D]" />
@@ -82,14 +82,14 @@ export default function FeaturedOpportunities() {
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   onClick={handleOpenSubmitModal}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
                 >
                   <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
                   <span>Submit an Opportunity</span>
                 </button>
                 <Link
                   href="/community"
-                  className="inline-flex items-center gap-1 px-5 py-2.5 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider hover:border-[#171717] transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1 px-5 py-2.5 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider hover:border-[#171717] transition-colors"
                 >
                   <span>Explore Community</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

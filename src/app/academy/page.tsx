@@ -84,7 +84,7 @@ export default function AcademyPage() {
       <section className="py-20 md:py-28 bg-[#F4F0E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="relative border border-[#D8D0C4] bg-white p-12 sm:p-16 text-center space-y-6 card-hover-lift">
+            <div className="relative border border-[#D8D0C4] bg-white p-6 sm:p-12 md:p-16 text-center space-y-6 card-hover-lift">
               <SwissCornerMarks size="w-3 h-3" />
               <div className="w-16 h-16 mx-auto rounded-full bg-[#F4F0E8] border border-[#D8D0C4] flex items-center justify-center text-[#171717]">
                 <BookOpen className="w-7 h-7 text-[#68645D]" />
@@ -107,12 +107,12 @@ export default function AcademyPage() {
                 The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs.
               </p>
 
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <a
                   href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider font-semibold hover:bg-black transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider font-semibold hover:bg-black transition-colors"
                 >
                   <MessageSquare className="w-4 h-4 text-[#25D366]" />
                   <span>Join Community for Updates</span>
@@ -120,7 +120,7 @@ export default function AcademyPage() {
                 </a>
                 <Link
                   href="/community"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider font-medium hover:border-[#171717] transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider font-medium hover:border-[#171717] transition-colors"
                 >
                   <span>Explore Community Hub</span>
                 </Link>

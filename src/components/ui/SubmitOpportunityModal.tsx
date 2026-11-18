@@ -219,7 +219,7 @@ export default function SubmitOpportunityModal() {
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   placeholder="e.g. World Affairs MUN 2027"
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                 />
                 {errors.title && <p className="text-[11px] text-red-600 mt-1">{errors.title}</p>}
               </div>
@@ -235,7 +235,7 @@ export default function SubmitOpportunityModal() {
                     value={formData.organizer}
                     onChange={(e) => setFormData({ ...formData, organizer: e.target.value })}
                     placeholder="e.g. University MUN Society"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   />
                   {errors.organizer && <p className="text-[11px] text-red-600 mt-1">{errors.organizer}</p>}
                 </div>
@@ -246,7 +246,7 @@ export default function SubmitOpportunityModal() {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   >
                     <option value="MUN Conference">MUN Conference</option>
                     <option value="Writing Competition">Writing Competition</option>
@@ -267,7 +267,7 @@ export default function SubmitOpportunityModal() {
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="e.g. New Delhi, India or Virtual"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   />
                   {errors.location && <p className="text-[11px] text-red-600 mt-1">{errors.location}</p>}
                 </div>
@@ -278,7 +278,7 @@ export default function SubmitOpportunityModal() {
                   <select
                     value={formData.format}
                     onChange={(e) => setFormData({ ...formData, format: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   >
                     <option value="In-Person">In-Person</option>
                     <option value="Virtual">Virtual / Online</option>
@@ -298,7 +298,7 @@ export default function SubmitOpportunityModal() {
                     value={formData.deadline}
                     onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
                     placeholder="e.g. December 15, 2026"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   />
                   {errors.deadline && <p className="text-[11px] text-red-600 mt-1">{errors.deadline}</p>}
                 </div>
@@ -311,7 +311,7 @@ export default function SubmitOpportunityModal() {
                     value={formData.url}
                     onChange={(e) => setFormData({ ...formData, url: e.target.value })}
                     placeholder="https://example.org/register"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                   />
                   {errors.url && <p className="text-[11px] text-red-600 mt-1">{errors.url}</p>}
                 </div>
@@ -327,7 +327,7 @@ export default function SubmitOpportunityModal() {
                   value={formData.contactEmail}
                   onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
                   placeholder="secretariat@example.org"
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  className="w-full px-3.5 py-2.5 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
                 />
                 {errors.contactEmail && <p className="text-[11px] text-red-600 mt-1">{errors.contactEmail}</p>}
               </div>
@@ -342,7 +342,7 @@ export default function SubmitOpportunityModal() {
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   placeholder="Summary of committees, agendas, eligibility..."
-                  className="w-full px-3.5 py-2 bg-white border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717] resize-none"
+                  className="w-full px-3.5 py-2 bg-white border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717] resize-none"
                 />
               </div>
 

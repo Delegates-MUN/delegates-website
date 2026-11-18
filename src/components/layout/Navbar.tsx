@@ -94,7 +94,7 @@ export default function Navbar() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-3">
+            <div className="hidden lg:flex items-center space-x-3">
               {/* Search Trigger */}
               <button
                 onClick={handleOpenSearch}
@@ -128,8 +128,8 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Mobile Hamburger & Fast Search Button */}
-            <div className="flex md:hidden items-center space-x-2">
+            {/* Mobile / Tablet Hamburger & Fast Action Buttons */}
+            <div className="flex lg:hidden items-center space-x-2">
               <button
                 onClick={handleOpenSearch}
                 className="p-2 text-[#68645D] hover:text-[#171717]"
@@ -159,9 +159,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Slide-down Menu */}
+        {/* Mobile / Tablet Slide-down Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-[#D8D0C4] bg-[#F4F0E8] px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
+          <div className="lg:hidden border-t border-[#D8D0C4] bg-[#F4F0E8] px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
             <nav className="flex flex-col space-y-1">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
@@ -169,6 +169,7 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`block py-2.5 px-3 font-interface text-sm uppercase tracking-wider transition-colors ${
                       isActive
                         ? "bg-[#EAE4D9] text-[#171717] font-semibold"

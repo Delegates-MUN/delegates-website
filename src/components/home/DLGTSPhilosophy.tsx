@@ -95,14 +95,14 @@ export default function DLGTSPhilosophy() {
         </div>
 
         {/* 5-Letter Navigation Bar */}
-        <div className="grid grid-cols-5 gap-2 sm:gap-4">
+        <div className="grid grid-cols-5 gap-1.5 sm:gap-4">
           {PRINCIPLES.map((item) => {
             const isSelected = activeLetter === item.letter;
             return (
               <button
                 key={item.letter}
                 onClick={() => setActiveLetter(item.letter)}
-                className={`py-4 sm:py-6 px-2 sm:px-4 text-center border transition-all relative ${
+                className={`py-3 sm:py-6 px-1 sm:px-4 text-center border transition-all relative ${
                   isSelected
                     ? "bg-[#252422] border-white text-white shadow-md ring-1 ring-white"
                     : "bg-[#1E1D1B] border-[#2D2B28] text-[#8E877C] hover:text-[#C9C2B7] hover:border-[#444]"
@@ -111,10 +111,10 @@ export default function DLGTSPhilosophy() {
                 {isSelected && (
                   <span className="absolute top-0 left-0 right-0 h-1 bg-white" />
                 )}
-                <span className="block font-editorial text-3xl sm:text-5xl font-light">
+                <span className="block font-editorial text-2xl sm:text-4xl md:text-5xl font-light">
                   {item.letter}
                 </span>
-                <span className="mt-1.5 block font-interface text-[10px] sm:text-xs uppercase tracking-wider truncate">
+                <span className="mt-1 block font-interface text-[8px] sm:text-[10px] md:text-xs uppercase tracking-tight sm:tracking-wider truncate">
                   {item.title.split("/")[0]}
                 </span>
               </button>
@@ -124,10 +124,10 @@ export default function DLGTSPhilosophy() {
 
         {/* Active Principle Detailed Showcase */}
         <ScrollReveal delay={100}>
-          <div key={activeLetter} className="bg-[#201F1D] border border-[#33312D] p-8 sm:p-12 animate-fadeIn card-hover-lift">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          <div key={activeLetter} className="bg-[#201F1D] border border-[#33312D] p-5 sm:p-8 md:p-12 animate-fadeIn card-hover-lift">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
               {/* Letter Callout */}
-              <div className="lg:col-span-3 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-[#33312D] pb-8 lg:pb-0 lg:pr-8 flex flex-col justify-between space-y-4">
+              <div className="lg:col-span-3 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-[#33312D] pb-6 lg:pb-0 lg:pr-8 flex flex-col justify-between space-y-4">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#171717] border border-[#33312D] text-white mx-auto lg:mx-0 transition-transform duration-300 hover:scale-105">
                   <IconComponent className="w-8 h-8" />
                 </div>

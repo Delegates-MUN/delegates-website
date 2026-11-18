@@ -510,3 +510,49 @@ This log documents every architectural decision, bug fix, feature integration, d
      - Updated search palette descriptions to reflect pure platform navigation without unverified guides.
 - **Verification & Deployment:**
   - Production build (`npm run build`) succeeded with exit code 0 across all 11 static and dynamic routes.
+
+
+---
+
+## 20. Mobile Responsiveness & Breakpoint Hardening Sprint
+
+### 20.1 Tablet & Mobile Breakpoint Alignment (`src/components/layout/Navbar.tsx`)
+- **Tablet Navigation Gap Fixed**: Previously desktop navigation was hidden below `1024px` (`hidden lg:flex`), while desktop action buttons were displayed above `768px` (`hidden md:flex`) and the mobile hamburger toggle was hidden above `768px` (`flex md:hidden`). This left tablets (iPad portrait/landscape, 768px-1023px) with NO navigation links and NO hamburger menu.
+- **Harmonized Breakpoints**:
+  - Desktop actions: `hidden lg:flex`
+  - Mobile & tablet actions and hamburger menu: `flex lg:hidden`
+  - Slide-down menu drawer: `lg:hidden`
+- **Auto-Close on Navigation**: Added `onClick={() => setMobileMenuOpen(false)}` to all navigation links in the slide-down drawer so that selecting a route smoothly closes the menu.
+
+### 20.2 Homepage Mobile Optimization
+- **`EditorialHero.tsx`**:
+  - Responsive headline scale: `text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem]` with optimized line height `leading-[1.1] sm:leading-[1.08]`.
+  - Buttons wrap to full width on phones: `flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4`.
+  - Institutional markers converted from ragged flex wrapping to a structured grid: `grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-[#D8D0C4]`.
+- **`DLGTSPhilosophy.tsx`**:
+  - 5-column button bar optimized for small viewports (320px–375px): `py-3 sm:py-6 px-1 sm:px-4`, letter sizing `text-2xl sm:text-4xl md:text-5xl`, title text `text-[8px] sm:text-[10px] md:text-xs tracking-tight sm:tracking-wider`.
+  - Active principle showcase box padding adjusted to `p-5 sm:p-8 md:p-12`.
+- **`FeaturedEditorial.tsx` & `FeaturedOpportunities.tsx`**:
+  - Card container padding adjusted from `p-8/p-10` to `p-5 sm:p-8 md:p-10` to prevent horizontal text cramping on 320px devices.
+  - Empty state action buttons set to `w-full sm:w-auto inline-flex items-center justify-center` for balanced tap targets.
+- **`NewsletterBar.tsx`**:
+  - Social & community channels button group converted to responsive grid: `grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap gap-2.5 sm:gap-3`.
+  - Padding adjusted to `p-5 sm:p-8 md:p-12`.
+
+### 20.3 Inner Pages & Forms Responsiveness
+- **`src/app/about/page.tsx`**:
+  - Architectural hero image aspect ratio adjusted to `aspect-[16/10] sm:aspect-[21/9]` so it maintains sufficient vertical height on 320px-375px phones without crushing the archival stamp or quote overlay.
+- **`src/app/contact/page.tsx`**:
+  - Card paddings tuned to `p-5 sm:p-8 md:p-10`.
+  - All form input fields, textareas, and select elements updated to `text-base sm:text-sm` (and `text-base sm:text-xs`) to prevent iOS Safari auto-zooming on focus while retaining crisp typography on desktop.
+- **`src/app/community/page.tsx`**:
+  - Hero action buttons set to full width on mobile: `flex flex-col sm:flex-row gap-3 sm:gap-4` with `w-full sm:w-auto`.
+- **`src/app/academy/page.tsx` & `src/app/media/page.tsx`**:
+  - Empty state container padding tuned to `p-6 sm:p-12 md:p-16`.
+  - Buttons styled with `w-full sm:w-auto justify-center`.
+- **`SubmitOpportunityModal.tsx`**:
+  - Input field font sizes set to `text-base sm:text-xs` to prevent iOS zoom.
+  - Responsive padding across form and confirmation views.
+
+### 20.4 Build & Verification
+- `npm run build` executed and passed cleanly (exit code 0, all 11 routes statically generated or dynamically enabled).

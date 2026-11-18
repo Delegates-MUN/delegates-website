@@ -7,7 +7,7 @@ export default function NewsletterBar() {
   return (
     <section className="relative bg-[#171717] text-[#F4F0E8] border-t border-b border-[#2D2B28] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <div className="relative border border-[#33312D] bg-[#1E1D1B] p-8 sm:p-12">
+        <div className="relative border border-[#33312D] bg-[#1E1D1B] p-5 sm:p-8 md:p-12">
           <SwissCornerMarks borderColor="border-white/30" />
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             {/* Left Column: Heading and Supporting Text */}
@@ -15,21 +15,21 @@ export default function NewsletterBar() {
               <span className="font-interface text-[10px] uppercase tracking-[0.22em] text-[#B89358] font-semibold block">
                 Official Channels
               </span>
-              <h3 className="font-editorial text-3xl sm:text-4xl text-white font-normal leading-tight">
+              <h3 className="font-editorial text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-tight">
                 Stay Connected with DELEGATES
               </h3>
-              <p className="font-interface text-sm text-[#C9C2B7] leading-relaxed">
+              <p className="font-interface text-xs sm:text-sm text-[#C9C2B7] leading-relaxed">
                 Follow our platforms for updates, learning resources, and community announcements.
               </p>
             </div>
 
             {/* Right Column: Verified Social & Community Buttons */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap items-center gap-2.5 sm:gap-3">
               <a
                 href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-white text-[#171717] font-interface text-xs uppercase tracking-[0.16em] font-semibold hover:bg-[#F4F0E8] transition-colors active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 bg-white text-[#171717] font-interface text-xs uppercase tracking-[0.16em] font-semibold hover:bg-[#F4F0E8] transition-colors active:scale-[0.98]"
               >
                 <MessageSquare className="w-4 h-4 text-[#25D366]" />
                 <span>WhatsApp</span>
@@ -40,7 +40,7 @@ export default function NewsletterBar() {
                 href="https://www.linkedin.com/company/delegates-mun/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-3 border border-[#33312D] bg-[#252422] text-white hover:text-white hover:border-white font-interface text-xs uppercase tracking-[0.16em] font-medium transition-colors active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-[#33312D] bg-[#252422] text-white hover:text-white hover:border-white font-interface text-xs uppercase tracking-[0.16em] font-medium transition-colors active:scale-[0.98]"
               >
                 {/* LinkedIn SVG */}
                 <svg className="w-4 h-4 fill-current text-[#0077B5]" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@ export default function NewsletterBar() {
                 href="https://www.instagram.com/delegates_mun/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-3 border border-[#33312D] bg-[#252422] text-white hover:text-white hover:border-white font-interface text-xs uppercase tracking-[0.16em] font-medium transition-colors active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-[#33312D] bg-[#252422] text-white hover:text-white hover:border-white font-interface text-xs uppercase tracking-[0.16em] font-medium transition-colors active:scale-[0.98]"
               >
                 {/* Instagram SVG */}
                 <svg className="w-4 h-4 fill-current text-[#E4405F]" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function NewsletterBar() {
 
               <a
                 href="mailto:delegates@zohomail.in"
-                className="inline-flex items-center gap-2 px-4 py-3 border border-[#33312D] bg-[#252422] text-white hover:text-white hover:border-white font-interface text-xs uppercase tracking-[0.16em] font-medium transition-colors active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-[#33312D] bg-[#252422] text-white hover:text-white hover:border-white font-interface text-xs uppercase tracking-[0.16em] font-medium transition-colors active:scale-[0.98]"
               >
                 <Mail className="w-4 h-4 text-[#B89358]" />
                 <span>Email Desk</span>

@@ -121,12 +121,12 @@ export default function CommunityPage() {
                 DELEGATES brings together beginner delegates, seasoned competitors, and Executive Board members into a unified, principled platform. No paywalls, no barriers—just meaningful dialogue and global curiosity.
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-4 animate-fadeInUp delay-200">
+              <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fadeInUp delay-200">
                 <a
                   href="https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#171717] text-[#F4F0E8] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-black transition-colors active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#171717] text-[#F4F0E8] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-black transition-colors active:scale-[0.98] w-full sm:w-auto"
                 >
                   <MessageSquare className="w-4 h-4 text-[#25D366]" />
                   <span>Join WhatsApp Community</span>
@@ -134,7 +134,7 @@ export default function CommunityPage() {
                 </a>
                 <button
                   onClick={handleOpenJoinModal}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#171717] text-[#171717] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#171717] hover:text-[#F4F0E8] transition-colors active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[#171717] text-[#171717] font-interface text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#171717] hover:text-[#F4F0E8] transition-colors active:scale-[0.98] w-full sm:w-auto"
                 >
                   <span>Community Overview</span>
                 </button>

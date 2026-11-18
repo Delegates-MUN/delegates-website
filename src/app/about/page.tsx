@@ -79,7 +79,7 @@ export default function AboutPage() {
           </div>
 
           {/* Architectural Monumental Hero Photograph */}
-          <div className="relative aspect-[21/9] w-full border border-[#D8D0C4] overflow-hidden bg-[#171717] mt-8 group card-hover-lift animate-fadeIn delay-200">
+          <div className="relative aspect-[16/10] sm:aspect-[21/9] w-full border border-[#D8D0C4] overflow-hidden bg-[#171717] mt-8 group card-hover-lift animate-fadeIn delay-200">
             <SwissCornerMarks />
             <Image
               src="/assets/editorial/about-architecture.jpg"
@@ -89,7 +89,7 @@ export default function AboutPage() {
               sizes="(max-width: 1280px) 100vw, 1280px"
               className="object-cover grayscale contrast-110 opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-6 flex flex-col justify-between">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-4 sm:p-6 flex flex-col justify-between">
               <div className="flex justify-end">
                 <ArchivalBadge label="PALAIS DES NATIONS // SEAT OF MULTILATERALISM" classification="EST. 1936" variant="dark" />
               </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 <span className="text-[10px] uppercase tracking-widest text-[#B89358] block">
                   Historical Precedent
                 </span>
-                <p className="font-editorial italic text-sm sm:text-base leading-snug">
+                <p className="font-editorial italic text-xs sm:text-base leading-snug">
                   “Where sovereign nations assemble to arbitrate conflict through the enduring instrument of civil dialogue.”
                 </p>
               </div>

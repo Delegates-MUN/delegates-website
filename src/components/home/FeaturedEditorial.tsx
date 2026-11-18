@@ -37,7 +37,7 @@ export default function FeaturedEditorial() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* Left Col: Academy Pedagogical Desk */}
           <ScrollReveal delay={0} className="h-full">
-            <div className="relative border border-[#D8D0C4] bg-white p-8 sm:p-10 flex flex-col justify-between group hover:border-[#171717] transition-all card-hover-lift h-full">
+            <div className="relative border border-[#D8D0C4] bg-white p-5 sm:p-8 md:p-10 flex flex-col justify-between group hover:border-[#171717] transition-all card-hover-lift h-full">
               <SwissCornerMarks size="w-3 h-3" />
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
@@ -62,7 +62,7 @@ export default function FeaturedEditorial() {
                 </div>
 
                 {/* Empty State Card */}
-                <div className="p-6 bg-[#F4F0E8] border border-[#D8D0C4] space-y-2">
+                <div className="p-5 sm:p-6 bg-[#F4F0E8] border border-[#D8D0C4] space-y-2">
                   <span className="font-interface text-[10px] uppercase tracking-widest text-[#B89358] font-semibold block">
                     Curriculum Notice
                   </span>
@@ -89,7 +89,7 @@ export default function FeaturedEditorial() {
 
           {/* Right Col: Media Editorial Desk */}
           <ScrollReveal delay={100} className="h-full">
-            <div className="relative border border-[#D8D0C4] bg-white p-8 sm:p-10 flex flex-col justify-between group hover:border-[#171717] transition-all card-hover-lift h-full">
+            <div className="relative border border-[#D8D0C4] bg-white p-5 sm:p-8 md:p-10 flex flex-col justify-between group hover:border-[#171717] transition-all card-hover-lift h-full">
               <SwissCornerMarks size="w-3 h-3" />
               <div className="space-y-6">
                 <div className="flex items-center justify-between">

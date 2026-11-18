@@ -192,7 +192,7 @@ export default function ContactPage() {
             {/* Left Col: Contact Info & Desk Overview (5 cols) */}
             <div className="lg:col-span-5 space-y-8">
               <ScrollReveal>
-                <div className="relative border border-[#D8D0C4] bg-white p-8 space-y-6 card-hover-lift">
+                <div className="relative border border-[#D8D0C4] bg-white p-5 sm:p-8 space-y-6 card-hover-lift">
                   <SwissCornerMarks size="w-2 h-2" />
                   <div className="space-y-2">
                     <span className="text-[10px] font-interface uppercase tracking-[0.2em] text-[#68645D]">
@@ -288,7 +288,7 @@ export default function ContactPage() {
             {/* Right Col: Verified Form (7 cols) */}
             <div className="lg:col-span-7">
               <ScrollReveal delay={100}>
-                <div className="relative border border-[#D8D0C4] bg-white p-8 sm:p-10 card-hover-lift">
+                <div className="relative border border-[#D8D0C4] bg-white p-5 sm:p-8 md:p-10 card-hover-lift">
                   <SwissCornerMarks size="w-2 h-2" />
                   <div className="border-b border-[#D8D0C4] pb-4 mb-6">
                     <span className="font-interface text-xs uppercase tracking-[0.2em] text-[#68645D]">
@@ -338,7 +338,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, fullName: e.target.value })
                     }
                     placeholder="e.g. Marcus Thorne"
-                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all"
+                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-base sm:text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all"
                   />
                   {errors.fullName && (
                     <p className="text-[11px] text-red-600 mt-1 font-medium">
@@ -359,7 +359,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     placeholder="e.g. marcus@university.org"
-                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all"
+                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-base sm:text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all"
                   />
                   {errors.email && (
                     <p className="text-[11px] text-red-600 mt-1 font-medium">
@@ -378,7 +378,7 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, enquiryType: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-xs text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white"
+                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-base sm:text-xs text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white"
                   >
                     {enquiryOptions.map((opt) => (
                       <option key={opt} value={opt}>
@@ -400,7 +400,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, subject: e.target.value })
                     }
                     placeholder="e.g. Editorial Submission: Security Council Reform"
-                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all"
+                    className="w-full px-4 py-2.5 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-base sm:text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all"
                   />
                 </div>
 
@@ -416,7 +416,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Please outline your enquiry, background, or proposal with clarity..."
-                    className="w-full px-4 py-3 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all resize-y"
+                    className="w-full px-4 py-3 bg-[#F4F0E8]/50 border border-[#D8D0C4] text-base sm:text-sm text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all resize-y"
                   />
                   {errors.message && (
                     <p className="text-[11px] text-red-600 mt-1 font-medium">
