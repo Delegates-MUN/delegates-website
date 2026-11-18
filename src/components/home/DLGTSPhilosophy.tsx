@@ -115,7 +115,11 @@ export default function DLGTSPhilosophy() {
                   {item.letter}
                 </span>
                 <span className="mt-1 block font-interface text-[8px] sm:text-[10px] md:text-xs uppercase tracking-tight sm:tracking-wider truncate">
-                  {item.title.split("/")[0]}
+                  {item.letter === "T"
+                    ? "Truth / Trust"
+                    : item.letter === "D"
+                    ? "Diplomacy / Democracy"
+                    : item.title}
                 </span>
               </button>
             );

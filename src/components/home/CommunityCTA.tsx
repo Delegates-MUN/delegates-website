@@ -28,7 +28,7 @@ export default function CommunityCTA() {
         </h2>
 
         <p className="font-interface text-sm sm:text-base text-[#C9C2B7] max-w-xl mx-auto leading-relaxed">
-          Anyone interested is welcomed into our open community forum. Selected active members are invited into specialized cohorts and working groups subsequently.
+          Anyone interested is welcomed into our open community forum. Specialized working groups and cohort initiatives are planned for future phases as the community expands.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -52,7 +52,7 @@ export default function CommunityCTA() {
         </div>
 
         <p className="text-[11px] font-interface text-[#8E877C] tracking-wide pt-2">
-          Rooted in Principles. United by Dialogue. · Direct WhatsApp entry open to all delegates; specialized cohorts selected subsequently.
+          Rooted in Principles. United by Dialogue. · Direct WhatsApp entry open to all delegates; specialized cohorts planned for future phases.
         </p>
       </div>
     </section>

@@ -217,7 +217,7 @@ export default function CommunityPage() {
                     </h3>
                   </div>
                   <p className="text-xs text-[#68645D] leading-relaxed">
-                    Active and engaged community members are invited to participate in specialized working groups and initiatives subsequently.
+                    Open to all delegates; dedicated working groups and focused initiatives are planned for future phases as the community expands.
                   </p>
                 </div>
               </div>
@@ -434,7 +434,7 @@ export default function CommunityPage() {
             </h2>
 
             <p className="font-interface text-sm text-[#C9C2B7] max-w-xl mx-auto leading-relaxed">
-              Anyone interested in diplomacy and Model UN is welcomed into our open community forum. Selected active members are invited into specialized cohorts and working groups subsequently.
+              Anyone interested in diplomacy and Model UN is welcomed into our open community forum. Specialized cohorts and working groups are planned for future phases as the community grows.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">

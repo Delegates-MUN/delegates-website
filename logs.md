@@ -579,3 +579,29 @@ This log documents every architectural decision, bug fix, feature integration, d
   2. **Direct Secretariat Email Forwarding**: Dispatches verified transmission to `delegates@zohomail.in` via Web3Forms.
 - Connectivity test verified with live response `{ status: 'success' }`.
 - Verified production build (`npm run build`) succeeded with exit code 0.
+
+
+---
+
+## 22. Content Audit, Brand Consistency & Claims Alignment Sprint
+
+### 22.1 Academy Guides Verification & Clarification
+- Verified live production status of `/academy`: all 6 former unverified guides remain completely removed. The page displays the approved honest empty state (*"New Learning Resources in the Works"*). Browser cache notes provided for clients viewing stale versions.
+
+### 22.2 DLGTS Brand Inconsistency Fixed (`DLGTSPhilosophy.tsx`)
+- Resolved abbreviation discrepancy in the 5-button framework where button T displayed `"Truth"` instead of the approved brand philosophy `"Truth / Trust"`.
+- Button T now explicitly displays `"Truth / Trust"` matching the footer, about page, and brand standards.
+
+### 22.3 Transparent Framing for Future Initiatives
+- Updated all instances in `community/page.tsx`, `CommunityCTA.tsx`, `contact/page.tsx`, and `JoinCommunityModal.tsx` that previously implied specialized cohorts or working groups were currently running.
+- Replaced with clear future-roadmap framing: *"Specialized working groups and cohort initiatives are planned for future phases as the community expands."*
+
+### 22.4 Contact Page Claims Calibration (`contact/page.tsx` & `about/page.tsx`)
+- Removed unverified corporate claims (`24–48h Response SLA`, `Direct Department Routing`, `prompt archival review`).
+- Replaced with factual institutional badges: `Official Correspondence`, `Direct Email Review`, and `Secretariat Desk`.
+- Removed references to formal "mentorship" tracks across contact and about pages, keeping focus on accessible educational resources and community discussion.
+- Refined privacy notice to accurately reflect data handling: *"Information submitted through this portal is used exclusively to review and respond to your inquiry. We do not sell, rent, or share personal contact information with third parties."*
+
+### 22.5 Submit Opportunity Pipeline & Google Sheets Sync (`submit-opportunity/route.ts`)
+- Verified that all "Submit Opportunity" CTAs correctly trigger the interactive modal `<SubmitOpportunityModal />`.
+- Connected `/api/submit-opportunity/route.ts` to the Google Sheets webhook so opportunity submissions are also logged to the spreadsheet in addition to forwarding to `delegates@zohomail.in`.

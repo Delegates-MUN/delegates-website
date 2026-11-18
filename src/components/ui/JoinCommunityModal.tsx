@@ -81,7 +81,7 @@ export default function JoinCommunityModal() {
         {/* Body */}
         <div className="space-y-6">
           <p className="font-interface text-xs sm:text-sm text-[#68645D] leading-relaxed">
-            DELEGATES brings together MUN enthusiasts, aspiring diplomats, and individuals interested in international affairs. Anyone interested in diplomacy and Model UN is welcomed into our open community forum. Selected active members are invited into specialized cohorts and working groups subsequently.
+            DELEGATES brings together MUN enthusiasts, aspiring diplomats, and individuals interested in international affairs. Anyone interested in diplomacy and Model UN is welcomed into our open community forum. Specialized cohorts and working groups are planned for future phases as the community grows.
           </p>
 
           {/* Primary Action Card: WhatsApp */}

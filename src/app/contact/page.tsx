@@ -144,13 +144,13 @@ export default function ContactPage() {
               </h1>
 
               <p className="font-interface text-base sm:text-lg text-[#68645D] leading-relaxed animate-fadeInUp delay-150">
-                Whether you represent an MUN secretariat seeking academic collaboration, an aspiring writer proposing an editorial dispatch, or a delegate seeking mentorship, our desk is open.
+                Whether you represent an MUN secretariat seeking academic collaboration, an aspiring writer proposing an editorial dispatch, or a delegate with an inquiry, our desk is open.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs font-interface text-[#171717] font-medium pt-2 animate-fadeInUp delay-200">
-                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Diplomatic Enquiries</span>
-                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">24-48h Response SLA</span>
-                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Direct Department Routing</span>
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Official Correspondence</span>
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Direct Email Review</span>
+                <span className="px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4]">Secretariat Desk</span>
               </div>
             </div>
 
@@ -175,7 +175,7 @@ export default function ContactPage() {
                       Secretariat Communications
                     </span>
                     <p className="font-editorial italic text-xs sm:text-sm text-white/90">
-                      “All formal inquiries, conference partnerships, and submissions receive prompt archival review.”
+                      “All formal inquiries, conference partnerships, and editorial submissions are reviewed directly by the secretariat desk.”
                     </p>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function ContactPage() {
                         <ArrowRight className="w-3 h-3" />
                       </a>
                       <p className="text-[11px] text-[#68645D]">
-                        Open to all interested delegates; specialized working groups selected subsequently.
+                        Open to all interested delegates; specialized working groups are planned for future phases.
                       </p>
                     </div>
 
@@ -279,7 +279,7 @@ export default function ContactPage() {
                     Data Handling & Privacy Notice:
                   </span>
                   <p className="leading-relaxed">
-                    Information submitted through this portal is utilized solely for communicating regarding your specific enquiry. We never monetize, distribute, or share personal data with external third parties.
+                    Information submitted through this portal is used exclusively to review and respond to your inquiry. We do not sell, rent, or share personal contact information with third parties.
                   </p>
                 </div>
               </ScrollReveal>

@@ -219,7 +219,7 @@ export default function AboutPage() {
                     Principles in Action
                   </h3>
                   <p className="font-interface text-xs text-[#C9C2B7] leading-relaxed">
-                    These five ideals are not abstract virtues; they are practical standards enforced across all DELEGATES simulations, publications, and mentorship tracks.
+                    These five ideals are not abstract virtues; they are practical standards that guide all DELEGATES publications, educational resources, and community dialogue.
                   </p>
                 </div>
                 <div className="pt-2 text-xs font-editorial italic text-white/80">
