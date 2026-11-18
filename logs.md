@@ -648,3 +648,15 @@ This log documents every architectural decision, bug fix, feature integration, d
   - Sitemap directive in `src/app/robots.ts`.
 - Preserved Google Search Console verification token (`google9ead6cbf74096ef9`).
 - Verified production build (`npm run build`) succeeded with exit code 0.
+
+
+---
+
+## 26. Static XML Sitemap Optimization for Search Console
+
+### 26.1 Technical Enhancement
+- Switched from dynamic serverless route (`sitemap.ts`) to static physical XML file at `public/sitemap.xml`.
+  - Fixes Google Search Console's `Transfer-Encoding: chunked` rejection issue on new properties.
+  - Serves direct `Content-Length`, `Content-Type: application/xml`, `Accept-Ranges: bytes`, and `ETag` headers directly from Vercel's Edge CDN.
+- Switched `robots.txt` to static physical file at `public/robots.txt` with absolute canonical sitemap pointer.
+- Verified production build (`npm run build`) succeeded with exit code 0.
