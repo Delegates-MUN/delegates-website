@@ -33,7 +33,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://delegates.org"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://delegates-website.vercel.app"
+  ),
   title: {
     default: "DELEGATES — Rooted in Principles. United by Dialogue.",
     template: "%s | DELEGATES",

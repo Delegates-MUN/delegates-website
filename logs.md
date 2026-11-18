@@ -618,3 +618,20 @@ This log documents every architectural decision, bug fix, feature integration, d
   - `verification: { google: "google9ead6cbf74096ef9" }`
   - Ensures both the HTML file and the `<meta name="google-site-verification" ...>` methods are active simultaneously.
 - Verified production build (`npm run build`) succeeded with exit code 0.
+
+
+---
+
+## 24. SEO Sitemap and Robots.txt Generation
+
+### 24.1 Implementation
+- Implemented dynamic Next.js App Router sitemap generator at `src/app/sitemap.ts`.
+  - Indexes all primary public routes: `/`, `/about`, `/community`, `/academy`, `/media`, and `/contact`.
+  - Assigned appropriate `priority` and `changeFrequency` metrics.
+  - Automatically served at `https://delegates-website.vercel.app/sitemap.xml`.
+- Implemented dynamic robots policy generator at `src/app/robots.ts`.
+  - Grants public crawl access to all standard pages while disallowing `/api/` backend routes.
+  - Declares canonical sitemap reference link.
+  - Automatically served at `https://delegates-website.vercel.app/robots.txt`.
+- Updated `metadataBase` in `src/app/layout.tsx` to point to `https://delegates-website.vercel.app`.
+- Verified production build (`npm run build`) succeeded with exit code 0 across 13 routes.
