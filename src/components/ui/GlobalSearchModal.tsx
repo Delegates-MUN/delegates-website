@@ -47,7 +47,7 @@ export default function GlobalSearchModal() {
   const pages = [
     { name: "Home", href: "/", desc: "Rooted in Principles. United by Dialogue." },
     { name: "Community Hub", href: "/community", desc: "A Community Built Around Dialogue & WhatsApp Forum" },
-    { name: "Academy Library", href: "/academy", desc: "Foundational Model UN Learning & Procedural Guides" },
+    { name: "Academy Library", href: "/academy", desc: "Model UN Learning & Practical Guidance" },
     { name: "Media Desk", href: "/media", desc: "Perspectives on Diplomacy, Geopolitics, and International Relations" },
     { name: "About DELEGATES", href: "/about", desc: "Our Vision, Mission, and the DLGTS Philosophy" },
     { name: "Contact & Correspondence", href: "/contact", desc: "Official Enquiries, Collaborations, and Submissions" },

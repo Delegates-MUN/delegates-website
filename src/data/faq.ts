@@ -10,7 +10,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: "faq-2",
     question: "Is there a fee or paywall to access the Academy resources?",
-    answer: "No. DELEGATES Academy operates as a public, open-access educational library. In alignment with our brand promise ('A space to learn without barriers'), all published guides, research methodologies, and procedural breakdowns are freely accessible without gated subscriptions.",
+    answer: "No. DELEGATES Academy operates as an open-access educational space. In alignment with our brand promise ('A space to learn without barriers'), all upcoming learning resources and educational materials will be freely accessible without gated subscriptions.",
     category: "Academy",
   },
   {
@@ -22,7 +22,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: "faq-4",
     question: "Can I submit an editorial article or commentary to DELEGATES Media?",
-    answer: "Yes. We welcome well-researched, original commentary on geopolitics, international law, diplomatic history, and MUN pedagogy. Submissions are reviewed by our Editorial Board for factual rigor, balanced analysis, and adherence to our ethical principles.",
+    answer: "Yes. We welcome thoughtful commentary on geopolitics, international relations, and Model UN. Submissions can be proposed through our contact desk for review.",
     category: "Participation",
   },
   {

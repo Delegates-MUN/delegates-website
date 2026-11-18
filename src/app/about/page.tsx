@@ -276,17 +276,17 @@ export default function AboutPage() {
                     Pillar 02 · Academy
                   </span>
                   <h3 className="font-editorial text-2xl text-[#171717]">
-                    The Pedagogical Library
+                    The Pedagogical Space
                   </h3>
                   <p className="text-xs text-[#68645D] leading-relaxed">
-                    Open-access masterclasses, verified research methods, resolution drafting clinics, and Executive Board training with zero paywalls.
+                    An educational space dedicated to making Model United Nations knowledge, guidance, and diplomatic insights accessible with zero paywalls.
                   </p>
                 </div>
                 <Link
                   href="/academy"
                   className="inline-flex items-center gap-1.5 text-xs font-interface font-semibold text-[#171717] pt-2 hover:underline group-hover:translate-x-0.5 transition-transform"
                 >
-                  <span>Visit Academy Library</span>
+                  <span>Explore Academy</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -303,14 +303,14 @@ export default function AboutPage() {
                     The Editorial Voice
                   </h3>
                   <p className="text-xs text-[#68645D] leading-relaxed">
-                    Rigorous long-form dispatches, legal commentaries, and interviews examining global diplomacy, regional security architecture, and multilateral reform.
+                    An editorial space dedicated to thoughtful perspectives on diplomacy, geopolitics, international relations, and Model United Nations.
                   </p>
                 </div>
                 <Link
                   href="/media"
                   className="inline-flex items-center gap-1.5 text-xs font-interface font-semibold text-[#171717] pt-2 hover:underline group-hover:translate-x-0.5 transition-transform"
                 >
-                  <span>Read Media Publications</span>
+                  <span>Explore Media Desk</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

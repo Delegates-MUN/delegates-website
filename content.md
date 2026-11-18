@@ -63,12 +63,14 @@ This document provides a comprehensive, structured summary of all textual conten
 2. **02 — ACADEMY:**
    - *Theme:* “Learn. Understand. Engage.”
    - *Visual Window:* Monochrome photograph of a classical diplomatic law library (`pillar-academy.jpg`).
-   - *Content:* Practical guidance, rules of procedure, and insights into diplomacy and international affairs.
-   - *Action:* Explore the Academy Library (`/academy`).
+   - *Content:* Practical guidance and insights into diplomacy and international affairs.
+   - *Notice:* “New learning resources are in the works. Stay connected for upcoming guides and educational content.”
+   - *Action:* Explore the Academy (`/academy`).
 3. **03 — MEDIA:**
    - *Theme:* “Perspectives Worth Exploring”
    - *Visual Window:* Monochrome photograph of an international affairs press desk (`pillar-media.jpg`).
    - *Content:* Thoughtful perspectives on diplomacy, geopolitics, international relations, and Model United Nations.
+   - *Notice:* “Our editorial desk is preparing its first collection of stories. Stay connected for updates.”
    - *Action:* Explore Media Desk (`/media`).
 
 ### E. DLGTS Philosophy Matrix
@@ -81,7 +83,7 @@ This document provides a comprehensive, structured summary of all textual conten
   - CTA: *Submit an Opportunity* (verified organizer intake).
 
 ### G. Featured Learning & Media Section
-- Highlights top foundational Academy guides alongside the editorial desk announcement.
+- Balanced showcase of Academy and Media pillars with both approved empty state notices.
 
 ### H. Closing Movement CTA
 - *“The world is shaped by those willing to understand it.”* Direct WhatsApp community entry for all delegates.
@@ -99,7 +101,7 @@ This document provides a comprehensive, structured summary of all textual conten
 - **Engagement Mechanism:** Direct WhatsApp community access open to all; active members selected for specialized cohorts subsequently.
 
 ### C. Inclusivity Standard (Who the Community is For)
-1. **First-Time MUN Participants (Foundation):** Step-by-step procedural guides, jargon decoders, and accessible foundational resources.
+1. **First-Time MUN Participants (Foundation):** Guidance, terminology breakdowns, and accessible foundational resources.
 2. **Regular & Experienced Delegates (Strategy):** Deeper geopolitical context, collaborative drafting discussions, and foreign policy insights.
 3. **Executive Board Members & Chairs (Leadership):** Presiding officers exchanging study guide approaches and mentoring upcoming delegates.
 4. **MUN Organizers & Secretariats (Institutional):** Connecting with passionate delegates and upholding ethical standards.
@@ -111,19 +113,16 @@ This document provides a comprehensive, structured summary of all textual conten
 
 ---
 
-## 4. Page Content: Academy Library (`/academy`)
+## 4. Page Content: Academy Space (`/academy`)
 
 ### A. Core Educational Mission
 - **Headline:** *“Learn. Understand. Engage.”*
 - **Description:** The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs.
 
-### B. Six Published Foundational Guides
-1. **Demystifying Rules of Procedure: From Roll Call to Voting Bloc:** Parliamentary rules, motions, points, and caucuses.
-2. **The Architecture of a Compelling Position Paper:** Tripartite structure, treaty alignment, and operative proposals.
-3. **Rigorous Country Dossier Research: Beyond the Surface:** Geopolitical alliances, trade dependencies, and national redlines.
-4. **Mastering the Unmoderated Caucus: Bloc Leadership Without Dominance:** Consensus building, synthesis, and clause delegation.
-5. **Behind the Dais: What Executive Boards Actually Look For:** Evaluation criteria, policy compliance, and chairing philosophy.
-6. **Resolution Drafting: Anatomy of Preambulatory & Operative Clauses:** Clause mechanics, operative verbs, and enforcement mechanisms.
+### B. Approved Pedagogical Empty State
+- **Heading:** *“New Learning Resources in the Works”*
+- **Notice:** *“New learning resources are in the works. Stay connected for upcoming guides and educational content.”*
+- **CTA:** Direct link to enter the open WhatsApp Community forum for updates.
 
 ---
 
@@ -153,4 +152,4 @@ This document provides a comprehensive, structured summary of all textual conten
   - WhatsApp Community: `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`
   - LinkedIn: `https://www.linkedin.com/company/delegates-mun/`
   - Instagram: `https://www.instagram.com/delegates_mun/`
-- **Correspondence Form:** Real server-side validated contact form generating tracking reference ID `DLGTS-XXXXXX`.
+- **Correspondence Form:** Real server-side validated contact form forwarding straight to `delegates@zohomail.in` via Web3Forms.

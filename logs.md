@@ -485,3 +485,28 @@ This log documents every architectural decision, bug fix, feature integration, d
      - Zero account password requirements; runs purely via token authorization.
      - Built-in spam filtering and fallback error states.
 - **Verification:** Live integration test succeeded with Web3Forms confirmation and production build passed with exit code 0.
+
+
+---
+
+## 19. Removal of Unverified Guides & Academy Transition to Clean Empty State
+- **Objective:** Remove all unverified learning guides, dynamic slug routes, and related curriculum claims from the Academy page and platform to ensure complete content authenticity.
+- **Actions Executed:**
+  1. **Academy Data Directory (`src/data/academy.ts`):** Removed the 6 placeholder guides; set `ACADEMY_RESOURCES = []`.
+  2. **Dynamic Slug Route (`src/app/academy/[slug]`):** Deleted the literal directory `src/app/academy/[slug]` to eliminate dead routes.
+  3. **Academy Page (`src/app/academy/page.tsx`):**
+     - Replaced with the approved honest introduction and polished empty state:
+       - Heading: *“Learn. Understand. Engage.”*
+       - Description: *“The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs.”*
+       - Empty State Notice: *“New learning resources are in the works. Stay connected for upcoming guides and educational content.”*
+     - Removed reading drawer, text-size toggles, bookmark tracking, and difficulty filter controls.
+  4. **Homepage Features (`FeaturedEditorial.tsx`, `PillarsSection.tsx`):**
+     - Updated `FeaturedEditorial.tsx` to display balanced editorial status cards for both Academy and Media pillars without referencing specific guide titles.
+     - Updated `PillarsSection.tsx` Pillar 02 to show the in-development pedagogical desk notice.
+  5. **About & FAQ (`src/app/about/page.tsx`, `src/data/faq.ts`):**
+     - Grounded Academy descriptions to remove claims of masterclasses, clinics, or specialized training.
+     - Updated FAQ responses regarding Academy access.
+  6. **Global Search (`GlobalSearchModal.tsx`):**
+     - Updated search palette descriptions to reflect pure platform navigation without unverified guides.
+- **Verification & Deployment:**
+  - Production build (`npm run build`) succeeded with exit code 0 across all 11 static and dynamic routes.

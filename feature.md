@@ -27,9 +27,7 @@ This document provides a comprehensive inventory of all features, interactive ca
 
 ### 1.3 Universal Search Palette (`GlobalSearchModal.tsx`)
 - **Keyboard Shortcut Trigger:** Listens globally for `Ctrl + K` (Windows/Linux) and `Cmd + K` (macOS).
-- **Multi-Index Query Engine:** Simultaneously queries verified platform resources:
-  1. *Academy Curriculum Guides:* By title, category, and summary across all 6 published guides.
-  2. *Navigation Pages:* Instant shortcuts to Home, Community Hub, Academy Library, Media Desk, About, and Contact.
+- **Navigation Shortcuts:** Instant shortcuts to Home, Community Hub, Academy, Media Desk, About, and Contact.
 - **Keyboard Accessible & Escape Dismissal:** Esc closes the modal; typing immediately filters results without page reloads.
 
 ---
@@ -66,13 +64,11 @@ This document provides a comprehensive inventory of all features, interactive ca
   - `academy-amphitheater.jpg`: Symmetrical tiered classical lecture amphitheater (Academy Page Hero).
   - `media-reading-room.jpg`: Open geopolitical atlas and legal folios under a green banker's lamp (Media Page Hero).
   - `secretariat-desk.jpg`: Diplomatic desk with leather portfolio, fountain pen, and embossed seal (Contact Page Hero).
-- **Consistent Image Post-Processing:** Standardized with `grayscale contrast-110 opacity-90 group-hover:scale-102 group-hover:opacity-100` transitions.
 
 ### 2.4 Swiss Typographic & Cartographic Accents (`SwissAccents.tsx`)
 - **`SwissCornerMarks`:** Reusable corner hairline registration brackets (`+` and `L` ticks) evoking high-end Swiss print layout standards. Implemented using resilient 1.5px inline styling to guarantee pixel-perfect rendering across all browsers.
 - **`CartographicStamp`:** Aesthetic typographic coordinates and location markers without claiming physical foreign offices or UN affiliation.
 - **`ArchivalBadge`:** Volume and classification tags in monospace styling.
-- **Micro-Interaction Animation Suite (`globals.css`):** Hardware-accelerated keyframe animations (`fadeIn`, `fadeInUp`, `scaleIn`) with `cubic-bezier(0.16, 1, 0.3, 1)` easing.
 
 ---
 
@@ -89,26 +85,20 @@ This document provides a comprehensive inventory of all features, interactive ca
   - Heading: *“No Opportunities Listed Yet”*
   - Description: *“We're working on bringing relevant MUN conferences, initiatives, and opportunities to the DELEGATES community. Check back soon for updates.”*
 - **Opportunity Submission Intake (`/api/submit-opportunity`, `SubmitOpportunityModal.tsx`):**
-  - Full server-side validation, anti-spam checking, and reference ID generation (`DLGTS-OPP-XXXXXX`) for organizers wishing to submit legitimate conferences.
-  - Fallback email direct to `delegates@zohomail.in`.
+  - Full server-side validation, anti-spam checking, and reference ID generation (`DLGTS-OPP-XXXXXX`) forwarding straight to `delegates@zohomail.in`.
 
 ---
 
-## 4. Pillar 02 — Academy Pedagogical Library
+## 4. Pillar 02 — Academy Pedagogical Space
 
-### 4.1 Curriculum Overview & Reading Desk (`/academy`)
+### 4.1 Academy Overview & Approved Empty State (`/academy`)
 - **Authentic Pedagogical Mission:**
   - Heading: *“Learn. Understand. Engage.”*
   - Description: *“The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs.”*
-- **Clean Reading Drawer Modal:** In-depth slide-out reader with customizable text sizing (`sm`, `base`, `lg`), core takeaways, and persistent bookmarking via localStorage.
-- **6 Published Foundational Guides (`src/data/academy.ts`):**
-  1. *Rules of Procedure:* From Roll Call to Voting Bloc.
-  2. *Position Papers:* The Architecture of a Compelling Position Paper.
-  3. *Country Research Methodology:* Beyond the Surface.
-  4. *Unmoderated Caucus Negotiation:* Bloc Leadership Without Dominance.
-  5. *Executive Board Perspective:* Behind the Dais & Scoring Criteria.
-  6. *Resolution Drafting:* Anatomy of Preambulatory & Operative Clauses.
-- **Empty State Support:** Dynamically displays *“New learning resources are in the works. Stay connected for upcoming guides and educational content.”* when filters produce zero results.
+- **Polished Empty State:**
+  - Notice: *“New learning resources are in the works. Stay connected for upcoming guides and educational content.”*
+  - Direct connection to the open WhatsApp Community forum for curriculum release announcements.
+- **Zero Dummy Tools / Guides:** All unverified curriculum, non-functional tools, and dead dynamic routes removed.
 
 ---
 
@@ -121,7 +111,6 @@ This document provides a comprehensive inventory of all features, interactive ca
 - **Polished Editorial Empty State:**
   - Notice: *“Our editorial desk is preparing its first collection of stories. Stay connected for updates.”*
   - Zero fabricated authors, dummy interviews, or synthetic reading metrics.
-  - Direct call-to-action connecting visitors to the WhatsApp community and Academy resources.
 
 ---
 
@@ -134,9 +123,6 @@ This document provides a comprehensive inventory of all features, interactive ca
 - **Official WhatsApp Community:** `https://chat.whatsapp.com/DgERPMtTm4f0ONCfet1ebv`
 
 ### 6.2 Contact Desk & Correspondence Engine (`/contact`, `/api/contact`)
+- **Live Email Forwarding via Web3Forms:** Form submissions deliver directly to `delegates@zohomail.in` with reply-to set to the sender.
 - **Real Server-Side Validation:** Validates full name, valid email address, enquiry classification, minimum 10-character message length, and communication consent.
-- **Reference ID Logging:** Generates formal reference code (`DLGTS-XXXXXX`) upon successful dispatch.
-- **Robust Error Handling:** Displays meaningful user feedback, loading state animations, and server failure warnings.
-
-### 6.3 Public Architecture & No Member Accounts
-- **Public-Facing Website with Forms:** No login, member sign-up, or profile database. All visitors explore the complete website freely without authentication barriers.
+- **Reference ID Generation:** Generates confirmation receipt code (`DLGTS-XXXXXX`).

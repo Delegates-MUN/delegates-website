@@ -218,7 +218,7 @@ export default function PillarsSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-between">
                       <div className="flex justify-end">
-                        <ArchivalBadge label="LEARNING ARCHIVE" classification="OPEN VAULT" variant="dark" />
+                        <ArchivalBadge label="LEARNING ARCHIVE" classification="IN DEVELOPMENT" variant="dark" />
                       </div>
                       <div className="text-white text-xs font-interface">
                         <span className="text-[10px] uppercase tracking-widest text-[#B89358] block">
@@ -231,35 +231,15 @@ export default function PillarsSection() {
                     </div>
                   </div>
 
-                  {/* Modules Selector */}
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between p-3 border border-[#33312D] bg-[#201F1D] hover:border-[#68645D] transition-colors card-hover-lift">
-                      <div className="space-y-0.5">
-                        <span className="text-[9px] font-interface text-[#8E877C] uppercase tracking-wider block">
-                          Module 01 · Parliamentary Basics
-                        </span>
-                        <h4 className="font-editorial text-sm text-white">
-                          Demystifying Rules of Procedure: Roll Call to Voting
-                        </h4>
-                      </div>
-                      <span className="text-[9px] font-interface uppercase px-2 py-0.5 bg-[#252422] text-[#C9C2B7] border border-[#33312D]">
-                        Beginner
-                      </span>
+                  {/* Academy Status Card */}
+                  <div className="p-4 border border-[#33312D] bg-[#201F1D] space-y-2">
+                    <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-[#8E877C]">
+                      <span className="font-semibold text-white">Pedagogical Desk Notice</span>
+                      <span className="text-[#B89358]">In Development</span>
                     </div>
-
-                    <div className="flex items-center justify-between p-3 border border-[#33312D] bg-[#201F1D] hover:border-[#68645D] transition-colors card-hover-lift">
-                      <div className="space-y-0.5">
-                        <span className="text-[9px] font-interface text-[#8E877C] uppercase tracking-wider block">
-                          Module 02 · Position Papers
-                        </span>
-                        <h4 className="font-editorial text-sm text-white">
-                          The Architecture of a Compelling Position Paper
-                        </h4>
-                      </div>
-                      <span className="text-[9px] font-interface uppercase px-2 py-0.5 bg-[#252422] text-[#C9C2B7] border border-[#33312D]">
-                        Intermediate
-                      </span>
-                    </div>
+                    <p className="font-editorial italic text-sm text-[#C9C2B7] leading-relaxed">
+                      “New learning resources are in the works. Stay connected for upcoming guides and educational content.”
+                    </p>
                   </div>
                 </div>
               </div>
