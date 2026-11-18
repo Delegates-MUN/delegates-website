@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://delegates-website.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.delegates-mun.xyz"
   ),
   title: {
     default: "DELEGATES — Rooted in Principles. United by Dialogue.",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "DELEGATES — Rooted in Principles. United by Dialogue.",
     description:
       "A premier community for MUN enthusiasts, aspiring diplomats, and youth leaders.",
-    url: "https://delegates.org",
+    url: "https://www.delegates-mun.xyz",
     siteName: "DELEGATES",
     images: [
       {

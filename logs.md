@@ -635,3 +635,16 @@ This log documents every architectural decision, bug fix, feature integration, d
   - Automatically served at `https://delegates-website.vercel.app/robots.txt`.
 - Updated `metadataBase` in `src/app/layout.tsx` to point to `https://delegates-website.vercel.app`.
 - Verified production build (`npm run build`) succeeded with exit code 0 across 13 routes.
+
+
+---
+
+## 25. Production Domain Transition (`delegates-mun.xyz`)
+
+### 25.1 Domain Harmonization
+- Configured production domain canonical URLs to `https://www.delegates-mun.xyz`:
+  - `metadataBase` and OpenGraph metadata in `src/app/layout.tsx`.
+  - Canonical URL references in `src/app/sitemap.ts`.
+  - Sitemap directive in `src/app/robots.ts`.
+- Preserved Google Search Console verification token (`google9ead6cbf74096ef9`).
+- Verified production build (`npm run build`) succeeded with exit code 0.
