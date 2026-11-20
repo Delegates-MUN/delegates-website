@@ -59,7 +59,7 @@ export default function JoinCommunityModal() {
           <div className="relative w-10 h-12 flex-shrink-0">
             <Image
               src="/assets/delegates-monogram-dark.png"
-              alt="DELEGATES"
+              alt="DELEGATES Official Monogram Emblem"
               fill
               sizes="40px"
               className="object-contain"

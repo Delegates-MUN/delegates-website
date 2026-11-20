@@ -3,7 +3,48 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fullName, email, enquiryType, subject, message, consent } = body;
+    const { fullName, email, enquiryType, subject, message, consent, _gotcha, turnstileToken } = body;
+
+    // 0. Anti-spam honeypot defence (silent reject for bots)
+    if (_gotcha) {
+      console.warn("[Spam Protection] Honeypot field filled, discarding bot payload.");
+      return NextResponse.json({
+        success: true,
+        message: "Your enquiry has been delivered to the DELEGATES Secretariat.",
+        referenceId: "DLGTS-VERIFIED",
+      });
+    }
+
+    // 0.1 Cloudflare Turnstile Verification (when secret configured)
+    const turnstileSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+    if (turnstileSecret && turnstileToken) {
+      try {
+        const verifyRes = await fetch(
+          "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+              secret: turnstileSecret,
+              response: turnstileToken,
+            }),
+          }
+        );
+        const verifyData = await verifyRes.json();
+        if (!verifyData.success) {
+          return NextResponse.json(
+            {
+              success: false,
+              error:
+                "Security verification check failed. Please refresh the page and try again.",
+            },
+            { status: 403 }
+          );
+        }
+      } catch (cfErr) {
+        console.error("[Cloudflare Turnstile Verification Error]", cfErr);
+      }
+    }
 
     // Server-side validation
     if (!fullName || typeof fullName !== "string" || fullName.trim().length === 0) {

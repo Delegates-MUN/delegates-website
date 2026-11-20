@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,6 +10,39 @@ import {
 } from "lucide-react";
 import { SwissCornerMarks, CartographicStamp, ArchivalBadge } from "@/components/ui/SwissAccents";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Academy — Curriculum & Pedagogical Desk | DELEGATES",
+  description:
+    "Open-access Model United Nations educational framework and guidance, making diplomatic knowledge and procedural statecraft accessible to all youth delegates without paywalls.",
+  alternates: {
+    canonical: "https://www.delegates-mun.xyz/academy",
+  },
+  openGraph: {
+    title: "Academy — Curriculum & Pedagogical Desk | DELEGATES",
+    description:
+      "Learn. Understand. Engage. Accessible MUN resources and practical statesmanship.",
+    url: "https://www.delegates-mun.xyz/academy",
+    siteName: "DELEGATES",
+    images: [
+      {
+        url: "/assets/editorial/academy-amphitheater.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Diplomatic Lecture Amphitheater — DELEGATES Academy",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Academy — Curriculum & Pedagogical Desk | DELEGATES",
+    description:
+      "Learn. Understand. Engage. Accessible MUN guidance and resources.",
+    images: ["/assets/editorial/academy-amphitheater.jpg"],
+  },
+};
 
 export default function AcademyPage() {
   return (

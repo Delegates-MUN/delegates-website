@@ -670,3 +670,39 @@ This log documents every architectural decision, bug fix, feature integration, d
 - Created `public/zohoverify/verifyforzoho.html` with verification token `85923842`.
   - Accessible at `https://www.delegates-mun.xyz/zohoverify/verifyforzoho.html` (and `http://delegates-mun.xyz/zohoverify/verifyforzoho.html`).
 - Also placed root fallback at `public/verifyforzoho.html`.
+
+
+---
+
+## 28. SEO, Security & User Experience Enhancements Sprint
+
+### 28.1 Custom 404 Page (`src/app/not-found.tsx`)
+- Built an institutional Swiss-editorial 404 page featuring the DELEGATES monogram, archival status badge (`Archival Protocol · Error 404`), clear explanation, and a directory linking to all core sections.
+
+### 28.2 Page Titles, Meta Descriptions & Preview Images
+- Configured unique, tailored SEO metadata across every route (`/`, `/about`, `/community`, `/academy`, `/media`, `/contact`, `/privacy`, and `/thank-you`):
+  - Canonical URLs pointing to `https://www.delegates-mun.xyz/<route>`.
+  - OpenGraph & Twitter Cards with 1200x630 editorial imagery per section.
+  - Refactored `media`, `community`, and `contact` pages into Server Component metadata wrappers with separated client views (`MediaView.tsx`, `CommunityView.tsx`, `ContactView.tsx`).
+
+### 28.3 Alt Text Audit
+- Verified descriptive, architectural, and pedagogical `alt` text across all images on the site (no empty, missing, or generic tags).
+
+### 28.4 Internal Linking & Privacy Route
+- Created `src/app/privacy/page.tsx` with structured data governance sections.
+- Updated footer legal links to point directly to `/privacy`.
+
+### 28.5 Spam Protection (Cloudflare Turnstile + Honeypot)
+- Integrated Cloudflare Turnstile spam protection on the Contact form (`ContactView.tsx` & `/api/contact/route.ts`).
+- Added hidden `_gotcha` honeypot field for silent bot rejection.
+- Server-side Turnstile verification endpoint verification enabled via `CLOUDFLARE_TURNSTILE_SECRET_KEY` with automatic fallback to public test key.
+
+### 28.6 Dedicated Thank You Confirmation Route (`src/app/thank-you/`)
+- Created `src/app/thank-you/page.tsx` with dynamic reference tracking display and next-steps guidance.
+- Contact form automatically redirects to `/thank-you?ref=...&type=contact` on successful transmission.
+
+### 28.7 Google Analytics Integration
+- Embedded official Google Analytics (`gtag.js`) in `src/app/layout.tsx` synced to `NEXT_PUBLIC_GA_ID`.
+
+### 28.8 Build & Verification
+- `npm run build` passed with exit code 0 across all 13 routes.

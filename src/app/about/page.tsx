@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,6 +13,39 @@ import {
 } from "lucide-react";
 import { SwissCornerMarks, CartographicStamp, ArchivalBadge } from "@/components/ui/SwissAccents";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "About Us — Purpose, Principles & Architecture | DELEGATES",
+  description:
+    "Discover the origins, institutional vision, and DLGTS framework of DELEGATES — founded to elevate Model United Nations into an enduring culture of statesmanship and dialogue.",
+  alternates: {
+    canonical: "https://www.delegates-mun.xyz/about",
+  },
+  openGraph: {
+    title: "About Us — Purpose, Principles & Architecture | DELEGATES",
+    description:
+      "Rooted in Principles. United by Dialogue. Learn about the DELEGATES philosophy and institutional foundations.",
+    url: "https://www.delegates-mun.xyz/about",
+    siteName: "DELEGATES",
+    images: [
+      {
+        url: "/assets/editorial/about-architecture.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Diplomatic Architecture of the Palais des Nations — DELEGATES",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — Purpose, Principles & Architecture | DELEGATES",
+    description:
+      "Rooted in Principles. United by Dialogue. Learn about the DELEGATES philosophy.",
+    images: ["/assets/editorial/about-architecture.jpg"],
+  },
+};
 
 export default function AboutPage() {
   const dlgtsPrinciples = [

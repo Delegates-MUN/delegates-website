@@ -230,16 +230,16 @@ export default function Footer() {
                 Principles & Ethics
               </Link>
               <Link
-                href="/contact"
+                href="/privacy"
                 className="hover:text-[#C9C2B7] transition-colors"
               >
-                Privacy & Data
+                Privacy Policy
               </Link>
               <Link
                 href="/contact"
                 className="hover:text-[#C9C2B7] transition-colors"
               >
-                Terms of Use
+                Correspondence Desk
               </Link>
             </div>
           </div>

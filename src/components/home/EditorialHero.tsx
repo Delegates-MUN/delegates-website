@@ -135,7 +135,7 @@ export default function EditorialHero() {
                   <div className="w-8 h-10 relative">
                     <Image
                       src="/assets/delegates-monogram-light.png"
-                      alt="Monogram mark"
+                      alt="DELEGATES Official Monogram Emblem"
                       fill
                       sizes="32px"
                       className="object-contain"
