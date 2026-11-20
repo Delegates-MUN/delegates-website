@@ -660,3 +660,13 @@ This log documents every architectural decision, bug fix, feature integration, d
   - Serves direct `Content-Length`, `Content-Type: application/xml`, `Accept-Ranges: bytes`, and `ETag` headers directly from Vercel's Edge CDN.
 - Switched `robots.txt` to static physical file at `public/robots.txt` with absolute canonical sitemap pointer.
 - Verified production build (`npm run build`) succeeded with exit code 0.
+
+
+---
+
+## 27. Zoho Mail Domain Verification Setup
+
+### 27.1 Deployment of Verification Files
+- Created `public/zohoverify/verifyforzoho.html` with verification token `85923842`.
+  - Accessible at `https://www.delegates-mun.xyz/zohoverify/verifyforzoho.html` (and `http://delegates-mun.xyz/zohoverify/verifyforzoho.html`).
+- Also placed root fallback at `public/verifyforzoho.html`.
