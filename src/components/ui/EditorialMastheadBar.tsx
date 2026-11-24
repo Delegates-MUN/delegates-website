@@ -16,11 +16,11 @@ export default function EditorialMastheadBar() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 text-white font-medium uppercase tracking-widest">
             <Globe2 className="w-3 h-3 text-[#B89358]" />
-            <span>GLOBAL DISPATCH DESK</span>
+            <span>STUDENT DIPLOMACY PLATFORM</span>
           </div>
           <span className="hidden md:inline text-[#68645D]">|</span>
           <span className="hidden md:inline tracking-wider uppercase">
-            EST. 2026 · VOL. I · ISSUE Nº 01
+            FREE & OPEN ACCESS · FOUNDED 2026
           </span>
           <span className="hidden lg:inline text-[#68645D]">|</span>
           <span className="hidden lg:inline font-editorial italic text-white/90">

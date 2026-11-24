@@ -28,8 +28,8 @@ export default function PillarsSection() {
                   </span>
                 </div>
                 <CartographicStamp
-                  location="EDITORIAL DIRECTORY // THE THREE PILLARS"
-                  coordinates="46°13′36″N 6°08′26″E"
+                  location="THE THREE INITIATIVES"
+                  coordinates="COMMUNITY · ACADEMY · MEDIA"
                   className="hidden sm:inline-flex"
                 />
               </div>
@@ -75,8 +75,8 @@ export default function PillarsSection() {
                         </span>
                         <Users className="w-4 h-4 text-[#68645D]" />
                       </div>
-                      <span className="font-mono text-[10px] text-[#8E877C] uppercase tracking-wider hidden sm:inline">
-                        SEC. 01 / ECOSYSTEM
+                      <span className="font-interface text-[10px] text-[#8E877C] uppercase tracking-wider hidden sm:inline">
+                        COMMUNITY FORUM
                       </span>
                     </div>
 
@@ -175,8 +175,8 @@ export default function PillarsSection() {
                         </span>
                         <BookOpen className="w-4 h-4 text-[#C9C2B7]" />
                       </div>
-                      <span className="font-mono text-[10px] text-[#8E877C] uppercase tracking-wider hidden sm:inline">
-                        SEC. 02 / CURRICULUM
+                      <span className="font-interface text-[10px] text-[#8E877C] uppercase tracking-wider hidden sm:inline">
+                        ACADEMY MANUAL
                       </span>
                     </div>
 
@@ -185,7 +185,7 @@ export default function PillarsSection() {
                     </h3>
 
                     <p className="text-sm text-[#C9C2B7] leading-relaxed">
-                      The DELEGATES Academy aims to make Model United Nations knowledge more accessible through learning resources, practical guidance, and insights into diplomacy and international affairs.
+                      Free parliamentary cheat sheets, GSL speech templates, and negotiation guides written by experienced delegates.
                     </p>
                   </div>
 
@@ -218,27 +218,27 @@ export default function PillarsSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-between">
                       <div className="flex justify-end">
-                        <ArchivalBadge label="LEARNING ARCHIVE" classification="IN DEVELOPMENT" variant="dark" />
+                        <ArchivalBadge label="DELEGATES" classification="FIELD MANUAL" variant="dark" />
                       </div>
                       <div className="text-white text-xs font-interface">
-                        <span className="text-[10px] uppercase tracking-widest text-[#B89358] block">
-                          Diplomatic Foundation
+                        <span className="text-[10px] uppercase tracking-widest text-[#B89358] block font-semibold">
+                          Featured Guide
                         </span>
                         <span className="font-editorial italic">
-                          Practical guidance and insights into diplomacy and international affairs.
+                          Rules of Procedure Quick Guide & 4-Part GSL Formula
                         </span>
                       </div>
                     </div>
                   </div>
 
                   {/* Academy Status Card */}
-                  <div className="p-4 border border-[#33312D] bg-[#201F1D] space-y-2">
+                  <div className="p-4 border border-[#33312D] bg-[#201F1D] space-y-1.5">
                     <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-[#8E877C]">
-                      <span className="font-semibold text-white">Pedagogical Desk Notice</span>
-                      <span className="text-[#B89358]">In Development</span>
+                      <span className="font-semibold text-white">Interactive ROP Cheat Sheet</span>
+                      <span className="text-[#B89358]">Free Access</span>
                     </div>
-                    <p className="font-editorial italic text-sm text-[#C9C2B7] leading-relaxed">
-                      “New learning resources are in the works. Stay connected for upcoming guides and educational content.”
+                    <p className="font-editorial text-sm text-[#C9C2B7] leading-relaxed">
+                      Instant reference for Points, Motions, Yields, and Speech Structures—optimized for quick reading during committee sessions.
                     </p>
                   </div>
                 </div>
@@ -263,17 +263,17 @@ export default function PillarsSection() {
                         </span>
                         <Newspaper className="w-4 h-4 text-[#68645D]" />
                       </div>
-                      <span className="font-mono text-[10px] text-[#8E877C] uppercase tracking-wider hidden sm:inline">
-                        SEC. 03 / EDITORIAL
+                      <span className="font-interface text-[10px] text-[#8E877C] uppercase tracking-wider hidden sm:inline">
+                        MEDIA DESK
                       </span>
                     </div>
 
                     <h3 className="font-editorial text-2xl sm:text-3xl text-[#171717] leading-snug">
-                      Perspectives Worth Exploring
+                      Perspectives Worth Reading
                     </h3>
 
                     <p className="text-sm text-[#68645D] leading-relaxed">
-                      DELEGATES is building an editorial space for thoughtful perspectives on diplomacy, geopolitics, international relations, and Model United Nations.
+                      Independent commentary on diplomatic culture, treaty analysis, and youth statecraft—grounded in research rather than performative rhetoric.
                     </p>
                   </div>
 
@@ -282,20 +282,19 @@ export default function PillarsSection() {
                       href="/media"
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs uppercase tracking-[0.16em] font-interface font-medium hover:bg-black transition-colors"
                     >
-                      <span>Explore Media Desk</span>
+                      <span>Read Dispatches</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
 
                     <div className="pt-3 border-t border-[#D8D0C4] flex items-center justify-between text-[11px] font-interface text-[#8E877C]">
-                      <span>Independent Editorial Desk</span>
-                      <span>Principled Perspectives</span>
+                      <span>Student-Led Voice</span>
+                      <span>Open Contributions</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Column: Press Desk Photo & Editorial Announcement */}
+                {/* Right Column: Editorial Photograph */}
                 <div className="lg:col-span-7 space-y-4 flex flex-col justify-between">
-                  {/* Monochrome Press Desk Photo Box */}
                   <div className="relative aspect-[16/8] w-full border border-[#D8D0C4] overflow-hidden bg-[#171717] group">
                     <Image
                       src="/assets/editorial/pillar-media.jpg"
@@ -306,27 +305,27 @@ export default function PillarsSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between">
                       <div className="flex justify-end">
-                        <ArchivalBadge label="EDITORIAL BUREAU" classification="IN PREPARATION" variant="dark" />
+                        <ArchivalBadge label="DELEGATES" classification="DISPATCHES" variant="dark" />
                       </div>
                       <div className="text-white text-xs font-interface">
-                        <span className="text-[10px] uppercase tracking-widest text-[#B89358] block">
-                          Editorial Desk
+                        <span className="text-[10px] uppercase tracking-widest text-[#B89358] block font-semibold">
+                          Featured Essay
                         </span>
                         <span className="font-editorial italic">
-                          Thoughtful perspectives on diplomacy, geopolitics, and Model United Nations.
+                          Why Model UN Started Rewarding Shouting Matches—And How to Bring Diplomacy Back
                         </span>
                       </div>
                     </div>
                   </div>
 
                   {/* Editorial Desk Announcement Card */}
-                  <div className="p-5 border border-[#D8D0C4] bg-[#F4F0E8] space-y-2">
+                  <div className="p-5 border border-[#D8D0C4] bg-[#F4F0E8] space-y-1.5">
                     <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-[#68645D]">
-                      <span className="font-semibold text-[#171717]">Editorial Desk Notice</span>
-                      <span>Coming Soon</span>
+                      <span className="font-semibold text-[#171717]">Dispatches & Commentary</span>
+                      <span className="text-[#171717]">Open to Writers</span>
                     </div>
-                    <p className="font-editorial italic text-sm text-[#171717] leading-relaxed">
-                      “Our editorial desk is preparing its first collection of stories. Stay connected for updates.”
+                    <p className="font-editorial text-sm text-[#171717] leading-relaxed">
+                      Explore analytical essays from debaters worldwide, or submit your own analysis on international affairs.
                     </p>
                   </div>
                 </div>

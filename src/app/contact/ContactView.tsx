@@ -129,8 +129,8 @@ export default function ContactView() {
               </span>
             </div>
             <CartographicStamp
-              location="OFFICIAL COMMUNICATIONS // SECRETARIAT DESK"
-              coordinates="46°13′36″N 6°08′26″E"
+              location="DELEGATES SECRETARIAT"
+              coordinates="DIRECT INQUIRIES"
             />
           </div>
 

@@ -26,8 +26,8 @@ export default function PrivacyPage() {
               </span>
             </div>
             <CartographicStamp
-              location="DATA GOVERNANCE PROTOCOL"
-              coordinates="46°13′36″N 6°08′26″E"
+              location="DATA GOVERNANCE"
+              coordinates="PRIVACY ASSURANCE"
             />
           </div>
 

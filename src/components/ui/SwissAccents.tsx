@@ -67,8 +67,8 @@ export function SwissCornerMarks({
 }
 
 export function CartographicStamp({
-  location = "EDITORIAL ARCHIVE // SWISS GRID",
-  coordinates = "46°12′N 6°09′E",
+  location = "DELEGATES",
+  coordinates = "FREE & OPEN ACCESS",
   className = "",
 }: {
   location?: string;
@@ -77,21 +77,21 @@ export function CartographicStamp({
 }) {
   return (
     <div
-      className={`inline-flex items-center gap-3 font-mono text-[9px] uppercase tracking-widest text-[#8E877C] select-none ${className}`}
+      className={`inline-flex items-center gap-2.5 font-interface text-[10px] uppercase tracking-wider text-[#8E877C] select-none ${className}`}
     >
-      <span className="flex items-center gap-1.5">
-        <span className="w-1.5 h-1.5 bg-[#B89358] inline-block" />
+      <span className="flex items-center gap-1.5 font-medium text-[#171717]">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#B89358] inline-block" />
         <span>{location}</span>
       </span>
-      <span className="text-[#D8D0C4]">|</span>
+      <span className="text-[#D8D0C4]">·</span>
       <span>{coordinates}</span>
     </div>
   );
 }
 
 export function ArchivalBadge({
-  label = "DLGTS · DIPLOMATIC ARCHIVE",
-  classification = "VOL. I // ISSUE 01",
+  label = "DELEGATES",
+  classification = "GUIDE",
   variant = "light",
 }: {
   label?: string;
@@ -101,15 +101,15 @@ export function ArchivalBadge({
   const isDark = variant === "dark";
   return (
     <div
-      className={`inline-flex items-center justify-between border px-2.5 py-1 text-[9px] font-mono tracking-widest uppercase ${
+      className={`inline-flex items-center gap-2 border px-2.5 py-1 text-[10px] font-interface tracking-wider uppercase select-none ${
         isDark
-          ? "bg-[#171717] border-[#33312D] text-[#C9C2B7]"
-          : "bg-[#EAE4D9]/80 border-[#D8D0C4] text-[#68645D]"
+          ? "bg-[#171717]/90 border-white/20 text-[#EAE4D9]"
+          : "bg-[#EAE4D9] border-[#D8D0C4] text-[#171717]"
       }`}
     >
       <span className="font-semibold text-current">{label}</span>
-      <span className="mx-2 opacity-40">::</span>
-      <span className="opacity-80">{classification}</span>
+      <span className="w-1 h-1 rounded-full bg-[#B89358]" />
+      <span className="text-[9px] opacity-80">{classification}</span>
     </div>
   );
 }

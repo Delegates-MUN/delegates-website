@@ -60,38 +60,38 @@ export default function FeaturedOpportunities() {
           </div>
         </div>
 
-        {/* Opportunities Content or Empty State */}
+        {/* Opportunities Content or Welcoming Secretariat Callout */}
         {filteredOpportunities.length === 0 ? (
           <ScrollReveal>
-            <div className="relative border border-[#D8D0C4] bg-white p-6 sm:p-10 md:p-16 text-center max-w-3xl mx-auto space-y-5 card-hover-lift">
+            <div className="relative border border-[#D8D0C4] bg-white p-6 sm:p-10 md:p-14 text-center max-w-3xl mx-auto space-y-6 card-hover-lift">
               <SwissCornerMarks size="w-3 h-3" />
               <div className="w-14 h-14 mx-auto rounded-full bg-[#F4F0E8] border border-[#D8D0C4] flex items-center justify-center text-[#171717]">
-                <Clock className="w-6 h-6 text-[#68645D]" />
+                <PlusCircle className="w-6 h-6 text-[#171717]" />
               </div>
               <div className="space-y-2">
-                <span className="font-interface text-[10px] uppercase tracking-[0.22em] text-[#8E877C] font-semibold block">
-                  Circuit Listings
+                <span className="font-interface text-[10px] uppercase tracking-[0.22em] text-[#B89358] font-semibold block">
+                  Circuit Notice & Call for Submissions
                 </span>
                 <h3 className="font-editorial text-2xl sm:text-3xl text-[#171717] font-normal">
-                  No Opportunities Listed Yet
+                  Hosting an MUN Conference or Youth Summit?
                 </h3>
               </div>
-              <p className="font-interface text-sm text-[#68645D] max-w-lg mx-auto leading-relaxed">
-                We&apos;re working on bringing relevant MUN conferences, initiatives, and opportunities to the DELEGATES community. Check back soon for updates.
+              <p className="font-interface text-sm text-[#68645D] max-w-xl mx-auto leading-relaxed">
+                DELEGATES provides free circuit listings for school, university, and independent MUN conferences worldwide. Reach hundreds of passionate debaters, publish your committee matrix, and announce EB applications at zero cost.
               </p>
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   onClick={handleOpenSubmitModal}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider hover:bg-black transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#171717] text-[#F4F0E8] text-xs font-interface uppercase tracking-wider font-semibold hover:bg-black transition-colors"
                 >
                   <PlusCircle className="w-3.5 h-3.5 text-[#B89358]" />
-                  <span>Submit an Opportunity</span>
+                  <span>List Your Conference for Free</span>
                 </button>
                 <Link
-                  href="/community"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1 px-5 py-2.5 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider hover:border-[#171717] transition-colors"
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-3 border border-[#D8D0C4] text-[#171717] text-xs font-interface uppercase tracking-wider hover:border-[#171717] transition-colors"
                 >
-                  <span>Explore Community</span>
+                  <span>Secretariat Inquiries</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

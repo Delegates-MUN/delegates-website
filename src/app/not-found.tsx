@@ -19,8 +19,8 @@ export default function NotFound() {
               </span>
             </div>
             <CartographicStamp
-              location="DISPATCH NOT FOUND"
-              coordinates="46°13′36″N 6°08′26″E"
+              location="PAGE NOT FOUND"
+              coordinates="ARCHIVE DIRECTORY"
               className="hidden sm:inline-flex"
             />
           </div>

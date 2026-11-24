@@ -47,7 +47,7 @@ export default function EditorialHero() {
             <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-[#EAE4D9] border border-[#D8D0C4] text-[#171717] animate-fadeInUp delay-50">
               <Sparkles className="w-3.5 h-3.5 text-[#B89358]" />
               <span className="font-interface text-[11px] uppercase tracking-[0.22em] font-medium">
-                An MUN & Diplomacy Community
+                Built by Delegates, for Delegates · 100% Free
               </span>
             </div>
 
@@ -88,26 +88,26 @@ export default function EditorialHero() {
             <div className="pt-8 border-t border-[#D8D0C4] grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 animate-fadeIn delay-300">
               <div className="space-y-1">
                 <span className="block font-interface text-[10px] uppercase tracking-[0.2em] text-[#68645D]">
-                  Three Pillars
+                  Field Manuals
                 </span>
                 <span className="font-editorial text-sm sm:text-base text-[#171717] font-medium block">
-                  Community · Academy · Media
+                  Free ROP Cheat Sheets
                 </span>
               </div>
               <div className="space-y-1">
                 <span className="block font-interface text-[10px] uppercase tracking-[0.2em] text-[#68645D]">
-                  Core Philosophy
+                  Network Access
                 </span>
                 <span className="font-editorial text-sm sm:text-base text-[#171717] font-medium block">
-                  DLGTS Framework
+                  Open WhatsApp Forum
                 </span>
               </div>
               <div className="space-y-1">
                 <span className="block font-interface text-[10px] uppercase tracking-[0.2em] text-[#68645D]">
-                  Curriculum Access
+                  Core Ethos
                 </span>
                 <span className="font-editorial text-sm sm:text-base text-[#171717] font-medium block">
-                  Open Public Library
+                  Zero Paywalls Ever
                 </span>
               </div>
             </div>

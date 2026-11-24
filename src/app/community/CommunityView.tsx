@@ -103,8 +103,8 @@ export default function CommunityView() {
               </span>
             </div>
             <CartographicStamp
-              location="COMMUNITY FORUM // YOUTH DIALOGUE"
-              coordinates="46°13′36″N 6°08′26″E"
+              location="STUDENT & DELEGATE FORUM"
+              coordinates="OPEN PARTICIPATION"
             />
           </div>
 
